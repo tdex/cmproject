@@ -22,3 +22,66 @@ header > nav li{
     margin: 1em 4px 0;
     font-size: 1.4em;
 }
+
+
+
+#destaque{
+    display: flex;
+    flex-direction: row;
+    padding: 1em 0 1em;
+    /*border-bottom: 1px solid darkgray;*/
+}
+#destaque-image{
+    flex: 50%;
+    padding: 9px;
+}
+#destaque-image img{
+    width: 100%;
+}
+#destaque-descricao{
+    flex: 50%;
+    padding: 0 1em 1em;
+}
+
+
+
+#veiculosDestaques{
+    align-content: center;
+    text-align: center;
+}
+#veiculosDestaques div{
+    text-align: left;
+    width: 305px;
+    height: 250px;
+    position: relative;
+    background-color: #cccccc;
+    margin: 0.5em 5px 0.5em;
+    display: inline-block;
+}
+#veiculosDestaques div span{
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    font-size: 2em;
+    display: none;
+}
+#veiculosDestaques div:hover span{
+    display: block;
+}
+
+
+
+#login{
+    max-width: 300px;
+    margin: 2em auto 1em;
+    background: #315ce2;
+    padding: 2em;
+    border-radius: 3px;
+    box-shadow: 0 3px 10px #213d96;
+}
+#login input[type='submit']{
+    background: white;
+    border: none;
+    display: block;
+    margin: 0 auto;
+}
