@@ -1,11 +1,25 @@
 package com.cmproject.usuarios;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Visitante {
+
+    @Id
+    @GeneratedValue
+    private int id;
+
     private String name;
     private String telefone;
     private String email;
     private String senha;
     private String endereco;
+
+    public int getId() {
+        return id;
+    }
 
     public String getName() {
         return name;

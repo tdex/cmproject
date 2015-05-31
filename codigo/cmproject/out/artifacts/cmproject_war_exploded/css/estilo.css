@@ -55,6 +55,7 @@ header > nav li{
     height: 250px;
     position: relative;
     background-color: #cccccc;
+    /*background-image: url(img/carros/sandero.jpg);*/
     margin: 0.5em 5px 0.5em;
     display: inline-block;
 }
@@ -69,9 +70,13 @@ header > nav li{
     display: block;
 }
 
+/*#veiculosDestaques div:nth-child(1){*/
+    /*background-image: url(img/carros/camaro.jpg);*/
+/*}*/
 
 
 #login{
+    color: #ffffff;
     max-width: 300px;
     margin: 2em auto 1em;
     background: #315ce2;
@@ -80,7 +85,6 @@ header > nav li{
     box-shadow: 0 3px 10px #213d96;
 }
 #login input[type='submit']{
-    background: white;
     border: none;
     display: block;
     margin: 0 auto;
