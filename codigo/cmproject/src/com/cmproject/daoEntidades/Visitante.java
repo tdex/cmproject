@@ -1,4 +1,4 @@
-package com.cmproject.usuarios;
+package com.cmproject.daoEntidades;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,6 +16,17 @@ public class Visitante {
     private String email;
     private String senha;
     private String endereco;
+
+    public Visitante( String name, String telefone,String email, String senha, String endereco) {
+        this.telefone = telefone;
+        this.name = name;
+        this.email = email;
+        this.senha = senha;
+        this.endereco = endereco;
+    }
+
+    public Visitante() {
+    }
 
     public int getId() {
         return id;
@@ -60,4 +71,6 @@ public class Visitante {
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
+
+
 }

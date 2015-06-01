@@ -7,5 +7,25 @@
     </database-info>
     <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
     <schema name="" catalog="cmproject"/>
+    <table name="Colaborador" schema="" catalog="cmproject" type="TABLE">
+      <column name="idColaborador" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="nome" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="telefone" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="cpf" sqlType="VARCHAR" precision="14" scale="0" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="senha" sqlType="VARCHAR" precision="15" scale="0" nullable="false" jdbcType="12"/>
+      <column name="endereco" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="tipoAcesso" sqlType="VARCHAR" precision="15" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idColaborador"/>
+    </table>
+    <table name="Visitante" schema="" catalog="cmproject" type="TABLE">
+      <column name="idVisitante" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="nome" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="telefone" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="senha" sqlType="VARCHAR" precision="15" scale="0" nullable="false" jdbcType="12"/>
+      <column name="endereco" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idVisitante"/>
+    </table>
   </data-source>
 </component>
