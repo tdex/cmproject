@@ -71,7 +71,7 @@ header > nav li{
 }
 
 /*#veiculosDestaques div:nth-child(1){*/
-    /*background-image: url(img/carros/camaro.jpg);*/
+/*background-image: url(img/carros/camaro.jpg);*/
 /*}*/
 
 
@@ -88,4 +88,39 @@ header > nav li{
     border: none;
     display: block;
     margin: 0 auto;
+}
+
+#boxVeiculos{
+    margin: 1em;
+}
+#boxVeiculos  figure{
+    display: inline-block;
+    width: 13em;
+    margin: 5px 3px 5px;
+    padding: 1em;
+    box-shadow: 0 0 8px grey;
+}
+#boxVeiculos img {
+    width: 100% ;
+}
+
+section#flexCar{
+    display: flex;
+}
+#flexCar #guiaCategoria{
+    flex: 18%;
+}
+#flexCar #boxVeiculos{
+    flex: 82%;
+}
+
+#guiaCategoria nav{
+    padding: 10px;
+}
+#guiaCategoria nav ul{
+    list-style: none;
+}
+#guiaCategoria nav li{
+    padding: 5px;
+    cursor: pointer;
 }
