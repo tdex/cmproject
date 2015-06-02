@@ -1,5 +1,5 @@
 CREATE TABLE `cmproject`.`Colaborador` (
-  `idColaborador` INT NOT NULL,
+  `idColaborador` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(100) NOT NULL,
   `telefone` INT NULL,
   `cpf` VARCHAR(14) NOT NULL,
