@@ -24,12 +24,12 @@ public class VisitanteDAOImp implements DAO{
 
 
     @Override
-    public void atualizar(Visitante visitante) throws Exception {
+    public void atualizarVisitante(Visitante visitante) throws Exception {
 
     }
 
     @Override
-    public void excluir(Visitante visitante) throws Exception {
+    public void excluirVisitante(Visitante visitante) throws Exception {
 
     }
 
@@ -39,7 +39,7 @@ public class VisitanteDAOImp implements DAO{
     }
 
     @Override
-    public void salvar(Visitante visitante) throws Exception {
+    public void salvarVisitante(Visitante visitante) throws Exception {
         PreparedStatement ps = null;
         Connection conn = null;
         if (visitante == null)throw new Exception("O valor passado não pode ser nulo");

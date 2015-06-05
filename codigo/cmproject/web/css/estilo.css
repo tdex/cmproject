@@ -23,27 +23,33 @@ header > nav li{
     font-size: 1.4em;
 }
 
-
-
-#destaque{
+#destaque, #alg{
     display: flex;
     flex-direction: row;
     padding: 1em 0 1em;
     /*border-bottom: 1px solid darkgray;*/
 }
-#destaque-image{
+#destaque-image, #alg-description{
     flex: 50%;
     padding: 9px;
 }
-#destaque-image img{
+#destaque-image img, #alg-description img{
     width: 100%;
 }
-#destaque-descricao{
+#destaque-descricao , #alg-form{
     flex: 50%;
     padding: 0 1em 1em;
 }
 
+#alg-form input[type=date]{
+    padding: 0;
+    line-height: 1em;
+}
 
+#alg-description figcaption{
+    font-size: medium;
+    margin-top: 2em;
+}
 
 #veiculosDestaques{
     align-content: center;
