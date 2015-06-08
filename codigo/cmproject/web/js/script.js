@@ -34,5 +34,18 @@ $().ready(function(){
             algDesctiption.find("p").text("Lançado em 2004 pela Lamborghini, o Gallardo é o modelo de entrada do fabricante italiano. O super-esportivo foi o primeiro veículo da marca a ser equipado com um motor V10. No mesmo ano, a polícia italiana recebeu de presente algumas unidades do Gallardo para atuar no patrulhamento rodoviário do país, em homenagem aos 152 anos da instituição.");
             algDesctiption.find("img").attr("src", "img/carros/gallardo.jpg");
         }
+
+        $('#alg-submit').click(function(){
+            var data = new Date();
+            var dataAtual =   data.getDate()+ '-' + (data.getMonth()+1) + '-' +data.getFullYear() ;
+
+            var $dataRetirada = $('#retirada').val();
+
+            if(!(($dataRetirada[5]+$dataRetirada[6]) >= (data.getMonth()+1) && ($dataRetirada[8]+$dataRetirada[9]) >= data.getDate())){
+                alert('data não pode ser menor que a atual');
+            }
+
+        });
     }
+
 });

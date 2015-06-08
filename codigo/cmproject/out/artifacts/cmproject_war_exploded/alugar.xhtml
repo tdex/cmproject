@@ -40,16 +40,18 @@
                     </figure>
                 </section>
                 <section id="alg-form">
-                    <j:form>
-                        <h2>Tipo de aluguel</h2>
-                        <select>
+                    <form method="post" >
+                        <h2><label for="tipoAluguel">Tipo de aluguel</label></h2>
+                        <select id="tipoAluguel">
                             <option>Diária</option>
                             <option>Mensal</option>
                         </select>
-                        <h2>Retirada</h2>
-                        <input type="date" required="required"/>
-                        <input type="submit" value="Alugar"/>
-                    </j:form>
+                        <br/>
+                        <h2><label for="retirada">Retirada</label></h2>
+                        <input type="date" id="retirada" required="required"/>
+                        <br/><br/>
+                        <input type="submit" value="Alugar" id="alg-submit" />
+                    </form>
                 </section>
             </section>
         </main>
