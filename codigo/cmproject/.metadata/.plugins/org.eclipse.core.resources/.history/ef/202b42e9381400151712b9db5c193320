@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+</head>
+<body>
+<form action="validaColaborador.jsp" method="get">
+<fieldset>Cadastro Colaborador</fieldset>
+<input type="submit">
+</form>
+
+<form action="validaVisitante.jsp" method="get">
+<fieldset>Cadastro Visitante</fieldset>
+</form>
+
+</body>
+</html>

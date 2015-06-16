@@ -1,0 +1,8 @@
+package com.cmproject.dao;
+
+import java.sql.*;
+import com.cmproject.entidade.Visitante;
+
+public class VisitanteDAO extends DAO{
+
+}
