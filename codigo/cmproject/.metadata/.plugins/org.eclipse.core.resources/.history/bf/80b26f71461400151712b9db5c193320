@@ -1,0 +1,25 @@
+package com.cmproject.dao;
+
+import java.sql.*;
+import com.cmproject.entidade.Veiculo;;
+
+public class VeiculoDAO extends DAO{
+	public void inserirVeiculo(Veiculo veiculo) throws ClassNotFoundException{
+		Connection conexao = criaConexao();
+		
+		String query = "insert into Veiculo(nome, modelo, tipo, categoria, status, descricao) values (?,?,?,?,?,?)";
+		
+		try {
+			PreparedStatement ps = conexao.prepareStatement(query);
+			ps.setString(1, x);
+			ps.setString(2, x);
+			ps.setString(3, x);
+			ps.setString(4, x);
+			ps.setString(5, x);
+			ps.setString(6, x);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+}

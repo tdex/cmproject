@@ -1,0 +1,9 @@
+package com.cmproject.dao;
+
+import java.sql.*;
+import com.cmproject.entidade.Veiculo;;
+
+public class VeiculoDAO extends DAO{
+	
+			
+}
