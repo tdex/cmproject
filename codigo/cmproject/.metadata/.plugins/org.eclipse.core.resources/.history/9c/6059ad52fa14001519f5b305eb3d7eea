@@ -1,0 +1,12 @@
+package com.cmproject.servlet;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+import com.cmproject.entidade.Veiculo;
+import com.cmproject.dao.VeiculoDAO;
+
+@WebServlet("/VeiculoServlet")
+public class VeiculoServlet extends HttpServlet{
+
+}

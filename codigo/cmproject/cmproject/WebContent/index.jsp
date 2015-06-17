@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="validaColaborador.jsp" method="post">
+	<form action="ColaboradorServlet" method="post">
 		<fieldset>
 			<legend>Cadastro Colaborador</legend>
 			<label>Nome: <input type="text" name="nome" required></label><br>
@@ -26,7 +26,7 @@
 		</fieldset>
 	</form>
 
-	<form action="validaVisitante.jsp" method="post">
+	<form action="VisitanteServlet" method="post">
 		<fieldset>
 			<legend>Cadastro Visitante</legend>
 			<label>Nome: <input type="text" name="nome" required></label><br>
@@ -38,7 +38,7 @@
 		</fieldset>
 	</form>
 
-	<form action="validaVeiculo.jsp" method="post">
+	<form action="VeiculoServlet" method="post">
 		<fieldset>
 			<legend>Cadastro Veiculo</legend>
 			<label>Nome: <input type="text" required name="nome"></label><br>
