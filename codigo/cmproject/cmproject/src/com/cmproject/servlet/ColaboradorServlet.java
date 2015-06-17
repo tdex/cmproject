@@ -23,33 +23,54 @@ public class ColaboradorServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
 	}
-	
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		String destino = "sucesso.jsp";
-	
-		Colaborador colaborador = new Colaborador();
+		String operacao = request.getParameter("operacao");
 		ColaboradorDAO dao = new ColaboradorDAO();
-		try {
-			colaborador.setNome(request.getParameter("nome"));
-			colaborador.setTelefone(request.getParameter("telefone"));
-			colaborador.setCpf(request.getParameter("cpf"));
-			colaborador.setEmail(request.getParameter("email"));
-			colaborador.setSenha(request.getParameter("senha"));
-			colaborador.setEndereco(request.getParameter("endereco"));
-			colaborador.setTipoAcesso(request.getParameter("tipoAcesso"));
+
+		if(operacao.equals("cadastrar")){
+			Colaborador colaborador = new Colaborador();
 			try {
-				dao.inserirColaborador(colaborador);
-				
+				colaborador.setNome(request.getParameter("nome"));
+				colaborador.setTelefone(request.getParameter("telefone"));
+				colaborador.setCpf(request.getParameter("cpf"));
+				colaborador.setEmail(request.getParameter("email"));
+				colaborador.setSenha(request.getParameter("senha"));
+				colaborador.setEndereco(request.getParameter("endereco"));
+				colaborador.setTipoAcesso(request.getParameter("tipoAcesso"));
+				try {
+					dao.inserirColaborador(colaborador);
+
+				} catch (Exception e) {
+					destino = "fracasso.jsp";
+					e.printStackTrace();
+				}
 			} catch (Exception e) {
-				destino = "fracasso.jsp";
 				e.printStackTrace();
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}finally{
-			RequestDispatcher rd = request.getRequestDispatcher(destino);
-			rd.forward(request, response);	
+		}else if(operacao.equals("excluir")){
+			Colaborador colaborador = new Colaborador();
+			try {
+				colaborador.setEmail(request.getParameter("email"));
+				colaborador.setSenha(request.getParameter("senha"));
+				
+				dao.excluirColaborador(colaborador);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else if(operacao.equals("atualizar")){
+			
+		}else if(operacao.equals("listar")){
+			
+		}else if(operacao.equals("consultar")){
+			
 		}
 		
+		
+		RequestDispatcher rd = request.getRequestDispatcher(destino);
+		rd.forward(request, response);	
+
+
 	}
 }

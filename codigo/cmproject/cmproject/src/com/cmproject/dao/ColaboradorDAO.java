@@ -4,12 +4,11 @@ import java.sql.*;
 import com.cmproject.entidade.Colaborador;
 
 public class ColaboradorDAO extends DAO{
-	public void inserirColaborador(Colaborador colaborador) throws ClassNotFoundException{
-		Connection conexao = criaConexao();
-		
-		String query = "insert into Colaborador(nome, telefone, cpf, email, senha, endereco, tipoAcesso) values (?,?,?,?,?,?,?)";
-		
+	Connection conexao;
+	public void inserirColaborador(Colaborador colaborador){
 		try {
+			conexao = criaConexao();			
+			String query = "insert into Colaborador(nome, telefone, cpf, email, senha, endereco, tipoAcesso) values (?,?,?,?,?,?,?)";
 			PreparedStatement ps = conexao.prepareStatement(query);
 			
 			ps.setString(1, colaborador.getNome());
@@ -22,13 +21,27 @@ public class ColaboradorDAO extends DAO{
 			
 			ps.execute();
 			ps.close();
+			conexao.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 	
-	public void removerColaborador(Colaborador colaborador){
-		
+	public void excluirColaborador(Colaborador colaborador){
+		try {
+			conexao = criaConexao();
+			String query = "Delete from Colaborador where email = ?, senha = ?";
+			PreparedStatement ps = conexao.prepareStatement(query);
+			
+			ps.setString(1, colaborador.getEmail());
+			ps.setString(2, colaborador.getSenha());
+			
+			ps.execute();
+			ps.close();
+			conexao.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public Colaborador consultarColaborador(String nome, String email){

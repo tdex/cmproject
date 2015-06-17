@@ -10,6 +10,7 @@
 	<form action="ColaboradorServlet" method="post">
 		<fieldset>
 			<legend>Cadastro Colaborador</legend>
+			<input type="hidden" name="operacao" value="cadastrar">
 			<label>Nome: <input type="text" name="nome" required></label><br>
 			<label>Telefone: <input type="text" name="telefone"></label><br>
 			<label>CPF: <input type="text" name="cpf"></label><br>
@@ -29,6 +30,7 @@
 	<form action="VisitanteServlet" method="post">
 		<fieldset>
 			<legend>Cadastro Visitante</legend>
+			<input type="hidden" name="operacao" value="cadastrar">
 			<label>Nome: <input type="text" name="nome" required></label><br>
 			<label>Telefone: <input type="text" name="telefone"></label><br>
 			<label>E-mail: <input type="email" name="email"></label><br>
@@ -41,6 +43,7 @@
 	<form action="VeiculoServlet" method="post">
 		<fieldset>
 			<legend>Cadastro Veiculo</legend>
+			<input type="hidden" name="operacao" value="cadastrar">
 			<label>Nome: <input type="text" required name="nome"></label><br>
 			<label>Modelo: <input type="text" required name="modelo"></label><br>
 			<label>Imagem: <input type="file" required name="imagem"></label><br>

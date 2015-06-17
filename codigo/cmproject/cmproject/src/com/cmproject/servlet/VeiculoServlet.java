@@ -23,33 +23,54 @@ public class VeiculoServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
 	}
-	
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		String destino = "sucesso.jsp";
-	
-		Veiculo veiculo = new Veiculo();
+		String operacao = request.getParameter("operacao");
 		VeiculoDAO dao = new VeiculoDAO();
-		try {
-			veiculo.setNome(request.getParameter("nome"));
-			veiculo.setModelo(request.getParameter("modelo"));
-			veiculo.setImagem(request.getParameter("imagem"));
-			veiculo.setTipo(request.getParameter("tipo"));
-			veiculo.setStatus(request.getParameter("status"));
-			veiculo.setDescricao(request.getParameter("descricao"));
-			
+
+		if(operacao.equals("cadastrar")){
+			Veiculo veiculo = new Veiculo();
 			try {
-				dao.inserirVeiculo(veiculo);
+				veiculo.setNome(request.getParameter("nome"));
+				veiculo.setModelo(request.getParameter("modelo"));
+				veiculo.setImagem(request.getParameter("imagem"));
+				veiculo.setTipo(request.getParameter("tipo"));
+				veiculo.setStatus(request.getParameter("status"));
+				veiculo.setDescricao(request.getParameter("descricao"));
 				
+				try {
+					dao.inserirVeiculo(veiculo);
+					
+				} catch (Exception e) {
+					destino = "fracasso.jsp";
+					e.printStackTrace();
+				}
 			} catch (Exception e) {
-				destino = "fracasso.jsp";
+				e.printStackTrace();
+			} 
+		}else if(operacao.equals("excluir")){
+			Veiculo veiculo = new Veiculo();
+			try {
+				veiculo.setNome(request.getParameter("nome"));
+				veiculo.setModelo(request.getParameter("modelo"));
+				
+				dao.excluirVeiculo(veiculo);
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally{
-			RequestDispatcher rd = request.getRequestDispatcher(destino);
-			rd.forward(request, response);
+			
+		}else if(operacao.equals("atualizar")){
+			
+		}else if(operacao.equals("listar")){
+			
+		}else if(operacao.equals("consultar")){
+			
 		}
 		
+		RequestDispatcher rd = request.getRequestDispatcher(destino);
+		rd.forward(request, response);
+
+
 	}
 }
