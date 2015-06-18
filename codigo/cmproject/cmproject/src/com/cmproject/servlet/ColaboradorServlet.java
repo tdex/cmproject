@@ -29,6 +29,9 @@ public class ColaboradorServlet extends HttpServlet {
 		String operacao = request.getParameter("operacao");
 		ColaboradorDAO dao = new ColaboradorDAO();
 
+//		request.setCharacterEncoding("ISO-8859-1"); 
+//		response.setContentType("text/html;charset=UTF-8");  
+		
 		if(operacao.equals("cadastrar")){
 			Colaborador colaborador = new Colaborador();
 			try {

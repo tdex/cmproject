@@ -29,6 +29,9 @@ public class VisitanteServlet extends HttpServlet {
 		String operacao = request.getParameter("operacao");
 		VisitanteDAO dao = new VisitanteDAO();
 
+//		request.setCharacterEncoding("UTF-8"); 
+//		response.setContentType("text/html;charset=UTF-8");  
+		
 		if(operacao.equals("cadastrar")){
 			Visitante visitante = new Visitante();
 			try {

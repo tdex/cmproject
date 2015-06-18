@@ -29,6 +29,9 @@ public class VeiculoServlet extends HttpServlet{
 		String operacao = request.getParameter("operacao");
 		VeiculoDAO dao = new VeiculoDAO();
 
+//		request.setCharacterEncoding("UTF-8"); 
+//		response.setContentType("text/html;charset=UTF-8");  
+		
 		if(operacao.equals("cadastrar")){
 			Veiculo veiculo = new Veiculo();
 			try {
