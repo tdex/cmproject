@@ -21,6 +21,8 @@ public class VisitanteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		request.setCharacterEncoding("UTF-8"); 
+		response.setContentType("text/html;charset=UTF-8");  
 		doPost(request, response);
 	}
 
@@ -29,8 +31,6 @@ public class VisitanteServlet extends HttpServlet {
 		String operacao = request.getParameter("operacao");
 		VisitanteDAO dao = new VisitanteDAO();
 
-//		request.setCharacterEncoding("UTF-8"); 
-//		response.setContentType("text/html;charset=UTF-8");  
 		
 		if(operacao.equals("cadastrar")){
 			Visitante visitante = new Visitante();

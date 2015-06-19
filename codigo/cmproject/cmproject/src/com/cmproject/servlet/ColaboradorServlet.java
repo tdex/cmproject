@@ -21,6 +21,8 @@ public class ColaboradorServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8"); 
+		response.setContentType("text/html;charset=UTF-8");  
 		doPost(request, response);
 	}
 
@@ -28,10 +30,7 @@ public class ColaboradorServlet extends HttpServlet {
 		String destino = "sucesso.jsp";
 		String operacao = request.getParameter("operacao");
 		ColaboradorDAO dao = new ColaboradorDAO();
-
-//		request.setCharacterEncoding("ISO-8859-1"); 
-//		response.setContentType("text/html;charset=UTF-8");  
-		
+	
 		if(operacao.equals("cadastrar")){
 			Colaborador colaborador = new Colaborador();
 			try {

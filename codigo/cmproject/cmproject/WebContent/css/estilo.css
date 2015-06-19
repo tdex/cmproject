@@ -90,8 +90,8 @@ header > nav li{
     border-radius: 3px;
     box-shadow: 0 3px 10px #213d96;
 }
-#login input{
-	color: #000;
+#login input, #login textarea{
+	color: #313131;
 }
 #login input[type='submit']{
     border: none;

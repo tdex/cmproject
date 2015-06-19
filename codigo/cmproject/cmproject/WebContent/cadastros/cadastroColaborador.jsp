@@ -4,9 +4,10 @@
 <html>
 <head>
 <title>Car Management Project</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />  
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="Car Management Project - gerênciamento automotivo" />
+<meta name="description"
+	content="Car Management Project - gerênciamento automotivo" />
 <link rel="stylesheet" href="../css/bootstrap.css" />
 <link rel="stylesheet" href="../css/bootstrap-theme.css" />
 <link rel="stylesheet" href="../css/estilo.css" />
@@ -31,30 +32,25 @@
 			</nav>
 		</header>
 		<main>
-		<div id="login">
-			<form action="../VisitanteServlet" method="get" accept-charset="UTF-8">
+		<section>
+			<form action="../ColaboradorServlet" method="get"	accept-charset="UTF-8">
 				<fieldset>
-					<legend>Cadastro Visitante</legend>
+					<legend>Cadastro Colaborador</legend>
 					<input type="hidden" name="operacao" value="cadastrar"> 
-					<label>Nome:
-						<input type="text" name="nome" required>
-					</label><br> 
-						<label>Telefone: <input type="text"	name="telefone">
-					</label><br>
-					<label>E-mail: 
-						<input type="email" name="email" required>
-					</label><br> 
-					<label>Senha:
-						<input type="password" name="senha" required>
-					</label><br> 
-					<label>Endereço: 
-						<textarea name="endereco"></textarea>
-					</label><br> 
-					<input type="submit" value="Cadastrar">
+					<label>Nome: <input type="text" name="nome" required></label><br> 
+					<label>Telefone: <input type="text"	name="telefone"></label><br> 
+					<label>CPF: <input type="text" name="cpf"></label><br> 
+					<label>E-mail: <input type="email" name="email" required></label><br> 
+					<label>Senha: <input type="password" name="senha" required></label><br> 
+					<label>Endereço: <input type="text"	name="endereco"></label><br> 
+					<label>Tipo de acesso: 
+					<select	name="tipoAcesso" required>
+							<option>Administrador</option>
+							<option selected>Colaborador</option>
+					</select>
+					</label><br> <input type="submit" value="Cadastrar">
 				</fieldset>
 			</form>
-		</div>
-		</main>
-	</div>
+		</section>
 </body>
 </html>
