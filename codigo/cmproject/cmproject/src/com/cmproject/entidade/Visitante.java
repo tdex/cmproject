@@ -1,6 +1,7 @@
 package com.cmproject.entidade;
 
 public class Visitante {
+	private String id; 
 	private String nome;
 	private String telefone;
 	private String email;
@@ -37,6 +38,12 @@ public class Visitante {
 	}
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
 	}
 	
 	

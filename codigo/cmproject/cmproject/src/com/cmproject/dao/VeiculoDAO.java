@@ -89,5 +89,31 @@ public class VeiculoDAO extends DAO{
 		}
 		return veiculos;
 	}
-
+	
+	public Veiculo consultarVeiculo(Veiculo veiculo){
+		try {
+			conexao = criaConexao();
+			String query = "Select * from Veiculo where idVeiculos=?";
+			PreparedStatement ps = conexao.prepareStatement(query);
+			
+			ps.setString(1, veiculo.getId());
+			
+			ResultSet rs = ps.executeQuery();
+			if(rs.next()){
+				veiculo.setId(rs.getString("idVeiculos"));
+				veiculo.setNome(rs.getString("nome"));
+				veiculo.setModelo(rs.getString("modelo"));
+				veiculo.setImagem(rs.getString("imagem"));
+				veiculo.setTipo(rs.getString("tipo"));
+				veiculo.setStatus(rs.getString("status"));
+				veiculo.setDescricao(rs.getString("descricao"));
+				
+			}
+			ps.close();
+			conexao.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return veiculo;
+	}
 }

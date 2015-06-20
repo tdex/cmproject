@@ -32,7 +32,8 @@
 			</nav>
 		</header>
 		<main> 
-			<h1>Operação realizada com sucesso</h1>
+			<h1>Ops! Ocorreu um erro</h1>
+			<p>Por gentileza volte e tente novamente.</p>
 			<a href="index.jsp"><button>Voltar</button></a>
 		</main>
 	</div>

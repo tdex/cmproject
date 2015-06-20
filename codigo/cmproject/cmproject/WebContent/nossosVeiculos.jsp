@@ -47,7 +47,7 @@
 						<th>Tipo</th>
 						<th>Status</th>
 						<th>Descrição</th>
-						<th>Operações</th>
+						<th colspan="2">Operações</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -68,6 +68,7 @@
 							</c:choose>
 							<td><c:out value="${veiculo.descricao}" /></td>
 							<td><a href="VeiculoServlet?operacao=excluir&id=<c:out value="${veiculo.id}"/>"><button>Delete</button></a></td>
+							<td><a href="VeiculoServlet?operacao=consultar&idVeiculo=<c:out value="${veiculo.id}"/>"><button>Alugar</button></a></td>
 						</tr>
 					</c:forEach>
 

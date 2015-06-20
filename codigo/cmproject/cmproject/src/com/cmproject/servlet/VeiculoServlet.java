@@ -67,7 +67,10 @@ public class VeiculoServlet extends HttpServlet{
 			destino = "nossosVeiculos.jsp";
 			request.setAttribute("veiculos", dao.listaVeiculos());
 		}else if(operacao.equals("consultar")){
-			
+			destino = "aluguel.jsp";
+			Veiculo veiculo = new Veiculo();
+			veiculo.setId(request.getParameter("idVeiculo"));
+			request.setAttribute("veiculo", dao.consultarVeiculo(veiculo));
 		}
 		
 		RequestDispatcher rd = request.getRequestDispatcher(destino);
