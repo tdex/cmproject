@@ -54,8 +54,7 @@ public class VeiculoServlet extends HttpServlet{
 		}else if(operacao.equals("excluir")){
 			Veiculo veiculo = new Veiculo();
 			try {
-				veiculo.setNome(request.getParameter("nome"));
-				veiculo.setModelo(request.getParameter("modelo"));
+				veiculo.setId(request.getParameter("id"));
 				
 				dao.excluirVeiculo(veiculo);
 			} catch (Exception e) {

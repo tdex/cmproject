@@ -1,3 +1,4 @@
+<%@page import="com.cmproject.entidade.Veiculo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -46,6 +47,7 @@
 						<th>Tipo</th>
 						<th>Status</th>
 						<th>Descrição</th>
+						<th>Operações</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -56,9 +58,16 @@
 							<td><c:out value="${veiculo.modelo}" /></td>
 							<td><c:out value="${veiculo.imagem}" /></td>
 							<td><c:out value="${veiculo.tipo}" /></td>
-							<td class="status"><c:out value="${veiculo.status}" /></td>
+							<c:choose>
+								<c:when test="${veiculo.status == '0' }">
+									<td class="status" style="color: red;"><c:out value="indisponível" /></td>
+								</c:when>
+								<c:when test="${veiculo.status == '1' }">
+									<td class="status" style="color: green"><c:out value="disponível" /></td>
+								</c:when>
+							</c:choose>
 							<td><c:out value="${veiculo.descricao}" /></td>
-							
+							<td><a href="VeiculoServlet?operacao=excluir&id=<c:out value="${veiculo.id}"/>"><button>Delete</button></a></td>
 						</tr>
 					</c:forEach>
 

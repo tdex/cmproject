@@ -33,11 +33,10 @@ public class VeiculoDAO extends DAO{
 	public void excluirVeiculo(Veiculo veiculo) {
 		try {
 			conexao = criaConexao();
-			String query = "Delete from Veiculo where nome = ?, modelo = ?";
+			String query = "Delete from Veiculo where idVeiculos=?";
 			PreparedStatement ps = conexao.prepareStatement(query);
 
-			ps.setString(1, veiculo.getNome());
-			ps.setString(2, veiculo.getModelo());
+			ps.setString(1, veiculo.getId());
 
 			ps.execute();
 			ps.close();
@@ -58,7 +57,7 @@ public class VeiculoDAO extends DAO{
 			ps.setString(3, veiculo.getImagem());
 			ps.setString(4, veiculo.getTipo());
 			ps.setString(5, veiculo.getStatus());
-			ps.setInt(6, veiculo.getId());  //salvar id que está no banco no momento de escolher na lista
+			ps.setString(6, veiculo.getId());  //salvar id que está no banco no momento de escolher na lista
 
 			ps.executeUpdate();
 
@@ -75,7 +74,7 @@ public class VeiculoDAO extends DAO{
 			ResultSet rs = statement.executeQuery("select * from Veiculo");
 			while(rs.next()){
 				Veiculo veiculo = new Veiculo();
-				veiculo.setId(rs.getInt("idVeiculos"));
+				veiculo.setId(rs.getString("idVeiculos"));
 				veiculo.setNome(rs.getString("nome"));
 				veiculo.setModelo(rs.getString("modelo"));
 				veiculo.setImagem(rs.getString("imagem"));

@@ -1,7 +1,7 @@
 package com.cmproject.entidade;
 
 public class Veiculo {
-	private int id; //não usado no momento de inserir;
+	private String id; //não usado no momento de inserir;
 	private String nome;
 	private String modelo;
 	private String imagem;
@@ -46,11 +46,11 @@ public class Veiculo {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setId(String string) {
+		this.id = string;
 	}
 	
 
