@@ -24,7 +24,7 @@
 			<nav>
 				<ul>
 					<li><a href="../index.jsp">Início</a></li>
-					<li><a href="../nossoVeiculos.jsp">Nossos veículos</a></li>
+					<li><a href="../VeiculoServlet?operacao=listar">Nossos veículos</a></li>
 					<li><a href="#">Localizar</a></li>
 					<li><a href="#">Serviços</a></li>
 					<li><a href="../login.jsp">Entrar</a></li>

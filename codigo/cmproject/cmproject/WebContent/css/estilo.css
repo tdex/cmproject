@@ -133,3 +133,13 @@ section#flexCar{
     padding: 5px;
     cursor: pointer;
 }
+
+#listaCarros{
+	margin: 1em auto;
+}
+#listaCarros table{
+	border: 1px solid #CCC;
+}
+#listaCarros td, #listaCarros th{
+	padding: 3px;
+}
