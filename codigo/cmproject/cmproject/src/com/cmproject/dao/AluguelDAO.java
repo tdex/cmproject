@@ -7,6 +7,7 @@ import java.util.List;
 import com.cmproject.entidade.Aluguel;
 import com.cmproject.entidade.Veiculo;
 import com.cmproject.entidade.Visitante;
+import com.cmproject.servlet.VeiculoServlet;
 
 public class AluguelDAO extends DAO{
 	Connection conexao;
@@ -39,8 +40,27 @@ public class AluguelDAO extends DAO{
 			while(rs.next()){
 				Aluguel aluguel = new Aluguel();
 				aluguel.setId(rs.getString("idAluguel"));
-				aluguel.setIdVeiculo(rs.getString("Veiculo_idVeiculos"));
-				aluguel.setIdVisitante(rs.getString("Visitante_idVisitante"));
+				
+				
+				//exibir nome do veiculo ao invés do id
+				Veiculo veiculo = new Veiculo();
+				veiculo.setId(rs.getString("Veiculo_idVeiculos"));
+				Statement statement2 = conexao.createStatement();
+				ResultSet rs2 = statement2.executeQuery("Select * from Veiculo where idVeiculos="+veiculo.getId());
+				while(rs2.next()){
+					aluguel.setIdVeiculo(rs2.getString("nome")+"("+rs2.getString("modelo")+")");
+				}
+				
+				//Exibir nome do visitante ao invés do id na lista
+				Visitante visitante = new Visitante();
+				visitante.setId(rs.getString("Visitante_idVisitante"));
+				Statement statement3 = conexao.createStatement();
+				ResultSet rs3 = statement3.executeQuery("Select * from Visitante where idVisitante="+visitante.getId());
+				while(rs3.next()){
+					aluguel.setIdVisitante(rs3.getString("nome"));
+				}
+				
+				
 				aluguel.setDataAluguel(rs.getString("dataAluguel"));
 				
 				alugueis.add(aluguel);
