@@ -32,7 +32,6 @@
 					<li><a href="index.jsp">Localizar</a></li>
 					<li><a href="index.jsp">Serviços</a></li>
 					<li><a href="login.jsp">Entrar</a></li>
-					<li><a href="AluguelServlet?operacao=listar">listaAluguel</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -42,34 +41,21 @@
 				<thead>
 					<tr>
 						<th>ID</th>
-						<th>Nome</th>
-						<th>Modelo</th>
-						<th>Imagem</th>
-						<th>Tipo</th>
-						<th>Status</th>
-						<th>Descrição</th>
+						<th>Veiculo</th>
+						<th>Cliente</th>
+						<th>Data</th>
 						<th colspan="2">Operações</th>
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="${veiculos}" var="veiculo">
+					<c:forEach items="${alugueis}" var="aluguel">
 						<tr>
-							<td><c:out value="${veiculo.id}" /></td>
-							<td><c:out value="${veiculo.nome}" /></td>
-							<td><c:out value="${veiculo.modelo}" /></td>
-							<td><c:out value="${veiculo.imagem}" /></td>
-							<td><c:out value="${veiculo.tipo}" /></td>
-							<c:choose>
-								<c:when test="${veiculo.status == '0' }">
-									<td class="status" style="color: red;"><c:out value="indisponível" /></td>
-								</c:when>
-								<c:when test="${veiculo.status == '1' }">
-									<td class="status" style="color: green"><c:out value="disponível" /></td>
-								</c:when>
-							</c:choose>
-							<td><c:out value="${veiculo.descricao}" /></td>
-							<td><a href="VeiculoServlet?operacao=excluir&id=<c:out value="${veiculo.id}"/>"><button>Delete</button></a></td>
-							<td><a href="VeiculoServlet?operacao=consultar&idVeiculo=<c:out value="${veiculo.id}"/>"><button>Alugar</button></a></td>
+							<td><c:out value="${aluguel.id}" /></td>
+							<td><c:out value="${aluguel.idVeiculo}" /></td>
+							<td><c:out value="${aluguel.idVisitante}" /></td>
+							<td><c:out value="${aluguel.dataAluguel}" /></td>
+							
+							<td><a href="AluguelServlet?operacao=excluir&id=<c:out value="${aluguel.id}"/>"><button>Cancelar</button></a></td>
 						</tr>
 					</c:forEach>
 

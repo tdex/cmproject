@@ -28,6 +28,7 @@
 					<li><a href="index.jsp">Localizar</a></li>
 					<li><a href="index.jsp">Serviços</a></li>
 					<li><a href="login.jsp">Entrar</a></li>
+					<li><a href="AluguelServlet?operacao=listar">listaAluguel</a></li>
 				</ul>
 			</nav>
 		</header>

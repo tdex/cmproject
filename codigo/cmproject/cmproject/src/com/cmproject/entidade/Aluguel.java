@@ -4,13 +4,13 @@ public class Aluguel {
 	private String id;
 	private String idVeiculo;
 	private String idVisitante;
-	private long dataAluguel;
+	private String dataAluguel;
 	
-	public long getDataAluguel() {
+	public String getDataAluguel() {
 		return dataAluguel;
 	}
-	public void setDataAluguel(long dataAluguel) {
-		this.dataAluguel = dataAluguel;
+	public void setDataAluguel(String string) {
+		this.dataAluguel = string;
 	}
 	public String getId() {
 		return id;

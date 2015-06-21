@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +14,7 @@ import com.cmproject.entidade.Aluguel;
 import com.cmproject.entidade.Veiculo;
 import com.cmproject.entidade.Visitante;
 
+@WebServlet("/AluguelServlet")
 public class AluguelServlet extends HttpServlet{
 
 	/**
@@ -47,7 +49,13 @@ public class AluguelServlet extends HttpServlet{
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		}else if(operacao.equals("listar")){
+			destino = "listaAluguel.jsp";
+			request.setAttribute("alugueis", dao.listaAlugueis());
 		}
+		
+		
+		
 		RequestDispatcher rd = request.getRequestDispatcher(destino);
 		rd.forward(request, response);			
 	}
