@@ -42,4 +42,26 @@ public class VisitanteDAO extends DAO{
 		}
 				
 	}
+	
+	public String consultaVisitanteLogin(Visitante visitante){
+		try {
+			conexao = criaConexao();
+			String query = "Select * from Visitante where email=?,senha=?";
+			PreparedStatement ps = conexao.prepareStatement(query);
+			
+			ps.setString(1, visitante.getEmail());
+			ps.setString(2, visitante.getEmail());
+			
+			ResultSet rs = ps.executeQuery();
+			if(rs.next()){
+				visitante.setId(rs.getString("idVisitante"));
+//				
+			}
+			ps.close();
+			conexao.close();
+		} catch (Exception e) {
+			 e.printStackTrace();
+		}
+		return visitante.getId();
+	}
 }

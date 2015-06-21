@@ -24,27 +24,30 @@
 			<nav>
 				<ul>
 					<li><a href="../index.jsp">Início</a></li>
-					<li><a href="../VeiculoServlet?operacao=listar">Nossos veículos</a></li>
+					<li><a href="../VeiculoServlet?operacao=listar">Nossos
+							veículos</a></li>
 					<li><a href="#">Localizar</a></li>
-					<li><a href="#">Serviços</a></li>
+					<li><a href="acoesAdministrativas.jsp">Administrador</a></li>
 					<li><a href="../login.jsp">Entrar</a></li>
 				</ul>
 			</nav>
 		</header>
 		<main>
 		<section>
-			<form action="../ColaboradorServlet" method="get"	accept-charset="UTF-8">
+			<form action="../ColaboradorServlet" method="get"
+				accept-charset="UTF-8">
 				<fieldset>
 					<legend>Cadastro Colaborador</legend>
-					<input type="hidden" name="operacao" value="cadastrar"> 
-					<label>Nome: <input type="text" name="nome" required></label><br> 
-					<label>Telefone: <input type="text"	name="telefone"></label><br> 
-					<label>CPF: <input type="text" name="cpf"></label><br> 
-					<label>E-mail: <input type="email" name="email" required></label><br> 
-					<label>Senha: <input type="password" name="senha" required></label><br> 
-					<label>Endereço: <input type="text"	name="endereco"></label><br> 
-					<label>Tipo de acesso: 
-					<select	name="tipoAcesso" required>
+					<input type="hidden" name="operacao" value="cadastrar"> <label>Nome:
+						<input type="text" name="nome" required>
+					</label><br> <label>Telefone: <input type="text"
+						name="telefone"></label><br> <label>CPF: <input
+						type="text" name="cpf"></label><br> <label>E-mail: <input
+						type="email" name="email" required></label><br> <label>Senha:
+						<input type="password" name="senha" required>
+					</label><br> <label>Endereço: <input type="text"
+						name="endereco"></label><br> <label>Tipo de acesso: <select
+						name="tipoAcesso" required>
 							<option>Administrador</option>
 							<option selected>Colaborador</option>
 					</select>
@@ -52,5 +55,7 @@
 				</fieldset>
 			</form>
 		</section>
+		</main>
+	</div>
 </body>
 </html>

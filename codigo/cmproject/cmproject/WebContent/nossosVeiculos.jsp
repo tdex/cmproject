@@ -30,15 +30,15 @@
 					<li><a href="VeiculoServlet?operacao=listar">Nossos
 							veículos</a></li>
 					<li><a href="index.jsp">Localizar</a></li>
-					<li><a href="index.jsp">Serviços</a></li>
+					<li><a href="cadastros/acoesAdministrativas.jsp">Administrador</a></li>
 					<li><a href="login.jsp">Entrar</a></li>
-					<li><a href="AluguelServlet?operacao=listar">listaAluguel</a></li>
 				</ul>
 			</nav>
 		</header>
 		<main>
 		<section id="listaCarros">
-			<table border=1>
+			<h1>Nossos Veículos</h1>
+			<table border="1">
 				<thead>
 					<tr>
 						<th>ID</th>
@@ -48,7 +48,7 @@
 						<th>Tipo</th>
 						<th>Status</th>
 						<th>Descrição</th>
-						<th colspan="2">Operações</th>
+						<th colspan="1">Operações</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -57,7 +57,7 @@
 							<td><c:out value="${veiculo.id}" /></td>
 							<td><c:out value="${veiculo.nome}" /></td>
 							<td><c:out value="${veiculo.modelo}" /></td>
-							<td><c:out value="${veiculo.imagem}" /></td>
+							<td><img alt="Imagem não encontrada" src="<c:out value="${veiculo.imagem}" />" width="200px"></td>
 							<td><c:out value="${veiculo.tipo}" /></td>
 							<c:choose>
 								<c:when test="${veiculo.status == '0' }">
@@ -68,7 +68,6 @@
 								</c:when>
 							</c:choose>
 							<td><c:out value="${veiculo.descricao}" /></td>
-							<td><a href="VeiculoServlet?operacao=excluir&id=<c:out value="${veiculo.id}"/>"><button>Delete</button></a></td>
 							<td><a href="VeiculoServlet?operacao=consultar&idVeiculo=<c:out value="${veiculo.id}"/>"><button>Alugar</button></a></td>
 						</tr>
 					</c:forEach>

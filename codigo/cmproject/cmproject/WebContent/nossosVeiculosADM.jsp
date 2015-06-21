@@ -1,7 +1,4 @@
-<%@page import="java.sql.Connection"%>
 <%@page import="com.cmproject.entidade.Veiculo"%>
-<%@page import="com.cmproject.dao.DAO"%>
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -40,25 +37,38 @@
 		</header>
 		<main>
 		<section id="listaCarros">
-			<table border=1>
+			<table border="1">
 				<thead>
 					<tr>
 						<th>ID</th>
-						<th>Veiculo</th>
-						<th>Cliente</th>
-						<th>Data</th>
+						<th>Nome</th>
+						<th>Modelo</th>
+						<th>Imagem</th>
+						<th>Tipo</th>
+						<th>Status</th>
+						<th>Descrição</th>
 						<th colspan="2">Operações</th>
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="${alugueis}" var="aluguel">
+					<c:forEach items="${veiculos}" var="veiculo">
 						<tr>
-							<td><c:out value="${aluguel.id}" /></td>
-							<td><c:out value="${aluguel.idVeiculo}" /></td>
-							<td><c:out value="${aluguel.idVisitante}" /></td>
-							<td><c:out value="${aluguel.dataAluguel}" /></td>
-							
-							<td><a href="AluguelServlet?operacao=excluir&id=<c:out value="${aluguel.id}"/>"><button>Cancelar</button></a></td>
+							<td><c:out value="${veiculo.id}" /></td>
+							<td><c:out value="${veiculo.nome}" /></td>
+							<td><c:out value="${veiculo.modelo}" /></td>
+							<td><img alt="Imagem não encontrada" src="<c:out value="${veiculo.imagem}" />" width="200px"></td>
+							<td><c:out value="${veiculo.tipo}" /></td>
+							<c:choose>
+								<c:when test="${veiculo.status == '0' }">
+									<td class="status" style="color: red;"><c:out value="indisponível" /></td>
+								</c:when>
+								<c:when test="${veiculo.status == '1' }">
+									<td class="status" style="color: green"><c:out value="disponível" /></td>
+								</c:when>
+							</c:choose>
+							<td><c:out value="${veiculo.descricao}" /></td>
+							<td><a href="VeiculoServlet?operacao=excluir&id=<c:out value="${veiculo.id}"/>"><button>Delete</button></a></td>
+							<td><a href="VeiculoServlet?operacao=consultar&idVeiculo=<c:out value="${veiculo.id}"/>"><button>Alugar</button></a></td>
 						</tr>
 					</c:forEach>
 

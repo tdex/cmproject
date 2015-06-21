@@ -26,9 +26,8 @@
 					<li><a href="index.jsp">Início</a></li>
 					<li><a href="VeiculoServlet?operacao=listar">Nossos veículos</a></li>
 					<li><a href="index.jsp">Localizar</a></li>
-					<li><a href="index.jsp">Serviços</a></li>
+					<li><a href="cadastros/acoesAdministrativas.jsp">Administrador</a></li>
 					<li><a href="login.jsp">Entrar</a></li>
-					<li><a href="AluguelServlet?operacao=listar">listaAluguel</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -48,7 +47,7 @@
 					olhar, mas o conjunto final de design e performance do Camaro SS
 					2014 causa fortes emoções em qualquer um que atravesse o seu
 					caminho.</p>
-				<a href="alugar.jsp#camaro"><button>Alugar</button></a>
+				<a href="VeiculoServlet?operacao=listar"><button>Saiba mais</button></a>
 			</div>
 		</section>
 		<section id="veiculosDestaques">

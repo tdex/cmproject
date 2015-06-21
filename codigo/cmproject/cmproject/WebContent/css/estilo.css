@@ -138,7 +138,10 @@ section#flexCar{
 	margin: 1em auto;
 }
 #listaCarros table{
-	border: 1px solid #CCC;
+	border: 1px solid #e1d8d8;
+}
+#listaCarros table thead{
+	text-align: center;
 }
 #listaCarros td, #listaCarros th{
 	padding: 3px;

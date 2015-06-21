@@ -65,6 +65,9 @@ public class VeiculoServlet extends HttpServlet{
 			
 		}else if(operacao.equals("listar")){
 			destino = "nossosVeiculos.jsp";
+			request.setAttribute("veiculos", dao.listaVeiculosDisponiveis());
+		}else if(operacao.equals("listarADM")){
+			destino = "nossosVeiculosADM.jsp";
 			request.setAttribute("veiculos", dao.listaVeiculos());
 		}else if(operacao.equals("consultar")){
 			destino = "aluguel.jsp";

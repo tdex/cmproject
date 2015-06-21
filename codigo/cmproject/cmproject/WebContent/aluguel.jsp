@@ -1,7 +1,3 @@
-<%@page import="java.sql.Connection"%>
-<%@page import="com.cmproject.entidade.Veiculo"%>
-<%@page import="com.cmproject.dao.DAO"%>
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -38,35 +34,31 @@
 				</ul>
 			</nav>
 		</header>
-		<main>
-		<section id="listaCarros">
-			<table border=1>
-				<thead>
-					<tr>
-						<th>ID</th>
-						<th>Veiculo</th>
-						<th>Cliente</th>
-						<th>Data</th>
-						<th colspan="2">Operações</th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach items="${alugueis}" var="aluguel">
-						<tr>
-							<td><c:out value="${aluguel.id}" /></td>
-							<td><c:out value="${aluguel.idVeiculo}" /></td>
-							<td><c:out value="${aluguel.idVisitante}" /></td>
-							<td><c:out value="${aluguel.dataAluguel}" /></td>
-							
-							<td><a href="AluguelServlet?operacao=excluir&id=<c:out value="${aluguel.id}"/>"><button>Cancelar</button></a></td>
-						</tr>
-					</c:forEach>
-
-				</tbody>
-			</table>
+		<main> 
+		<section>
+			<c:forEach items="veiculo" var="veiculoSelected">
+				<h1><c:out value="${veiculo.nome }"/></h1>
+				<h2>Informações do veículo:</h2>
+				<p><c:out value="${veiculo.descricao }"/></p>
+				<img alt="not found image" src="<c:out value="${veiculo.imagem }"/>"><br>
+				<button id="btAlugar">Alugar</button>
+				<form action="AluguelServlet" method="get" accept-charset="utf-8" id="alugarDados" style="display: none">
+					<fieldset>
+						<legend>Dados de usuário</legend>
+						<input type="hidden" name="operacao" value="alugar">
+						<input type="hidden" name="idVeiculo" value="${veiculo.id }">
+						<label>Email: <input type="email" name="email" required></label><br>
+						<label>Senha: <input type="password" name="senha" required></label><br>
+						<label>Data de aluguel: <input type="date" name="data"></label><br>
+						<input type="submit" value="alugar">
+					</fieldset>
+				</form>
+			</c:forEach>
 		</section>
+		
 		</main>
 
 	</div>
+
 </body>
 </html>

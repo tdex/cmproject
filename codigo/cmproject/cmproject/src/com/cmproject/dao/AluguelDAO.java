@@ -12,14 +12,21 @@ import com.cmproject.servlet.VeiculoServlet;
 public class AluguelDAO extends DAO{
 	Connection conexao;
 	
-	public void alugarVeiculo(Veiculo veiculo,Visitante visitante, Aluguel aluguel){
+	public void alugarVeiculo(Veiculo veiculo,String email,String senha, Aluguel aluguel){
 		try {
 			conexao = criaConexao();
 			String query = "insert into Aluguel(Veiculo_idVeiculos, Visitante_idVisitante, dataAluguel) values(?,?,?)";
 			PreparedStatement ps = conexao.prepareStatement(query);
 			
+			Visitante visitante = new Visitante();
+			VisitanteDAO vdao = new VisitanteDAO();
+			visitante.setEmail(email);
+			visitante.setSenha(senha);
+			
+			System.out.println(vdao.consultaVisitanteLogin(visitante));
+			
 			ps.setString(1, veiculo.getId());
-			ps.setString(2, visitante.getId());
+			ps.setString(2, vdao.consultaVisitanteLogin(visitante));
 			ps.setString(3, aluguel.getDataAluguel());
 			
 			ps.execute();

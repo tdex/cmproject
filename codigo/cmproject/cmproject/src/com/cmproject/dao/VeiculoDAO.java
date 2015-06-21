@@ -89,6 +89,29 @@ public class VeiculoDAO extends DAO{
 		}
 		return veiculos;
 	}
+	public List<Veiculo> listaVeiculosDisponiveis(){
+		List<Veiculo> veiculos = new ArrayList<Veiculo>();
+		try {
+			conexao = criaConexao();
+			Statement statement = conexao.createStatement();
+			ResultSet rs = statement.executeQuery("select * from Veiculo where status=1");
+			while(rs.next()){
+				Veiculo veiculo = new Veiculo();
+				veiculo.setId(rs.getString("idVeiculos"));
+				veiculo.setNome(rs.getString("nome"));
+				veiculo.setModelo(rs.getString("modelo"));
+				veiculo.setImagem(rs.getString("imagem"));
+				veiculo.setTipo(rs.getString("tipo"));
+				veiculo.setStatus(rs.getString("status"));
+				veiculo.setDescricao(rs.getString("descricao"));
+				
+				veiculos.add(veiculo);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return veiculos;
+	}
 	
 	public Veiculo consultarVeiculo(Veiculo veiculo){
 		try {
