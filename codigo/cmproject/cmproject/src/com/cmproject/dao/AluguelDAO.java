@@ -7,7 +7,6 @@ import java.util.List;
 import com.cmproject.entidade.Aluguel;
 import com.cmproject.entidade.Veiculo;
 import com.cmproject.entidade.Visitante;
-import com.cmproject.servlet.VeiculoServlet;
 
 public class AluguelDAO extends DAO{
 	Connection conexao;
@@ -22,11 +21,13 @@ public class AluguelDAO extends DAO{
 			VisitanteDAO vdao = new VisitanteDAO();
 			visitante.setEmail(email);
 			visitante.setSenha(senha);
+			visitante.setId(vdao.consultaIDVisitante(email, senha));
 			
-			System.out.println(vdao.consultaVisitanteLogin(visitante));
+			System.out.println(vdao.consultaIDVisitante(email, senha));
+			System.out.println(visitante.getId()+"-> id");
 			
 			ps.setString(1, veiculo.getId());
-			ps.setString(2, vdao.consultaVisitanteLogin(visitante));
+			ps.setString(2, visitante.getId());
 			ps.setString(3, aluguel.getDataAluguel());
 			
 			ps.execute();

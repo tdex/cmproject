@@ -52,16 +52,16 @@
 		</section>
 		<section id="veiculosDestaques">
 
-			<div>
-				<a href="#" id="v1"> <span>Name do veículo</span>
+			<div style="background: url('img/carros/camaro.jpg') no-repeat;">
+				<a href="VeiculoServlet?operacao=listar" id="v1"> <span>Camaro</span>
 				</a>
 			</div>
-			<div>
-				<a href="#"> <span>Name do veículo 2</span>
+			<div style="background: url('img/carros/stilo.jpg') no-repeat;">
+				<a href="VeiculoServlet?operacao=listar"> <span>Fiat Stilo</span>
 				</a>
 			</div>
-			<div>
-				<a href="#"> <span>Name do veículo 3</span>
+			<div style="background: url('img/carros/corolla.jpg') no-repeat 100% left;">
+				<a href="VeiculoServlet?operacao=listar"> <span>Pajero</span>
 				</a>
 			</div>
 

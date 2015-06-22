@@ -67,7 +67,7 @@
 								</c:when>
 							</c:choose>
 							<td><c:out value="${veiculo.descricao}" /></td>
-							<td><a href="VeiculoServlet?operacao=excluir&id=<c:out value="${veiculo.id}"/>"><button>Delete</button></a></td>
+							<td><a href="VeiculoServlet?operacao=excluir&id=<c:out value="${veiculo.id}"/>"><button>Remover</button></a></td>
 							<td><a href="VeiculoServlet?operacao=consultar&idVeiculo=<c:out value="${veiculo.id}"/>"><button>Alugar</button></a></td>
 						</tr>
 					</c:forEach>

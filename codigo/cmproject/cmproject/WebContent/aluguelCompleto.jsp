@@ -26,39 +26,22 @@
 			<nav>
 				<ul>
 					<li><a href="index.jsp">Início</a></li>
-					<li><a href="VeiculoServlet?operacao=listar">Nossos
-							veículos</a></li>
-					<li><a href="index.jsp">Localizar</a></li>
+					<li><a href="VeiculoServlet?operacao=listar">Nossos	veículos</a></li>
+					<li><a href="#">Localizar</a></li>
 					<li><a href="cadastros/acoesAdministrativas.jsp">Administrador</a></li>
 					<li><a href="login.jsp">Entrar</a></li>
 				</ul>
 			</nav>
 		</header>
-		<main> 
-		<section>
-			<c:forEach items="veiculo" var="veiculoSelected">
-				<h1><c:out value="${veiculo.nome }"/></h1>
-				<h2>Informações do veículo:</h2>
-				<p><c:out value="${veiculo.descricao }"/></p>
-				<img alt="not found image" src="<c:out value="${veiculo.imagem }"/>"><br>
-				<button id="btAlugar">Alugar</button>
-				<form action="AluguelServlet" method="get" accept-charset="utf-8" id="alugarDados" style="display: none">
-					<fieldset>
-						<legend>Dados de usuário</legend>
-						<input type="hidden" name="operacao" value="alugar">
-						<input type="hidden" name="idVeiculo" value="${veiculo.id }">
-						<label>Email: <input type="email" name="email" required></label><br>
-						<label>Senha: <input type="password" name="senha" required></label><br>
-						<label>Data de aluguel: <input type="date" name="data"></label><br>
-						<input type="submit" value="alugar" id="alugar">
-					</fieldset>
-				</form>
-			</c:forEach>
-		</section>
-		
-		</main>
-
+		<main>
+		<h1>Aluguel realizado com sucesso</h1>
+		<div>
+			<h3>Pedido n. </h3>
+			<b>Email:</b><p><c:out value=""></c:out> </p>
+			<b>Data de retirada:</b><p></p>
+			<button id="imprimir">Imprimir</button>
+		</div>
+		<a href="index.jsp"><button>Voltar</button></a> </main>
 	</div>
-
 </body>
 </html>

@@ -5,4 +5,12 @@ $(document).ready(function(){
 		$("#alugarDados").show();
 	});
 
+	$("#alugar").click(function(){
+		confirm("confirmar aluguel?");
+	})
+	
+	$("#imprimir").click(function(){
+		$(this).hide();
+		window.print();
+	})
 });

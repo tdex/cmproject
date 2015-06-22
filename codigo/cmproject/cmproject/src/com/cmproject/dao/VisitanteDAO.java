@@ -5,6 +5,7 @@ import com.cmproject.entidade.Visitante;
 
 public class VisitanteDAO extends DAO{
 	Connection conexao;
+	
 	public void inserirVisitante(Visitante visitante){
 		try {
 			conexao = criaConexao();
@@ -43,10 +44,10 @@ public class VisitanteDAO extends DAO{
 				
 	}
 	
-	public String consultaVisitanteLogin(Visitante visitante){
+	public Visitante consultaVisitanteLogin(Visitante visitante){
 		try {
 			conexao = criaConexao();
-			String query = "Select * from Visitante where email=?,senha=?";
+			String query = "Select * from Visitante where email=? and senha=?";
 			PreparedStatement ps = conexao.prepareStatement(query);
 			
 			ps.setString(1, visitante.getEmail());
@@ -62,6 +63,27 @@ public class VisitanteDAO extends DAO{
 		} catch (Exception e) {
 			 e.printStackTrace();
 		}
-		return visitante.getId();
+		return visitante;
+	}
+	
+	public String consultaIDVisitante(String email, String senha){
+		String id = null;
+		try {
+			conexao = criaConexao();
+			String query = "Select * from Visitante where email=? and senha=?";
+			PreparedStatement ps = conexao.prepareStatement(query);
+			
+			ps.setString(1, email);
+			ps.setString(2, senha);
+			
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()){
+				id = rs.getString("idVisitante");
+			}
+		} catch (Exception e) {
+			System.out.println("Não foi encontrado email e senha especificado");
+			 e.printStackTrace();
+		}
+		return id;
 	}
 }

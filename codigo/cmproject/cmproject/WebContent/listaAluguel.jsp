@@ -40,6 +40,7 @@
 		</header>
 		<main>
 		<section id="listaCarros">
+		<h1>Aluguéis e Reservas</h1>
 			<table border=1>
 				<thead>
 					<tr>

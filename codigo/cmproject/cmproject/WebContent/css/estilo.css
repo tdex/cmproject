@@ -60,10 +60,10 @@ header > nav li{
     width: 305px;
     height: 250px;
     position: relative;
-    background-color: #cccccc;
     /*background-image: url(img/carros/sandero.jpg);*/
     margin: 0.5em 5px 0.5em;
     display: inline-block;
+    background-position: center;
 }
 #veiculosDestaques div span{
     position: absolute;
