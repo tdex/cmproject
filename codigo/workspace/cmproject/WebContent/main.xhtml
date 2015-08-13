@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>CMPROJECT</title>
+	<link rel="stylesheet" type="text/css" href="#{request.contextPath}/_resources/_css/style.css" />
+	<script type="text/javascript" src="#{request.contextPath}/_resources/js/script.js"></script>
+	
+</h:head>
+<h:body>
+	<div id="header">
+		<b:navBar brand="CMPROJECT" brandHref="#" inverse="true">
+			<b:navbarLinks>
+				<b:navLink value="Home" href="#{request.contextPath}/../index.xhtml" />
+				<b:navLink value="Nossos Veículos"
+					href="_pages/_other/nossos_veiculos.xhtml" />
+				<b:navLink value="Sobre" href="#{request.contextPath}/../_pages/_other/about.xhtml" />
+				<b:dropMenu value="Acesso">
+					<b:navLink value="Login" href="_pages/_other/login.xhtml" />
+					<b:navLink value="Registrar" href="#" />
+					<b:navLink></b:navLink>
+					<b:navLink header="Administrador" />
+					<b:navLink value="Ações Administrativas" href="#" />
+				</b:dropMenu>
+			</b:navbarLinks>
+			<h:form styleClass="navbar-form navbar-right">
+				<div class="form-group">
+					<b:inputText placeholder="Email" fieldSize="sm" />
+					<!--input type="text" class="form-control" placeholder="Search"/-->
+				</div>
+				<div class="form-group">
+					<b:inputText placeholder="Password" fieldSize="sm" />
+				</div> 
+                #{' '}
+                <b:commandButton action="a" value="Sign in"
+					look="success"  />
+			</h:form>
+		</b:navBar>
+	</div>
+
+	<div id="content">
+		<ui:insert name="conteudo">
+		</ui:insert>
+	</div>
+
+	<div id="footer">
+		<b:container>
+			<b:row>
+				<b:column col-md="4" col-sm="6">
+					<h4>Sobre</h4>
+					<p>Car Management Project &#174;</p>
+					<p>
+						Projeto da Disciplina <span>Projeto de software I &amp; II</span>
+					</p>
+					<p>Professor: Jarley Nobrega</p>
+				</b:column>
+				<b:column col-md="4" col-sm="6">
+					<h4>Desenvolvedor</h4>
+					<p>Tarcísio Deschamps Silva</p>
+				</b:column>
+				<b:column col-md="4" col-sm="6">
+					<h4>Codigo Fonte</h4>
+					<a href="http://github.com/tdex/cmproject">Github</a>
+				</b:column>
+			</b:row>
+		</b:container>
+	</div>
+
+</h:body>
+</html>
