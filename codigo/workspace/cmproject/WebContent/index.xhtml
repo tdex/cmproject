@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>CMPROJECT</title>
+	<link rel="stylesheet" type="text/css" href="_resources/_css/style.css"/>
+</h:head>
+<h:body>
+	<div id="header">
+			<b:navBar brand="CMPROJECT" brandHref="#" inverse="true">
+				<b:navbarLinks>
+					<b:navLink value="Home" href="#"></b:navLink>
+					<b:navLink value="Link" href="#"></b:navLink>
+					<b:navLink value="Link" href="#"></b:navLink>
+					<b:dropMenu value="Dropdown">
+						<b:navLink value="Action" href="#"></b:navLink>
+						<b:navLink value="Another action" href="#"></b:navLink>
+						<b:navLink value="Something else here" href="#"></b:navLink>
+						<b:navLink></b:navLink>
+						<b:navLink header="Nav header"></b:navLink>
+						<b:navLink value="Separated link" href="#"></b:navLink>
+						<b:navLink value="One more separated link" href="#"></b:navLink>
+					</b:dropMenu>
+				</b:navbarLinks>
+			</b:navBar>
+	</div>
+	<b:jumbotron id="jumboHome">
+		<b:container>
+			<h1>CMPROJECT</h1>
+			<p>O lugar onde o aluguél é do seu jeito</p>
+			<p>
+				<a href="link" class="btn btn-lg btn-info">Saiba mais.</a>
+			</p>
+		</b:container>
+	</b:jumbotron>
+</h:body>
+</html>

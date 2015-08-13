@@ -1,0 +1,11 @@
+
+.navbar{
+	border-radius: 0;
+	margin: 0;
+}
+
+#jumboHome{
+	background: url("../_img/desertroad.jpg") ;
+	background-size: cover; 
+	color: white;
+}
