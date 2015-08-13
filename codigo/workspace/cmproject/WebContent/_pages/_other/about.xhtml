@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>CMPROJECT</title>
+	<link rel="stylesheet" type="text/css" href="../../_resources/_css/style.css" />
+</h:head>
+<h:body>
+	<div id="header">
+		<b:navBar brand="CMPROJECT" brandHref="#" inverse="true">
+			<b:navbarLinks>
+					<b:navLink value="Home" href="#{request.contextPath}"></b:navLink>
+					<b:navLink value="Nossos Veículos" href="nossos_veiculos.xhtml"></b:navLink>
+					<b:navLink value="Sobre" href="about.xhtml"></b:navLink>
+					<b:dropMenu value="Acesso">
+						<b:navLink value="Login" href="#"></b:navLink>
+						<b:navLink value="Registrar" href="#"></b:navLink>
+						<b:navLink></b:navLink>
+						<b:navLink header="Administrador"></b:navLink>
+						<b:navLink value="Ações Administrativas" href="#"></b:navLink>
+					</b:dropMenu>
+				</b:navbarLinks>
+		</b:navBar>
+	</div>
+
+	<div id="content">
+		<b:container>
+			<b:jumbotron id="about">
+				<h2>Car Management Project</h2>
+				<p>Um lugar onde tudo está centralizado e pronto para as
+					nescessidades tando do cliente como do vendedor</p>
+				<p>Aqui você encontrará um sistema elegante onde poderá anunciar
+					seus veículos para qualquer pessoa. Tudo de forma fácil e
+					intuitiva.</p>
+			</b:jumbotron>
+		</b:container>
+	</div>
+</h:body>
+</html>
