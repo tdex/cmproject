@@ -11,7 +11,7 @@
 </h:head>
 <h:body>
 	<div id="header">
-		<b:navBar brand="CMPROJECT" brandHref="#" inverse="true">
+		<b:navBar brand="CMPROJECT" brandHref="#{request.contextPath}/index.xhtml" inverse="true">
 			<b:navbarLinks>
 					<b:navLink value="Home" href="#{request.contextPath}/../index.xhtml"></b:navLink>
 					<b:navLink value="Nossos Veículos" href="nossos_veiculos.xhtml"></b:navLink>
@@ -39,5 +39,29 @@
 			</b:jumbotron>
 		</b:container>
 	</div>
+	
+	<div id="footer">
+		<b:container>
+			<b:row>
+				<b:column col-md="4" col-sm="6">
+					<h4>Sobre</h4>
+					<p>Car Management Project &#174;</p>
+					<p>
+						Projeto da Disciplina <span>Projeto de software I &amp; II</span>
+					</p>
+					<p>Professor: Jarley Nobrega</p>
+				</b:column>
+				<b:column col-md="4" col-sm="6">
+					<h4>Desenvolvedor</h4>
+					<p>Tarcísio Deschamps Silva</p>
+				</b:column>
+				<b:column col-md="4" col-sm="6">
+					<h4>Codigo Fonte</h4>
+					<a href="http://github.com/tdex/cmproject">Github</a>
+				</b:column>
+			</b:row>
+		</b:container>
+	</div>
+	
 </h:body>
 </html>
