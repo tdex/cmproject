@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="../../main.xhtml">
+	<ui:define name="conteudo">
+		<b:container>
+			<b:well>
+				<h1>Cadastro Visitante</h1>
+				<h:form>
+					
+					<h:panelGrid columns="2" cellpadding="2">
+						<h:outputText value="Nome: " />
+						<b:inputText id="nome" required="true"/>
+						
+						<h:outputLabel value="Telefone: "/>
+						<b:inputText id="telefone" required="true" />
+						
+						<h:outputText value="Email: " />
+						<b:inputText id="email" required="true"/>
+						
+						<h:outputText value="Senha: " />
+						<b:inputSecret id="senha"/>
+						
+						<h:outputText value="Endereço: "/>
+						<h:inputTextarea id="endereco" required="true"/>
+						
+						<b:commandButton value="Cadastrar" />
+					</h:panelGrid>
+				</h:form>
+			</b:well>
+		</b:container>
+	</ui:define>
+</ui:composition>
+</html>
