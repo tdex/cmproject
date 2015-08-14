@@ -12,7 +12,7 @@
 	<ui:define name="conteudo">
 		<b:container>
 			<b:well>
-				<h1>Cadastro Visitante</h1>
+				<h1>Cadastro Colaborador</h1>
 				<h:form>
 
 					<h:panelGrid columns="1" cellpadding="2">
@@ -28,6 +28,13 @@
 							required="true" requiredMessage="Campo Obrigatório">
 							<f:facet name="prepend">
 								<h:outputText value="Telefone: " />
+							</f:facet>
+						</b:inputText>
+
+						<b:inputText id="cpf" placeholder="apenas numeros!"
+							required="true" requiredMessage="Campo Obrigatório">
+							<f:facet name="prepend">
+								<h:outputText value="CPF: " />
 							</f:facet>
 						</b:inputText>
 
@@ -55,9 +62,17 @@
 							</f:facet>
 						</b:inputText>
 
-						<h:panelGrid columns="2">
-							<b:commandButton value="Cadastrar" look="success" type="submit" />
-							<b:commandButton value="Limpar" look="danger" type="reset" />
+						<b:selectOneMenu>
+						<f:facet name="prepend">
+								<h:outputText value="Tipo Funcionário"/>
+						</f:facet>
+							<f:selectItem itemLabel="Selecione" itemValue=""/>
+							<f:selectItems value="" />
+						</b:selectOneMenu>
+							
+						<h:panelGrid columns="2">	
+						<b:commandButton value="Cadastrar" look="success" type="submit"/>
+						<b:commandButton value="Limpar" look="danger" type="reset"/>
 						</h:panelGrid>
 					</h:panelGrid>
 				</h:form>
