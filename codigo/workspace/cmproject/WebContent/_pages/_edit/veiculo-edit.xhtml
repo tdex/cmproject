@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="../../main.xhtml">
+	<ui:define name="conteudo">
+		<b:container>
+			<h1>Cadastro de Veículo</h1>
+			<h:form>
+
+				<h:panelGrid columns="1" cellpadding="2">
+					<b:inputText value="" id="nome" placeholder="Ex:Porshe Caynam"
+						required="true" requiredMessage="Campo Obrigatório">
+						<f:facet name="prepend">
+							<h:outputText value="Nome: " />
+						</f:facet>
+					</b:inputText>
+
+					<b:inputText id="modelo" placeholder="" required="true"
+						requiredMessage="Campo Obrigatório">
+						<f:facet name="prepend">
+							<h:outputText value="Modelo: " />
+						</f:facet>
+					</b:inputText>
+
+					<b:selectOneMenu required="true">
+						<f:selectItem itemLabel="Selecione" itemValue="" />
+						<f:selectItems></f:selectItems>
+						<f:facet name="prepend">
+							<h:outputText value="Tipo de Veículo" />
+						</f:facet>
+					</b:selectOneMenu>
+
+					<b:selectOneMenu required="true">
+						<f:selectItem itemLabel="Selecione" itemValue="" />
+						<f:selectItems></f:selectItems>
+						<f:facet name="prepend">
+							<h:outputText value="Status do Veículo" />
+						</f:facet>
+					</b:selectOneMenu>
+					<h:outputLabel>Descrição</h:outputLabel>
+					<p:editor id="editor" widgetVar="editorWidget"
+						value="" maxlength="500" width="300">
+					</p:editor>
+
+
+					<h:outputText value="Imagem" />
+					
+					<br/>
+					<h:panelGrid columns="2">
+						<b:commandButton value="Cadastrar" look="success" type="submit" />
+						<b:commandButton value="Limpar" look="danger" type="reset" />
+					</h:panelGrid>
+				</h:panelGrid>
+			</h:form>
+
+		</b:container>
+	</ui:define>
+</ui:composition>
+</html>
