@@ -1,10 +1,44 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8"/>
-<title>Insert title here</title>
-</head>
-<body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-</body>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="../../main.xhtml">
+	<ui:define name="conteudo">
+		<b:container>
+			<b:well>
+				<h1>Login</h1>
+				<h:form>
+
+					<h:panelGrid columns="1" cellpadding="2">
+						
+						<b:inputText id="email" placeholder="" required="true"
+							requiredMessage="Campo Obrigatório">
+							<f:facet name="prepend">
+								<h:outputText value="Email: " />
+							</f:facet>
+						</b:inputText>
+
+						<b:inputSecret id="senha" placeholder="" required="true"
+							requiredMessage="Campo Obrigatório">
+							<f:facet name="prepend">
+								<h:outputText value="Senha: " />
+							</f:facet>
+						</b:inputSecret>
+
+						<h:panelGrid columns="1">	
+						<b:commandButton value="Entrar" look="success" type="submit" />
+						</h:panelGrid>
+					</h:panelGrid>
+				</h:form>
+
+			</b:well>
+		</b:container>
+	</ui:define>
+</ui:composition>
 </html>

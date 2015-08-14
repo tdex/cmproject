@@ -13,15 +13,15 @@
 </h:head>
 <h:body>
 	<div id="header">
-		<b:navBar brand="CMPROJECT" brandHref="#{request.contextPath}/index.xhtml" inverse="true">
+		<b:navBar brand="CMPROJECT" brandHref="/cmproject" inverse="true">
 			<b:navbarLinks>
-				<b:navLink value="Home" href="#{request.contextPath}/../index.xhtml" />
+				<b:navLink value="Home" href="/../cmproject" />
 				<b:navLink value="Nossos Veículos"
-					href="_pages/_other/nossos_veiculos.xhtml" />
+					href="/_pages/_other/nossos_veiculos.xhtml" />
 				<b:navLink value="Sobre" href="#{request.contextPath}/../_pages/_other/about.xhtml" />
 				<b:dropMenu value="Acesso">
-					<b:navLink value="Login" href="_pages/_other/login.xhtml" />
-					<b:navLink value="Registrar" href="#" />
+					<b:navLink value="Login" href="/_pages/_other/login.xhtml" />
+					<b:navLink value="Registrar" href="/_pages/_edit/visitante-edit.xhtml" />
 					<b:navLink></b:navLink>
 					<b:navLink header="Administrador" />
 					<b:navLink value="Ações Administrativas" href="#" />
