@@ -14,23 +14,52 @@
 			<b:well>
 				<h1>Cadastro Visitante</h1>
 				<h:form>
-					
-					<h:panelGrid columns="2" cellpadding="2">
-						<h:outputText value="Nome: " />
-						<b:inputText id="nome" required="true"/>
-						
-						<h:outputLabel value="Telefone: "/>
-						<b:inputText id="telefone" required="true" />
-						
-						<h:outputText value="Email: " />
-						<b:inputText id="email" required="true"/>
-						
-						<h:outputText value="Senha: " />
-						<b:inputSecret id="senha"/>
-						
-						<h:outputText value="Endereço: "/>
-						<h:inputTextarea id="endereco" required="true"/>
-						
+
+					<h:panelGrid columns="1" cellpadding="2">
+						<b:inputText value="" id="nome"
+							placeholder="Ex: Tarcísio Deschamps" required="true"
+							requiredMessage="Campo Obrigatório">
+							<f:facet name="prepend">
+								<h:outputText value="Nome: " />
+							</f:facet>
+						</b:inputText>
+						<p:message for="nome" />
+
+						<b:inputText id="telefone" placeholder="apenas numeros!"
+							required="true" requiredMessage="Campo Obrigatório">
+							<f:facet name="prepend">
+								<h:outputText value="Telefone: " />
+							</f:facet>
+						</b:inputText>
+						<p:message for="telefone" />
+
+						<b:inputText id="email" placeholder="" required="true"
+							requiredMessage="Campo Obrigatório">
+							<f:facet name="prepend">
+								<h:outputText value="Email: " />
+							</f:facet>
+							<f:facet name="append">
+								<h:outputText value="@" />
+							</f:facet>
+						</b:inputText>
+						<p:message for="email" />
+
+						<b:inputSecret id="senha" placeholder="" required="true"
+							requiredMessage="Campo Obrigatório">
+							<f:facet name="prepend">
+								<h:outputText value="Senha: " />
+							</f:facet>
+						</b:inputSecret>
+						<p:message for="senha" />
+
+						<b:inputText id="endereco" placeholder=""
+							required="true" requiredMessage="Campo Obrigatório">
+							<f:facet name="prepend">
+								<h:outputText value="Endereço: " />
+							</f:facet>
+						</b:inputText>
+						<p:message for="endereco" />
+
 						<b:commandButton value="Cadastrar" />
 					</h:panelGrid>
 				</h:form>
