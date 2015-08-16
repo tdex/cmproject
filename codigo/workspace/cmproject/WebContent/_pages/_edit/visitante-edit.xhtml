@@ -16,39 +16,36 @@
 				<h:form>
 
 					<h:panelGrid columns="1" cellpadding="2">
-						<b:inputText value="" id="nome"
-							placeholder="Ex: Tarcísio Deschamps" required="true"
+						<b:inputText value="#{visitanteMB.visitante.nome}" id="nome"
+							placeholder="Ex: Romero Brito" required="true"
 							requiredMessage="Campo Obrigatório">
 							<f:facet name="prepend">
 								<h:outputText value="Nome: " />
 							</f:facet>
 						</b:inputText>
 
-						<b:inputText id="telefone" placeholder="apenas numeros!"
+						<b:inputText id="telefone" placeholder="apenas numeros!" value="#{visitanteMB.visitante.telefone}"
 							required="true" requiredMessage="Campo Obrigatório">
 							<f:facet name="prepend">
 								<h:outputText value="Telefone: " />
 							</f:facet>
 						</b:inputText>
 
-						<b:inputText id="email" placeholder="" required="true"
+						<b:inputText id="email" placeholder="" required="true" value="#{visitanteMB.visitante.email}"
 							requiredMessage="Campo Obrigatório">
 							<f:facet name="prepend">
 								<h:outputText value="Email: " />
 							</f:facet>
-							<f:facet name="append">
-								<h:outputText value="@" />
-							</f:facet>
 						</b:inputText>
 
-						<b:inputSecret id="senha" placeholder="" required="true"
+						<b:inputSecret id="senha" placeholder="" required="true" value="#{visitanteMB.visitante.senha}"
 							requiredMessage="Campo Obrigatório">
 							<f:facet name="prepend">
 								<h:outputText value="Senha: " />
 							</f:facet>
 						</b:inputSecret>
 
-						<b:inputText id="endereco" placeholder="" required="true"
+						<b:inputText id="endereco" placeholder="" required="true" value="#{visitanteMB.visitante.endereco}"
 							requiredMessage="Campo Obrigatório">
 							<f:facet name="prepend">
 								<h:outputText value="Endereço: " />
@@ -56,7 +53,7 @@
 						</b:inputText>
 
 						<h:panelGrid columns="2">
-							<b:commandButton value="Cadastrar" look="success" type="submit" />
+							<b:commandButton value="Cadastrar" look="success" type="submit" actionListener="#{visitanteMB.save()}"/>
 							<b:commandButton value="Limpar" look="danger" type="reset" />
 						</h:panelGrid>
 					</h:panelGrid>

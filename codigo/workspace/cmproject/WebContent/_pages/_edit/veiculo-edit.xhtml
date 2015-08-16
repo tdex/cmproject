@@ -15,31 +15,31 @@
 			<h:form>
 
 				<h:panelGrid columns="1" cellpadding="2">
-					<b:inputText value="" id="nome" placeholder="Ex:Porshe Caynam"
+					<b:inputText value="#{veiculoMB.veiculo.nome}" id="nome" placeholder="Ex:Porshe Caynam"
 						required="true" requiredMessage="Campo Obrigatório">
 						<f:facet name="prepend">
 							<h:outputText value="Nome: " />
 						</f:facet>
 					</b:inputText>
 
-					<b:inputText id="modelo" placeholder="" required="true"
+					<b:inputText id="modelo" placeholder="" value="#{veiculoMB.veiculo.modelo}" required="true"
 						requiredMessage="Campo Obrigatório">
 						<f:facet name="prepend">
 							<h:outputText value="Modelo: " />
 						</f:facet>
 					</b:inputText>
 
-					<b:selectOneMenu required="true">
+					<b:selectOneMenu required="true" value="#{veiculoMB.veiculo.tipo}">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
-						<f:selectItems></f:selectItems>
+						<f:selectItems value="#{veiculoMB.tipoVeiculo}"/>
 						<f:facet name="prepend">
 							<h:outputText value="Tipo de Veículo" />
 						</f:facet>
 					</b:selectOneMenu>
 
-					<b:selectOneMenu required="true">
+					<b:selectOneMenu required="true" value="#{veiculoMB.veiculo.status}">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
-						<f:selectItems></f:selectItems>
+						<f:selectItems value="#{veiculoMB.statusVeiculo}"/>
 						<f:facet name="prepend">
 							<h:outputText value="Status do Veículo" />
 						</f:facet>

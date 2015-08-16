@@ -1,10 +1,24 @@
 package com.cmproject.DAO;
 
+import java.io.Serializable;
 import java.util.List;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 import com.cmproject.model.Aluguel;
 
-public class AluguelDAOImpl implements AluguelDAO{
+@ManagedBean
+@SessionScoped
+public class AluguelMB implements AluguelDAO, Serializable{
+	
+	private static final long serialVersionUID = 1L;
+
+	private Aluguel aluguel;
+	
+	public AluguelMB() {
+		this.aluguel = new Aluguel();
+	}
 
 	@Override
 	public void save(Aluguel aluguel) {
@@ -35,5 +49,16 @@ public class AluguelDAOImpl implements AluguelDAO{
 		// TODO Auto-generated method stub
 		
 	}
+
+	public Aluguel getAluguel() {
+		return aluguel;
+	}
+
+	public void setAluguel(Aluguel aluguel) {
+		this.aluguel = aluguel;
+	}
+
+
+	
 
 }
