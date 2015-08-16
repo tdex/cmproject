@@ -53,7 +53,7 @@
 						</b:inputText>
 
 						<h:panelGrid columns="2">
-							<b:commandButton value="Cadastrar" look="success" type="submit" actionListener="#{visitanteMB.save()}"/>
+							<b:commandButton value="Cadastrar" look="success" type="submit" action="#{visitanteMB.persist()}"/>
 							<b:commandButton value="Limpar" look="danger" type="reset" />
 						</h:panelGrid>
 					</h:panelGrid>

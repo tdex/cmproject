@@ -1,67 +1,66 @@
-package com.cmproject.DAO;
+package com.cmproject.controller;
 
-import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
 
+import com.cmproject.DAO.ColaboradorDAO;
 import com.cmproject.model.Colaborador;
 import com.cmproject.model.TipoAcessoENUM;
 
 @ManagedBean
-@SessionScoped
-public class ColaboradorMB implements ColaboradorDAO, Serializable{
+public class ColaboradorMB implements ColaboradorDAO{
 
-	private static final long serialVersionUID = 1L;
+	private Colaborador Colaborador;
 
-	private Colaborador colaborador;
-	
-	public ColaboradorMB(){
-		this.colaborador = new Colaborador();
-	}
-	
-//CRUD
-	
 	@Override
 	public void save(Colaborador colaborador) {
-		
+		// TODO Auto-generated method stub
+
 	}
 
 	@Override
 	public Colaborador getColaborador(long id) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public List<Colaborador> list() {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void remove(Colaborador colaborador) {
-		
+		// TODO Auto-generated method stub
+
 	}
 
 	@Override
 	public void update(Colaborador colaborador) {
-		
+		// TODO Auto-generated method stub
+
 	}
 
-//getter e setter
-	public Colaborador getColaborador() {
-		return colaborador;
-	}
 
-	public void setColaborador(Colaborador colaborador) {
-		this.colaborador = colaborador;
-	}
+
+	//getter e setter
+	
 
 	public List<TipoAcessoENUM> getTipoAcesso(){
 		return Arrays.asList(TipoAcessoENUM.values());
 	}
-	
-	
+
+	public Colaborador getColaborador() {
+		return Colaborador;
+	}
+
+	public void setColaborador(Colaborador colaborador) {
+		Colaborador = colaborador;
+	}
+
+
 
 }

@@ -1,21 +1,20 @@
-package com.cmproject.DAO;
+package com.cmproject.controller;
 
-import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import com.cmproject.DAO.VeiculoDAO;
 import com.cmproject.model.StatusENUM;
 import com.cmproject.model.TipoVeiculoENUM;
 import com.cmproject.model.Veiculo;
 
 @ManagedBean
 @SessionScoped
-public class VeiculoMB implements VeiculoDAO, Serializable{
+public class VeiculoMB implements VeiculoDAO{
 
-	private static final long serialVersionUID = 1L;
 
 	private Veiculo veiculo;
 	

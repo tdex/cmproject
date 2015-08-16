@@ -1,19 +1,19 @@
-package com.cmproject.DAO;
+package com.cmproject.controller;
 
-import java.io.Serializable;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+
+import com.cmproject.DAO.AluguelDAO;
 import com.cmproject.model.Aluguel;
 
 @ManagedBean
 @SessionScoped
-public class AluguelMB implements AluguelDAO, Serializable{
+public class AluguelMB implements AluguelDAO{
 	
-	private static final long serialVersionUID = 1L;
-
+	
 	private Aluguel aluguel;
 	
 	public AluguelMB() {
