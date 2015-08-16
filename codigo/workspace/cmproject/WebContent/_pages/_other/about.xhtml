@@ -7,25 +7,29 @@
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<title>CMPROJECT</title>
-	<link rel="stylesheet" type="text/css" href="../../_resources/_css/style.css" />
+	<link rel="stylesheet" type="text/css"
+		href="../../_resources/_css/style.css" />
 </h:head>
 <h:body>
 	<div id="header">
-		<b:navBar brand="CMPROJECT" brandHref="#{request.contextPath}/index.xhtml" inverse="true">
+		<b:navBar brand="CMPROJECT"
+			brandHref="#{request.contextPath}/index.xhtml" inverse="true">
 			<b:navbarLinks>
-					<b:navLink value="Home" href="#{request.contextPath}/../index.xhtml"></b:navLink>
-					<b:navLink value="Nossos Veículos" href="nossos_veiculos.xhtml"></b:navLink>
-					<b:navLink value="Sobre" href="about.xhtml"></b:navLink>
-					<b:dropMenu value="Acesso">
-						<b:navLink value="Login" href="/_pages/_other/login.xhtml"></b:navLink>
-						<b:navLink value="Registrar" href="/_pages/_edit/visitante-edit.xhtml"></b:navLink>
-						<b:navLink></b:navLink>
-						<b:navLink header="Administrador"></b:navLink>
-						<b:navLink value="Ações Administrativas" href="#"></b:navLink>
-					</b:dropMenu>
-				</b:navbarLinks>
+				<b:navLink value="Home" href="#{request.contextPath}/../index.xhtml"></b:navLink>
+				<b:navLink value="Nossos Veículos" href="nossos_veiculos.xhtml"></b:navLink>
+				<b:navLink value="Sobre" href="about.xhtml"></b:navLink>
+				<b:dropMenu value="Acesso">
+					<b:navLink value="Login" href="/_pages/_other/login.xhtml"></b:navLink>
+					<b:navLink value="Registrar"
+						href="/_pages/_edit/visitante-edit.xhtml"></b:navLink>
+					<b:navLink></b:navLink>
+					<b:navLink header="Administrador"></b:navLink>
+					<b:navLink value="Ações Administrativas" href="#"></b:navLink>
+				</b:dropMenu>
+			</b:navbarLinks>
 		</b:navBar>
 	</div>
+	<div id="clear"></div>
 
 	<div id="content">
 		<b:container>
@@ -39,7 +43,7 @@
 			</b:jumbotron>
 		</b:container>
 	</div>
-	
+
 	<div id="footer">
 		<b:container>
 			<b:row>
@@ -63,6 +67,6 @@
 			</b:row>
 		</b:container>
 	</div>
-	
+
 </h:body>
 </html>

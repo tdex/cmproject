@@ -27,21 +27,10 @@
 					<b:navLink value="Ações Administrativas" href="#" />
 				</b:dropMenu>
 			</b:navbarLinks>
-			<h:form styleClass="navbar-form navbar-right">
-				<div class="form-group">
-					<b:inputText placeholder="Email" fieldSize="sm" />
-					<!--input type="text" class="form-control" placeholder="Search"/-->
-				</div>
-				<div class="form-group">
-					<b:inputText placeholder="Password" fieldSize="sm" />
-				</div> 
-                #{' '}
-                <b:commandButton action="a" value="Sign in"
-					look="success"  />
-			</h:form>
+			
 		</b:navBar>
 	</div>
-
+	<div id="clear"></div>
 	<div id="content">
 		<ui:insert name="conteudo">
 		</ui:insert>
