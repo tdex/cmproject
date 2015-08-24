@@ -5,17 +5,26 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+
 
 @Entity
+@Table(name="aluguel")
 public class Aluguel {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long id_aluguel;
-	
-	@Column(nullable = false)
-	private long idVeiculo;
-	@Column(nullable = false)
-	private long idVisitante;
+	@Column(name="id_aluguel")
+	private long idAluguel;
+	@OneToOne
+	@JoinColumn(name="id_Veiculo", nullable = false)
+	private Veiculo veiculo;
+	@ManyToOne
+	@JoinColumn(name="id_visitante", nullable = false)
+	private Visitante visitante;
 	@Column(nullable = false)
 	private String retirada;
 	@Column(nullable = false)
@@ -23,22 +32,22 @@ public class Aluguel {
 	
 	
 	public long getId_aluguel() {
-		return id_aluguel;
+		return idAluguel;
 	}
-	public void setId_aluguel(long id_aluguel) {
-		this.id_aluguel = id_aluguel;
+	public void setId_aluguel(long idAluguel) {
+		this.idAluguel = idAluguel;
 	}
-	public long getIdVeiculo() {
-		return idVeiculo;
+	public Veiculo getVeiculo() {
+		return veiculo;
 	}
-	public void setIdVeiculo(long idVeiculo) {
-		this.idVeiculo = idVeiculo;
+	public void setVeiculo(Veiculo veiculo) {
+		this.veiculo = veiculo;
 	}
-	public long getIdVisitante() {
-		return idVisitante;
+	public Visitante getVisitante() {
+		return visitante;
 	}
-	public void setIdVisitante(long idVisitante) {
-		this.idVisitante = idVisitante;
+	public void setVisitante(Visitante visitante) {
+		this.visitante = visitante;
 	}
 	public String getRetirada() {
 		return retirada;
@@ -52,7 +61,4 @@ public class Aluguel {
 	public void setEntrega(String entrega) {
 		this.entrega = entrega;
 	}
-	
-	
-	
 }

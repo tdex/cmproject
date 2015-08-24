@@ -7,12 +7,15 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="colaborador")
 public class Colaborador {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long id_colaborador;
+	@Column(name="id_colaborador")
+	private long idColaborador;
 	@Column(nullable = false)
 	private String nome;
 	@Column
@@ -30,10 +33,10 @@ public class Colaborador {
 	
 	
 	public long getId_colaborador() {
-		return id_colaborador;
+		return idColaborador;
 	}
-	public void setId_colaborador(long id_colaborador) {
-		this.id_colaborador = id_colaborador;
+	public void setId_colaborador(long idColaborador) {
+		this.idColaborador = idColaborador;
 	}
 	public String getNome() {
 		return nome;

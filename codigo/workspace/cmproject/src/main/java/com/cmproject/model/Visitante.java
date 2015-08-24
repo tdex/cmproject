@@ -5,16 +5,32 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="visitante")
 public class Visitante {
+	
+	public Visitante(){
+	}
+	
+	public Visitante(String nome, int telefone, String email, String senha,
+			String endereco) {
+		this.nome = nome;
+		this.telefone = telefone;
+		this.email = email;
+		this.senha = senha;
+		this.endereco = endereco;
+	}
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long id_visitante; 
+	@Column(name="id_visitante")
+	private long idVisitante; 
 	@Column(nullable = false, length = 150)
 	private String nome;
 	@Column
-	private String telefone;
+	private int telefone;
 	@Column(nullable = false, length = 300)
 	private String email;
 	@Column(nullable = false, length = 10)
@@ -24,10 +40,10 @@ public class Visitante {
 	
 
 	public long getId_visitante() {
-		return id_visitante;
+		return idVisitante;
 	}
-	public void setId_visitante(long id_visitante) {
-		this.id_visitante = id_visitante;
+	public void setidVisitante(long idVisitante) {
+		this.idVisitante = idVisitante;
 	}
 	public String getNome() {
 		return nome;
@@ -35,10 +51,10 @@ public class Visitante {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getTelefone() {
+	public int getTelefone() {
 		return telefone;
 	}
-	public void setTelefone(String telefone) {
+	public void setTelefone(int telefone) {
 		this.telefone = telefone;
 	}
 	public String getEmail() {
