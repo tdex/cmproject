@@ -12,8 +12,8 @@ public class VisitanteRN {
 		this.visitanteDAO = DAOFactory.criaVisitanteDAO();
 	}
 	
-	public void salvar(Visitante v1){
-		this.visitanteDAO.save(v1);
+	public void salvar(Visitante visitante){
+		this.visitanteDAO.save(visitante);
 	}
 
 }
