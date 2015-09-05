@@ -26,11 +26,25 @@
 		</plugins>
 	</build>
 
+	<repositories>
+		<repository>
+			<id>prime-repo</id>
+			<name>Prime Repo</name>
+			<url>http://repository.primefaces.org</url>
+		</repository>
+	</repositories>
+
 	<properties>
 		<spring.version>3.1.1.RELEASE</spring.version>
 	</properties>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>org.primefaces.themes</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>1.0.10</version>
+		</dependency>
 
 		<!-- Spring 3 dependencies -->
 		<dependency>
@@ -123,7 +137,7 @@
 			<artifactId>c3p0</artifactId>
 			<version>0.9.1.2</version>
 		</dependency>
-		
+
 		<!-- Bootsfaces -->
 		<dependency>
 			<groupId>net.bootsfaces</groupId>
