@@ -12,7 +12,7 @@
 	<ui:define name="conteudo">
 		<b:container>
 			<b:well>
-				<h1>Cadastro Colaborador</h1>
+				<h1>Cadastro de Colaborador</h1>
 				<h:form>
 
 					<h:panelGrid columns="1" cellpadding="2">
@@ -68,10 +68,11 @@
 						</b:selectOneMenu>
 							
 						<h:panelGrid columns="2">	
-						<b:commandButton value="Cadastrar" look="success" type="submit" actionListener="#{colaboradorMB.save()}"/>
-						<b:commandButton value="Limpar" look="danger" type="reset"/>
+						<b:commandButton value="Cadastrar" look="success" type="submit" actionListener="#{colaboradorMB.salvar}"/>
+						<!-- <b:commandButton value="Limpar" look="danger" type="reset"/>  -->
 						</h:panelGrid>
 					</h:panelGrid>
+					<b:messages/>
 				</h:form>
 
 			</b:well>
