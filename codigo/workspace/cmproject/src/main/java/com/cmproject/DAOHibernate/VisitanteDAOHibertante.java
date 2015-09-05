@@ -2,14 +2,21 @@ package com.cmproject.DAOHibernate;
 
 import java.util.List;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+
 import org.hibernate.Session;
 
 import com.cmproject.DAO.VisitanteDAO;
 import com.cmproject.model.Visitante;
 
+@ManagedBean
+@SessionScoped
 public class VisitanteDAOHibertante implements VisitanteDAO{
 
 	private Session sessao;
+	
+	private Visitante visitante;
 	
 	@Override
 	public void save(Visitante visitante) {
@@ -47,6 +54,14 @@ public class VisitanteDAOHibertante implements VisitanteDAO{
 
 	public void setSessao(Session sessao) {
 		this.sessao = sessao;
+	}
+
+	public Visitante getVisitante() {
+		return visitante;
+	}
+
+	public void setVisitante(Visitante visitante) {
+		this.visitante = visitante;
 	}
 
 }

@@ -7,6 +7,8 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
+<h:outputScript library="js" name="formataCPF.js" />
+<h:outputScript library="js" name="somenteNumeros.js" />
 
 <ui:composition template="../../main.xhtml">
 	<ui:define name="conteudo">
@@ -14,7 +16,7 @@
 			<b:well>
 				<h1>Cadastre-se gratuitamente</h1>
 				<h:form>
-					
+
 					<h:panelGrid columns="1" cellpadding="2">
 						<b:inputText value="#{visitanteMB.visitante.nome}" id="nome"
 							placeholder="Ex: Romero Brito" required="true"
@@ -24,35 +26,45 @@
 							</f:facet>
 						</b:inputText>
 
-						<b:inputText id="email" placeholder="" required="true" value="#{visitanteMB.visitante.email}"
+						<b:inputText id="email" placeholder="" required="true"
+							value="#{visitanteMB.visitante.email}"
 							requiredMessage="Campo Obrigatório">
 							<f:facet name="prepend">
 								<h:outputText value="Email: " />
 							</f:facet>
 						</b:inputText>
 
-						<b:inputSecret id="senha" placeholder="" required="true" value="#{visitanteMB.visitante.senha}"
+						<b:inputSecret id="senha" placeholder="" required="true"
+							value="#{visitanteMB.visitante.senha}"
 							requiredMessage="Campo Obrigatório">
 							<f:facet name="prepend">
 								<h:outputText value="Senha: " />
 							</f:facet>
 						</b:inputSecret>
-						
-						<b:inputText id="cpf" placeholder="apenas numeros!" value="#{visitanteMB.visitante.cpf}"
-							required="true" requiredMessage="Campo Obrigatório">
+
+						<b:inputText id="cpf" placeholder="apenas numeros!"
+							value="#{visitanteMB.visitante.cpf}" required="true"
+							requiredMessage="Campo Obrigatório"
+							onkeypress="formataCpf(this);return somenteNumeros(event)"
+							maxlength="15">
 							<f:facet name="prepend">
-								<h:outputText value="Cpf: " />
-							</f:facet>
-						</b:inputText>
-						
-						<b:inputText id="telefone" placeholder="apenas numeros!" value="#{visitanteMB.visitante.telefone}"
-							required="true" requiredMessage="Campo Obrigatório">
-							<f:facet name="prepend">
-								<h:outputText value="Telefone: " />
+								<h:outputText value="CPF: " />
 							</f:facet>
 						</b:inputText>
 
-						<b:inputText id="endereco" placeholder="" required="true" value="#{visitanteMB.visitante.endereco}"
+						<b:inputText id="telefone" placeholder="apenas numeros!"
+							value="#{visitanteMB.visitante.telefone}" required="true"
+							requiredMessage="Campo Obrigatório"
+							onkeypress="formataTelefone(this);return somenteNumeros(event)"
+							maxlength="12">
+							<f:facet name="prepend">
+								<h:outputText value="Telefone: " />
+							</f:facet>
+							<f:ajax event="keypress" execute="telefone" />
+						</b:inputText>
+
+						<b:inputText id="endereco" placeholder="" required="true"
+							value="#{visitanteMB.visitante.endereco}"
 							requiredMessage="Campo Obrigatório">
 							<f:facet name="prepend">
 								<h:outputText value="Endereço: " />
@@ -60,7 +72,8 @@
 						</b:inputText>
 
 						<h:panelGrid columns="2">
-							<b:commandButton value="Cadastre-se" look="success" type="submit" action="#{visitanteMB.salvar}"/>
+							<b:commandButton value="Cadastre-se" look="success" type="submit"
+								action="#{visitanteMB.salvar}" />
 							<!-- <b:commandButton value="Limpar" look="danger" type="reset" /> -->
 						</h:panelGrid>
 					</h:panelGrid>
