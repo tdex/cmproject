@@ -53,10 +53,11 @@
 					<p:fileUpload mode="simple" value="#{veiculoMB.veiculo.imagem}"/>
 					<br/>
 					<h:panelGrid columns="2">
-						<b:commandButton value="Cadastrar" look="success" type="submit" />
-						<b:commandButton value="Limpar" look="danger" type="reset" />
+						<b:commandButton value="Cadastrar" look="success" type="submit"
+							action="#{veiculoMB.salvar}" />
 					</h:panelGrid>
 				</h:panelGrid>
+				<b:messages/>
 			</h:form>
 
 		</b:container>
