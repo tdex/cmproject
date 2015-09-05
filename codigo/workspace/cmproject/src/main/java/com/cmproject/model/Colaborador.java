@@ -12,6 +12,21 @@ import javax.persistence.Table;
 @Entity
 @Table(name="colaborador")
 public class Colaborador {
+	
+	public Colaborador(){
+	}
+	
+	public Colaborador(String nome, String telefone, String cpf, String email,
+			String senha, String endereco, TipoAcessoENUM tipoAcesso) {
+		this.nome = nome;
+		this.telefone = telefone;
+		this.cpf = cpf;
+		this.email = email;
+		this.senha = senha;
+		this.endereco = endereco;
+		this.tipoAcesso = tipoAcesso;
+	}
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="id_colaborador")
@@ -30,7 +45,6 @@ public class Colaborador {
 	private String endereco;
 	@Enumerated(EnumType.ORDINAL)
 	private TipoAcessoENUM tipoAcesso;
-	
 	
 	public long getId_colaborador() {
 		return idColaborador;
@@ -80,6 +94,5 @@ public class Colaborador {
 	public void setTipoAcesso(TipoAcessoENUM tipoAcesso) {
 		this.tipoAcesso = tipoAcesso;
 	}
-	
 	
 }
