@@ -3,56 +3,29 @@ package com.cmproject.controller;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
-import com.cmproject.DAO.VeiculoDAO;
 import com.cmproject.model.StatusENUM;
 import com.cmproject.model.TipoVeiculoENUM;
 import com.cmproject.model.Veiculo;
+import com.cmproject.regradenegocio.VeiculoNR;
 
-@ManagedBean
+@ManagedBean (name="veiculoMB")
 @SessionScoped
-public class VeiculoMB implements VeiculoDAO{
+public class VeiculoMB{
 
-
-	private Veiculo veiculo;
+	private Veiculo veiculo = new Veiculo();
 	
-	public VeiculoMB() {
-		this.veiculo = new Veiculo();
+	public void salvar(){
+		VeiculoNR veiculoNR = new VeiculoNR();
+		veiculoNR.salvar(veiculo);
+		FacesMessage mensagem = new FacesMessage("Cadastrado com sucesso!");
+		FacesContext context = FacesContext.getCurrentInstance();
+		context.addMessage(null, mensagem);
 	}
-
-	@Override
-	public void save(Veiculo veiculo) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public Veiculo getVeiculo(long id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Veiculo> list() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void remove(Veiculo veiculo) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void update(Veiculo veiculo) {
-		// TODO Auto-generated method stub
-		
-	}
-
-//getter e setter
 	
 	public Veiculo getVeiculo() {
 		return veiculo;
