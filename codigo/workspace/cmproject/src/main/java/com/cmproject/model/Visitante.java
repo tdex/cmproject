@@ -15,11 +15,12 @@ public class Visitante {
 	}
 	
 	public Visitante(String nome, int telefone, String email, String senha,
-			String endereco) {
+			String endereco, int cpf) {
 		this.nome = nome;
 		this.telefone = telefone;
 		this.email = email;
 		this.senha = senha;
+		this.cpf = cpf;
 		this.endereco = endereco;
 	}
 	
@@ -29,12 +30,14 @@ public class Visitante {
 	private long idVisitante; 
 	@Column(nullable = false, length = 150)
 	private String nome;
-	@Column
-	private int telefone;
 	@Column(nullable = false, length = 300)
 	private String email;
 	@Column(nullable = false, length = 10)
 	private String senha;
+	@Column(nullable = false, length = 11)
+	private int cpf;
+	@Column
+	private int telefone;
 	@Column
 	private String endereco;
 	
@@ -74,6 +77,14 @@ public class Visitante {
 	}
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
+	}
+
+	public int getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(int cpf) {
+		this.cpf = cpf;
 	}
 	
 	

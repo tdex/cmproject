@@ -61,11 +61,13 @@ public class VisitanteTeste {
 	@Test
 	public void salvarVisitanteTest(){
 		
-		Visitante v1 = new Visitante("RAFAEL",9999,"EMAIL.COM","kkkk","rua milagre");
+		Visitante v1 = new Visitante("RAFAEL",9999,"EMAIL.COM","kkkk","rua milagre", 0);
 		
 		VisitanteRN visitanteRN = new VisitanteRN();
 		
 		visitanteRN.salvar(v1);
+		
+		
 		
 		assertEquals(true, true);
 	}

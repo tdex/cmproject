@@ -20,6 +20,7 @@ public class VisitanteMB {
 		FacesMessage mensagem = new FacesMessage("Cadastrado com sucesso!");
 		FacesContext context = FacesContext.getCurrentInstance();
 		context.addMessage(null, mensagem);
+		
 	}
 
 	public void setVisitante(Visitante visitante) {

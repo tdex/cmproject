@@ -12,7 +12,7 @@
 	<ui:define name="conteudo">
 		<b:container>
 			<b:well>
-				<h1>Cadastro Visitante</h1>
+				<h1>Cadastre-se gratuitamente</h1>
 				<h:form>
 					
 					<h:panelGrid columns="1" cellpadding="2">
@@ -21,13 +21,6 @@
 							requiredMessage="Campo Obrigatório">
 							<f:facet name="prepend">
 								<h:outputText value="Nome: " />
-							</f:facet>
-						</b:inputText>
-
-						<b:inputText id="telefone" placeholder="apenas numeros!" value="#{visitanteMB.visitante.telefone}"
-							required="true" requiredMessage="Campo Obrigatório">
-							<f:facet name="prepend">
-								<h:outputText value="Telefone: " />
 							</f:facet>
 						</b:inputText>
 
@@ -44,6 +37,20 @@
 								<h:outputText value="Senha: " />
 							</f:facet>
 						</b:inputSecret>
+						
+						<b:inputText id="cpf" placeholder="apenas numeros!" value="#{visitanteMB.visitante.cpf}"
+							required="true" requiredMessage="Campo Obrigatório">
+							<f:facet name="prepend">
+								<h:outputText value="Cpf: " />
+							</f:facet>
+						</b:inputText>
+						
+						<b:inputText id="telefone" placeholder="apenas numeros!" value="#{visitanteMB.visitante.telefone}"
+							required="true" requiredMessage="Campo Obrigatório">
+							<f:facet name="prepend">
+								<h:outputText value="Telefone: " />
+							</f:facet>
+						</b:inputText>
 
 						<b:inputText id="endereco" placeholder="" required="true" value="#{visitanteMB.visitante.endereco}"
 							requiredMessage="Campo Obrigatório">
@@ -53,8 +60,8 @@
 						</b:inputText>
 
 						<h:panelGrid columns="2">
-							<b:commandButton value="Cadastrar" look="success" type="submit" action="#{visitanteMB.salvar}"/>
-							<b:commandButton value="Limpar" look="danger" type="reset" />
+							<b:commandButton value="Cadastre-se" look="success" type="submit" action="#{visitanteMB.salvar}"/>
+							<!-- <b:commandButton value="Limpar" look="danger" type="reset" /> -->
 						</h:panelGrid>
 					</h:panelGrid>
 					<h:messages></h:messages>
