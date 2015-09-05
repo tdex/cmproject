@@ -2,9 +2,7 @@ package com.cmproject.DAOHibernate;
 
 import java.util.List;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
-
+import org.hibernate.Query;
 import org.hibernate.Session;
 
 import com.cmproject.DAO.VisitanteDAO;
@@ -44,6 +42,13 @@ public class VisitanteDAOHibertante implements VisitanteDAO{
 	public void update(Visitante visitante) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	@Override
+	public Visitante pesquisarCPF(String cpf) {
+		Query consultaCPF = this.sessao.createQuery("from Visitante l where l.cpf like :ncpf");
+		consultaCPF.setParameter("ncpf", cpf);
+		return (Visitante) consultaCPF.uniqueResult();
 	}
 
 	public Session getSessao() {

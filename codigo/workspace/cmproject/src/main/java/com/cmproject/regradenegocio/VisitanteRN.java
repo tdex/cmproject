@@ -22,8 +22,17 @@ public class VisitanteRN {
 		this.visitanteDAO.remove(visitante);
 	}
 
-	public boolean pesquisarCPF(int cpf){
-		return true;
+	public boolean pesquisarCPF(String cpf){
+		Visitante visitante = new Visitante();
+		visitante = this.visitanteDAO.pesquisarCPF(cpf);
+		
+		if(visitante == null){
+			return false;
+		} else if (visitante.getCpf().equals(cpf))  {
+			return true;
+		} else {
+			return false;
+		}
 
 	}
 

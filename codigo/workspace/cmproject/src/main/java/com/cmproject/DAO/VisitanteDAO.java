@@ -10,5 +10,6 @@ public interface VisitanteDAO {
 	public List<Visitante> list();
 	public void remove(Visitante visitante);
 	public void update(Visitante visitante);
+	public Visitante pesquisarCPF(String cpf);
 	
 }

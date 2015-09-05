@@ -34,7 +34,7 @@ public class Visitante {
 	private String email;
 	@Column(nullable = false, length = 10)
 	private String senha;
-	@Column(nullable = false, length = 14)
+	@Column(nullable = false, length = 11)
 	private String cpf;
 	@Column
 	private String telefone;

@@ -18,11 +18,16 @@ public class VisitanteMB {
 	
 	public void salvar(){
 		VisitanteRN visitanteRN = new VisitanteRN();
-		visitanteRN.salvar(visitante);
-		FacesMessage mensagem = new FacesMessage("Cadastrado com sucesso!");
-		FacesContext context = FacesContext.getCurrentInstance();
-		context.addMessage(null, mensagem);
-		
+		if(visitanteRN.pesquisarCPF(visitante.getCpf())){
+			FacesMessage mensagem = new FacesMessage("cpf informado já cadastrado.");
+			FacesContext context = FacesContext.getCurrentInstance();
+			context.addMessage(null, mensagem);
+		} else {
+			visitanteRN.salvar(visitante);
+			FacesMessage mensagem = new FacesMessage("Cadastrado com sucesso!");
+			FacesContext context = FacesContext.getCurrentInstance();
+			context.addMessage(null, mensagem);
+		}
 	}
 	
 	public List<Visitante> listar(){
