@@ -1,7 +1,9 @@
 package com.cmproject.controller;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import com.cmproject.model.Visitante;
 import com.cmproject.regradenegocio.VisitanteRN;
@@ -15,6 +17,9 @@ public class VisitanteMB {
 	public void salvar(){
 		VisitanteRN visitanteRN = new VisitanteRN();
 		visitanteRN.salvar(visitante);
+		FacesMessage mensagem = new FacesMessage("Cadastrado com sucesso!");
+		FacesContext context = FacesContext.getCurrentInstance();
+		context.addMessage(null, mensagem);
 	}
 
 	public void setVisitante(Visitante visitante) {

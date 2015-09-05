@@ -14,7 +14,7 @@
 			<b:well>
 				<h1>Cadastro Visitante</h1>
 				<h:form>
-
+					
 					<h:panelGrid columns="1" cellpadding="2">
 						<b:inputText value="#{visitanteMB.visitante.nome}" id="nome"
 							placeholder="Ex: Romero Brito" required="true"
@@ -57,6 +57,7 @@
 							<b:commandButton value="Limpar" look="danger" type="reset" />
 						</h:panelGrid>
 					</h:panelGrid>
+					<h:messages></h:messages>
 				</h:form>
 
 			</b:well>
