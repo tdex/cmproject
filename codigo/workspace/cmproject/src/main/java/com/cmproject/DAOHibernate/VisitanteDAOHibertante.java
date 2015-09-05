@@ -10,8 +10,6 @@ import org.hibernate.Session;
 import com.cmproject.DAO.VisitanteDAO;
 import com.cmproject.model.Visitante;
 
-@ManagedBean
-@SessionScoped
 public class VisitanteDAOHibertante implements VisitanteDAO{
 
 	private Session sessao;

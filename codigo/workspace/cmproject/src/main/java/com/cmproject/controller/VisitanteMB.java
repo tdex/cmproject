@@ -38,6 +38,4 @@ public class VisitanteMB {
 		return visitante;
 	}
 	
-	
-
 }
