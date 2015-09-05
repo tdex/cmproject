@@ -1,5 +1,7 @@
 package com.cmproject.controller;
 
+import java.util.List;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -21,6 +23,11 @@ public class VisitanteMB {
 		FacesContext context = FacesContext.getCurrentInstance();
 		context.addMessage(null, mensagem);
 		
+	}
+	
+	public List<Visitante> listar(){
+		VisitanteRN visitanteRN = new VisitanteRN();
+		return visitanteRN.listar_visitantes();
 	}
 
 	public void setVisitante(Visitante visitante) {

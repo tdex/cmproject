@@ -32,8 +32,8 @@ public class VisitanteDAOHibertante implements VisitanteDAO{
 
 	@Override
 	public List<Visitante> list() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Visitante> list = sessao.createCriteria(Visitante.class).list();
+		return list;
 	}
 
 	@Override
