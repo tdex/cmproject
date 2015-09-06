@@ -30,6 +30,19 @@ public class VisitanteMB {
 		}
 	}
 	
+	public void logar(){
+		VisitanteRN visitanteRN = new VisitanteRN();
+		if(visitanteRN.pesquisarEmail(visitante.getEmail())){
+			FacesMessage mensagem = new FacesMessage("Você tem cadastro");
+			FacesContext context = FacesContext.getCurrentInstance();
+			context.addMessage(null, mensagem);
+		} else {
+			FacesMessage mensagem = new FacesMessage("Você não tem cadastrado");
+			FacesContext context = FacesContext.getCurrentInstance();
+			context.addMessage(null, mensagem);
+		}
+	}
+	
 	public List<Visitante> listar(){
 		VisitanteRN visitanteRN = new VisitanteRN();
 		return visitanteRN.listar_visitantes();

@@ -11,5 +11,6 @@ public interface VisitanteDAO {
 	public void remove(Visitante visitante);
 	public void update(Visitante visitante);
 	public Visitante pesquisarCPF(String cpf);
+	public Visitante pesquisarEmail(String email);
 	
 }

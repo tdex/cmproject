@@ -50,6 +50,13 @@ public class VisitanteDAOHibertante implements VisitanteDAO{
 		consultaCPF.setParameter("ncpf", cpf);
 		return (Visitante) consultaCPF.uniqueResult();
 	}
+	
+	@Override
+	public Visitante pesquisarEmail(String email) {
+		Query consultaEmail = this.sessao.createQuery("from Visitante l where l.email like :email");
+		consultaEmail.setParameter("email", email);
+		return (Visitante) consultaEmail.uniqueResult();
+	}
 
 	public Session getSessao() {
 		return sessao;

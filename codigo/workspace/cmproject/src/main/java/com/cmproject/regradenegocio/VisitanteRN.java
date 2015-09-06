@@ -33,6 +33,19 @@ public class VisitanteRN {
 		} else {
 			return false;
 		}
+	}
+	
+	public boolean pesquisarEmail(String email){
+		Visitante visitante = new Visitante();
+		visitante = this.visitanteDAO.pesquisarEmail(email);
+		
+		if(visitante == null){
+			return false;
+		} else if (visitante.getEmail().equals(email))  {
+			return true;
+		} else {
+			return false;
+		}
 
 	}
 
