@@ -27,6 +27,11 @@ public class ColaboradorMB {
 	
 	}
 	
+	public List<Colaborador> listar(){
+		ColaboradorRN colaboradorRN = new ColaboradorRN();
+		return colaboradorRN.listar_colaboradores();
+	}
+	
 	//getter e setter
 	public List<TipoAcessoENUM> getTipoAcesso(){
 		return Arrays.asList(TipoAcessoENUM.values());
