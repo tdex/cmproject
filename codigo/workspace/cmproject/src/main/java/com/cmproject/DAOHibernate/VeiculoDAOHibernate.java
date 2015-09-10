@@ -23,7 +23,9 @@ public class VeiculoDAOHibernate implements VeiculoDAO{
 
 	@Override
 	public List<Veiculo> list() {
-		return null;
+		@SuppressWarnings("unchecked")
+		List<Veiculo> list = getSession().createCriteria(Veiculo.class).list();
+		return list;
 	}
 
 	@Override

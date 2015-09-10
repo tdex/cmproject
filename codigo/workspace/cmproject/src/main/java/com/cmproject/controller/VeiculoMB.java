@@ -27,6 +27,11 @@ public class VeiculoMB{
 		context.addMessage(null, mensagem);
 	}
 	
+	public List<Veiculo> listar(){
+		VeiculoNR veiculoNR = new VeiculoNR();
+		return veiculoNR.listar_veiculos();
+	}
+	
 	public Veiculo getVeiculo() {
 		return veiculo;
 	}
