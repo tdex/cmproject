@@ -23,7 +23,8 @@ public class ColaboradorDAOHibertante implements ColaboradorDAO{
 
 	@Override
 	public List<Colaborador> list() {
-		List<Colaborador> list = sessao.createCriteria(Colaborador.class).list();
+		@SuppressWarnings("unchecked")
+		List<Colaborador> list = getSessao().createCriteria(Colaborador.class).list();
 		return list;
 	}
 

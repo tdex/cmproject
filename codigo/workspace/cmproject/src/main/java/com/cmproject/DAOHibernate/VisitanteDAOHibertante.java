@@ -28,7 +28,8 @@ public class VisitanteDAOHibertante implements VisitanteDAO{
 
 	@Override
 	public List<Visitante> list() {
-		List<Visitante> list = sessao.createCriteria(Visitante.class).list();
+		@SuppressWarnings("unchecked")
+		List<Visitante> list = getSessao().createCriteria(Visitante.class).list();
 		return list;
 	}
 
