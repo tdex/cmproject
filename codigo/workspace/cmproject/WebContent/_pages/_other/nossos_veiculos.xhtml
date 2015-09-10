@@ -17,26 +17,24 @@
 				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 				rowsPerPageTemplate="5,10,20" rowKey="#{veiculo.id_veiculo}"
 				selectionMode="single">
-
-				<!-- 					<p:ajax event="rowSelect" listener="#{alunoListMB.selectAluno}"
+				<a href="#{veiculo.id_veiculo}"> 
+				<!-- <p:ajax event="rowSelect" listener="#{alunoListMB.selectAluno}"
 						oncomplete="enableButtons();" />
 					<p:ajax event="page" listener="#{alunoListMB.unselectAluno}"
 						oncomplete="unselectRows();" />
 					<p:ajax event="rowUnselect" listener="#{alunoListMB.unselectAluno}"
 						oncomplete="disableButtons();" />
- -->
-				<p:column headerText="Nome">
-					<h:outputText value="#{veiculo.nome}" />
-				</p:column>
-				<p:column headerText="Modelo">
-					<h:outputText value="#{veiculo.modelo}" />
-				</p:column>
-				<p:column headerText="Descrição">
-					<h:outputText value="#{veiculo.descricao}" />
-				</p:column>
-				<p:column headerText="Imagem">
-					<img src="#{veiculo.imagem}" width="100%" />
-				</p:column>
+ 				--> 
+ 					<p:column headerText="Nome">
+						<h:outputText value="#{veiculo.nome}" />
+					</p:column> <p:column headerText="Modelo">
+						<h:outputText value="#{veiculo.modelo}" />
+					</p:column> <p:column headerText="Descrição">
+						<h:outputText value="#{veiculo.descricao}" />
+					</p:column> <p:column headerText="Imagem">
+						<img src="#{veiculo.imagem}" width="100%" />
+					</p:column>
+				</a>
 			</p:dataTable>
 		</b:container>
 	</ui:define>
