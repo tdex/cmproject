@@ -23,7 +23,8 @@ public class ColaboradorDAOHibertante implements ColaboradorDAO{
 
 	@Override
 	public List<Colaborador> list() {
-		return null;
+		List<Colaborador> list = sessao.createCriteria(Colaborador.class).list();
+		return list;
 	}
 
 	@Override
