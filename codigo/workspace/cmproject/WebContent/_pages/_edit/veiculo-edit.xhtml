@@ -13,16 +13,18 @@
 		<b:container>
 			<h1>Cadastro de Veículo</h1>
 			<h:form>
-
+				<p:growl id="growl" showDetail="true" sticky="true" />
 				<h:panelGrid columns="1" cellpadding="2">
-					<b:inputText value="#{veiculoMB.veiculo.nome}" id="nome" placeholder="Ex:Porshe Caynam"
-						required="true" requiredMessage="Campo Obrigatório">
+					<b:inputText value="#{veiculoMB.veiculo.nome}" id="nome"
+						placeholder="Ex:Porshe Caynam" required="true"
+						requiredMessage="Campo Nome Obrigatório">
 						<f:facet name="prepend">
 							<h:outputText value="Nome: " />
 						</f:facet>
 					</b:inputText>
 
-					<b:inputText id="modelo" placeholder="" value="#{veiculoMB.veiculo.modelo}" required="true"
+					<b:inputText id="modelo" placeholder=""
+						value="#{veiculoMB.veiculo.modelo}" required="true"
 						requiredMessage="Campo Obrigatório">
 						<f:facet name="prepend">
 							<h:outputText value="Modelo: " />
@@ -31,33 +33,33 @@
 
 					<b:selectOneMenu required="true" value="#{veiculoMB.veiculo.tipo}">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
-						<f:selectItems value="#{veiculoMB.tipoVeiculo}"/>
+						<f:selectItems value="#{veiculoMB.tipoVeiculo}" />
 						<f:facet name="prepend">
 							<h:outputText value="Tipo de Veículo" />
 						</f:facet>
 					</b:selectOneMenu>
 
-					<b:selectOneMenu required="true" value="#{veiculoMB.veiculo.status}">
+					<b:selectOneMenu required="true"
+						value="#{veiculoMB.veiculo.status}">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
-						<f:selectItems value="#{veiculoMB.statusVeiculo}"/>
+						<f:selectItems value="#{veiculoMB.statusVeiculo}" />
 						<f:facet name="prepend">
 							<h:outputText value="Status do Veículo" />
 						</f:facet>
 					</b:selectOneMenu>
 					<h:outputLabel>Descrição</h:outputLabel>
 					<p:editor id="editor" widgetVar="editorWidget"
-						value="#{veiculoMB.veiculo.descricao}"   width="300">
+						value="#{veiculoMB.veiculo.descricao}" width="300">
 					</p:editor>
 
 					<h:outputText value="Imagem:" />
-					<p:fileUpload mode="simple" value="#{veiculoMB.veiculo.imagem}"/>
-					<br/>
+					<p:fileUpload mode="simple" value="#{veiculoMB.veiculo.imagem}" />
+					<br />
 					<h:panelGrid columns="2">
 						<b:commandButton value="Cadastrar" look="success" type="submit"
 							action="#{veiculoMB.salvar}" />
 					</h:panelGrid>
 				</h:panelGrid>
-				<b:messages/>
 			</h:form>
 
 		</b:container>

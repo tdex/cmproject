@@ -16,19 +16,19 @@
 			<b:well>
 				<h1>Cadastre-se gratuitamente</h1>
 				<h:form>
-
+					<p:growl id="growl" showDetail="true" sticky="true" />
 					<h:panelGrid columns="1" cellpadding="2">
 						<b:inputText value="#{visitanteMB.visitante.nome}" id="nome"
 							placeholder="Ex: Romero Brito" required="true"
-							requiredMessage="Campo Obrigatório">
+							requiredMessage="Campo Nome Obrigatório">
 							<f:facet name="prepend">
-								<h:outputText value="Nome: " />
+								<h:outputText value="Nome: " for="nome"/>
 							</f:facet>
 						</b:inputText>
 
 						<b:inputText id="email" placeholder="" required="true"
 							value="#{visitanteMB.visitante.email}"
-							requiredMessage="Campo Obrigatório">
+							requiredMessage="Insira um e-mail válido">
 							<f:facet name="prepend">
 								<h:outputText value="Email: " />
 							</f:facet>
@@ -36,7 +36,7 @@
 
 						<b:inputSecret id="senha" placeholder="" required="true"
 							value="#{visitanteMB.visitante.senha}"
-							requiredMessage="Campo Obrigatório">
+							requiredMessage="Senha Obrigatória">
 							<f:facet name="prepend">
 								<h:outputText value="Senha: " />
 							</f:facet>
@@ -44,9 +44,7 @@
 
 						<b:inputText id="cpf" placeholder="apenas numeros!"
 							value="#{visitanteMB.visitante.cpf}" required="true"
-							requiredMessage="Campo Obrigatório"
-							onkeypress="formataCpf(this);return somenteNumeros(event)"
-							maxlength="15">
+							requiredMessage="Insira seu CPF">
 							<f:facet name="prepend">
 								<h:outputText value="CPF: " />
 							</f:facet>
@@ -54,9 +52,7 @@
 
 						<b:inputText id="telefone" placeholder="apenas numeros!"
 							value="#{visitanteMB.visitante.telefone}" required="true"
-							requiredMessage="Campo Obrigatório"
-							onkeypress="formataTelefone(this);return somenteNumeros(event)"
-							maxlength="12">
+							requiredMessage="Insira um telefone">
 							<f:facet name="prepend">
 								<h:outputText value="Telefone: " />
 							</f:facet>
@@ -65,7 +61,7 @@
 
 						<b:inputText id="endereco" placeholder="" required="true"
 							value="#{visitanteMB.visitante.endereco}"
-							requiredMessage="Campo Obrigatório">
+							requiredMessage="Insira um endereço">
 							<f:facet name="prepend">
 								<h:outputText value="Endereço: " />
 							</f:facet>
@@ -77,7 +73,6 @@
 							<!-- <b:commandButton value="Limpar" look="danger" type="reset" /> -->
 						</h:panelGrid>
 					</h:panelGrid>
-					<h:messages/>
 				</h:form>
 			</b:well>
 		</b:container>
