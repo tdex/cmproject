@@ -14,29 +14,31 @@
 			<b:well>
 				<h1>Login</h1>
 				<h:form>
+					<p:growl id="growl" showDetail="true" sticky="true" />
 
 					<h:panelGrid columns="1" cellpadding="2">
-						
-						<b:inputText value="#{visitanteMB.visitante.email}" id="email" placeholder="" required="true"
+
+						<b:inputText value="#{visitanteMB.visitante.email}" id="email"
+							placeholder="" required="true"
 							requiredMessage="Campo Obrigatório">
 							<f:facet name="prepend">
 								<h:outputText value="Email: " />
 							</f:facet>
 						</b:inputText>
 
-						<b:inputSecret value="#{visitanteMB.visitante.senha}" id="senha" placeholder="" required="true"
+						<b:inputSecret value="#{visitanteMB.visitante.senha}" id="senha"
+							placeholder="" required="true"
 							requiredMessage="Campo Obrigatório">
 							<f:facet name="prepend">
 								<h:outputText value="Senha: " />
 							</f:facet>
 						</b:inputSecret>
 
-						<h:panelGrid columns="1">	
-						<b:commandButton value="Entrar" look="success" type="submit" 
-							action="#{visitanteMB.logar}"/>
+						<h:panelGrid columns="1">
+							<b:commandButton value="Entrar" look="success" type="submit"
+								action="#{visitanteMB.logar}" />
 						</h:panelGrid>
 					</h:panelGrid>
-					<h:messages/>
 				</h:form>
 
 			</b:well>
