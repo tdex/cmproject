@@ -1,3 +1,0 @@
-INDEX VERSION 1.127
-/home/tarcisio/Dropbox/Projetos/GitHub/cmproject/codigo/cmproject/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1461747204.index
-/cmproject/src

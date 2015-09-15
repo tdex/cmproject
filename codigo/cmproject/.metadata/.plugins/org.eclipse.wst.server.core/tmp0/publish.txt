@@ -1,3 +1,0 @@
-#Tomcat publish data
-#Wed Jun 17 19:20:39 BRT 2015
-org.eclipse.jst.jee.server\:cmproject=/home/tarcisio/Programas/apache-tomcat-8.0.23/wtpwebapps/cmproject
