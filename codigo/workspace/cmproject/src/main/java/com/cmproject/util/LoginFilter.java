@@ -30,7 +30,8 @@ public class LoginFilter implements Filter {
 			String contextPath = ((HttpServletRequest) request) .getContextPath(); 
 			//Redirecionamos o usuário imediatamente 
 			//para a página de login.xhtml 
-			((HttpServletResponse) response).sendRedirect (contextPath + "/_pages/_other/login.xhtml"); } 
+			((HttpServletResponse) response).sendRedirect (contextPath + "/_pages/_other/login.xhtml"); }
+//			((HttpServletResponse) response).sendRedirect (contextPath + "/_pages/_private/_edit/colaborador-edit.xhtml"); }	
 		else { 
 			//Caso ele esteja logado, apenas deixamos 
 			//que o fluxo continue 
