@@ -52,6 +52,7 @@
 	<filter-mapping>
 		<filter-name>LoginFilter</filter-name>
 		<url-pattern>/_pages/_acoes_adm/*</url-pattern>
+		<url-pattern>/_pages/_edit/*</url-pattern>
 	</filter-mapping>
 	
 </web-app>
