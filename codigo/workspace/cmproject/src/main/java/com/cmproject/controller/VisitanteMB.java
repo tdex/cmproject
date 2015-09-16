@@ -23,7 +23,7 @@ public class VisitanteMB {
 
 	public void salvar(){
 		VisitanteRN visitanteRN = new VisitanteRN();
-		if(visitanteRN.pesquisarCPF(visitante.getCpf())){
+		if(visitanteRN.pesquisarCPF(visitante.getCpf()) || visitanteRN.pesquisarEmail(visitante.getEmail())){
 			FacesMessage mensagem = new FacesMessage("cpf informado já cadastrado.");
 			FacesContext context = FacesContext.getCurrentInstance();
 			context.addMessage(null, mensagem);
