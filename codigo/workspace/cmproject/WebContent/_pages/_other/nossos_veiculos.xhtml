@@ -18,13 +18,14 @@
 				rowsPerPageTemplate="5,10,20" rowKey="#{veiculo.id_veiculo}"
 				selectionMode="single">
 				<a href="#{veiculo.id_veiculo}"> 
-				<!-- <p:ajax event="rowSelect" listener="#{alunoListMB.selectAluno}"
+				<!-- p:ajax event="rowSelect" listener="#{alunoListMB.selectAluno}"
 						oncomplete="enableButtons();" />
 					<p:ajax event="page" listener="#{alunoListMB.unselectAluno}"
 						oncomplete="unselectRows();" />
 					<p:ajax event="rowUnselect" listener="#{alunoListMB.unselectAluno}"
 						oncomplete="disableButtons();" />
- 				--> 
+						 -->
+ 			
  					<p:column headerText="Nome">
 						<h:outputText value="#{veiculo.nome}" />
 					</p:column> <p:column headerText="Modelo">
