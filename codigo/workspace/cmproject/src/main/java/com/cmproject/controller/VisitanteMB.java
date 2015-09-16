@@ -9,6 +9,7 @@ import javax.faces.context.FacesContext;
 
 import com.cmproject.model.Visitante;
 import com.cmproject.regradenegocio.VisitanteRN;
+import com.mysql.jdbc.TimeUtil;
 
 @ManagedBean (name="visitanteMB")
 @SessionScoped
@@ -34,18 +35,20 @@ public class VisitanteMB {
 		}
 	}
 
-	public void logar(){
+	public String logar(){
 		VisitanteRN visitanteRN = new VisitanteRN();
 		if(visitanteRN.pesquisarEmail(visitante.getEmail())){
-			setLoggedIn(true);
-			visitanteLogado = visitante;
-			FacesMessage mensagem = new FacesMessage("Cadastro efetuado com sucesso!");
+			FacesMessage mensagem = new FacesMessage("Usuário logado com sucesso!");
 			FacesContext context = FacesContext.getCurrentInstance();
 			context.addMessage(null, mensagem);
+			setLoggedIn(true);
+			visitanteLogado = visitante;
+			return "/index.xhtml";
 		} else {
 			FacesMessage mensagem = new FacesMessage("Você não tem cadastrado");
 			FacesContext context = FacesContext.getCurrentInstance();
 			context.addMessage(null, mensagem);
+			return "";
 		}
 	}
 
