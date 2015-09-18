@@ -1,7 +1,7 @@
 package com.cmproject.model;
 
 public enum TipoUsuarioENUM {
-	VISITANTE(0), COLABORADOR(1), FUNCIONARIO(2);
+	VISITANTE(0), COLABORADOR(1);
 	
 	public int valor;
 	
