@@ -17,7 +17,7 @@ public class Colaborador {
 	}
 	
 	public Colaborador(String nome, String telefone, String cpf, String email,
-			String senha, String endereco, TipoAcessoENUM tipoAcesso) {
+			String senha, String endereco, TipoUsuarioENUM tipoAcesso) {
 		this.nome = nome;
 		this.telefone = telefone;
 		this.cpf = cpf;
@@ -44,7 +44,7 @@ public class Colaborador {
 	@Column(nullable = false)
 	private String endereco;
 	@Enumerated(EnumType.ORDINAL)
-	private TipoAcessoENUM tipoAcesso;
+	private TipoUsuarioENUM tipoAcesso;
 	
 	public long getId_colaborador() {
 		return idColaborador;
@@ -88,10 +88,10 @@ public class Colaborador {
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
-	public TipoAcessoENUM getTipoAcesso() {
+	public TipoUsuarioENUM getTipoAcesso() {
 		return tipoAcesso;
 	}
-	public void setTipoAcesso(TipoAcessoENUM tipoAcesso) {
+	public void setTipoAcesso(TipoUsuarioENUM tipoAcesso) {
 		this.tipoAcesso = tipoAcesso;
 	}
 	

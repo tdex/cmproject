@@ -6,7 +6,7 @@
 
 <managed-bean>
   <managed-bean-name>visitante</managed-bean-name>
-  <managed-bean-class>com.cmproject.controller.VisitanteMB</managed-bean-class>
+  <managed-bean-class>com.cmproject.controller.UsuarioMB</managed-bean-class>
   <managed-bean-scope>session</managed-bean-scope>
 </managed-bean>
 </faces-config>

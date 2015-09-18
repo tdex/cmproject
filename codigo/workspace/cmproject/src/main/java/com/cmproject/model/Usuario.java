@@ -2,26 +2,29 @@ package com.cmproject.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="visitante")
-public class Visitante {
+@Table(name="usuario")
+public class Usuario {
 	
-	public Visitante(){
+	public Usuario(){
 	}
 	
-	public Visitante(String nome, String telefone, String email, String senha,
-			String endereco, String cpf) {
+	public Usuario(String nome, String telefone, String email, String senha,
+			String endereco, String cpf, TipoUsuarioENUM tipoUsuario) {
 		this.nome = nome;
 		this.telefone = telefone;
 		this.email = email;
 		this.senha = senha;
 		this.cpf = cpf;
 		this.endereco = endereco;
+		this.tipoUsuario = tipoUsuario;
 	}
 	
 	@Id
@@ -40,6 +43,8 @@ public class Visitante {
 	private String telefone;
 	@Column
 	private String endereco;
+	@Enumerated(EnumType.ORDINAL)
+	private TipoUsuarioENUM tipoUsuario;
 	
 
 	public long getId_visitante() {
@@ -87,5 +92,12 @@ public class Visitante {
 		this.cpf = cpf;
 	}
 	
+	public TipoUsuarioENUM getTipoUsuario() {
+		return tipoUsuario;
+	}
+
+	public void setTipoUsuario(TipoUsuarioENUM tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
+	}
 	
 }

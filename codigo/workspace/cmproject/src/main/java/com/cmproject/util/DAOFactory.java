@@ -2,16 +2,16 @@ package com.cmproject.util;
 
 import com.cmproject.DAO.ColaboradorDAO;
 import com.cmproject.DAO.VeiculoDAO;
-import com.cmproject.DAO.VisitanteDAO;
+import com.cmproject.DAO.usuarioDAO;
 import com.cmproject.DAOHibernate.ColaboradorDAOHibertante;
 import com.cmproject.DAOHibernate.VeiculoDAOHibernate;
-import com.cmproject.DAOHibernate.VisitanteDAOHibertante;
+import com.cmproject.DAOHibernate.UsuarioDAOHibertante;
 
 public class DAOFactory {
 
-	public static VisitanteDAO criaVisitanteDAO() {
+	public static usuarioDAO criaVisitanteDAO() {
 
-		VisitanteDAOHibertante visitanteDaoHibertante = new VisitanteDAOHibertante();
+		UsuarioDAOHibertante visitanteDaoHibertante = new UsuarioDAOHibertante();
 		visitanteDaoHibertante.setSessao(HibernateUtil.getSession().getCurrentSession());
 
 		return visitanteDaoHibertante;

@@ -18,7 +18,7 @@
 				<h:form>
 					<p:growl id="growl" showDetail="true" sticky="true" />
 					<h:panelGrid columns="1" cellpadding="2">
-						<b:inputText value="#{visitanteMB.visitante.nome}" id="nome"
+						<b:inputText value="#{usuarioMB.usuario.nome}" id="nome"
 							placeholder="Ex: Romero Brito" required="true"
 							requiredMessage="Campo Nome Obrigatório">
 							<f:facet name="prepend">
@@ -27,7 +27,7 @@
 						</b:inputText>
 
 						<b:inputText id="email" placeholder="" required="true"
-							value="#{visitanteMB.visitante.email}"
+							value="#{usuarioMB.usuario.email}"
 							requiredMessage="Insira um e-mail válido">
 							<f:facet name="prepend">
 								<h:outputText value="Email: " />
@@ -35,7 +35,7 @@
 						</b:inputText>
 
 						<b:inputSecret id="senha" placeholder="" required="true"
-							value="#{visitanteMB.visitante.senha}"
+							value="#{usuarioMB.usuario.senha}"
 							requiredMessage="Senha Obrigatória">
 							<f:facet name="prepend">
 								<h:outputText value="Senha: " />
@@ -43,7 +43,7 @@
 						</b:inputSecret>
 
 						<b:inputText id="cpf" placeholder="apenas numeros!"
-							value="#{visitanteMB.visitante.cpf}" required="true"
+							value="#{usuarioMB.usuario.cpf}" required="true"
 							requiredMessage="Insira seu CPF">
 							<f:facet name="prepend">
 								<h:outputText value="CPF: " />
@@ -51,7 +51,7 @@
 						</b:inputText>
 
 						<b:inputText id="telefone" placeholder="apenas numeros!"
-							value="#{visitanteMB.visitante.telefone}" required="true"
+							value="#{usuarioMB.usuario.telefone}" required="true"
 							requiredMessage="Insira um telefone">
 							<f:facet name="prepend">
 								<h:outputText value="Telefone: " />
@@ -60,7 +60,7 @@
 						</b:inputText>
 
 						<b:inputText id="endereco" placeholder="" required="true"
-							value="#{visitanteMB.visitante.endereco}"
+							value="#{usuarioMB.usuario.endereco}"
 							requiredMessage="Insira um endereço">
 							<f:facet name="prepend">
 								<h:outputText value="Endereço: " />
@@ -69,7 +69,7 @@
 
 						<h:panelGrid columns="2">
 							<b:commandButton value="Cadastre-se" look="success" type="submit"
-								action="#{visitanteMB.salvar}" />
+								action="#{usuarioMB.salvar}" />
 							<!-- <b:commandButton value="Limpar" look="danger" type="reset" /> -->
 						</h:panelGrid>
 					</h:panelGrid>

@@ -24,7 +24,7 @@ public class Aluguel {
 	private Veiculo veiculo;
 	@ManyToOne
 	@JoinColumn(name="id_visitante", nullable = false)
-	private Visitante visitante;
+	private Usuario visitante;
 	@Column(nullable = false)
 	private String retirada;
 	@Column(nullable = false)
@@ -43,10 +43,10 @@ public class Aluguel {
 	public void setVeiculo(Veiculo veiculo) {
 		this.veiculo = veiculo;
 	}
-	public Visitante getVisitante() {
+	public Usuario getVisitante() {
 		return visitante;
 	}
-	public void setVisitante(Visitante visitante) {
+	public void setVisitante(Usuario visitante) {
 		this.visitante = visitante;
 	}
 	public String getRetirada() {

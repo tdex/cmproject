@@ -9,7 +9,7 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
 import com.cmproject.model.Colaborador;
-import com.cmproject.model.TipoAcessoENUM;
+import com.cmproject.model.TipoUsuarioENUM;
 import com.cmproject.regradenegocio.ColaboradorRN;
 
 @ManagedBean (name="colaboradorMB")
@@ -33,8 +33,8 @@ public class ColaboradorMB {
 	}
 	
 	//getter e setter
-	public List<TipoAcessoENUM> getTipoAcesso(){
-		return Arrays.asList(TipoAcessoENUM.values());
+	public List<TipoUsuarioENUM> getTipoAcesso(){
+		return Arrays.asList(TipoUsuarioENUM.values());
 	}
 
 	public Colaborador getColaborador() {

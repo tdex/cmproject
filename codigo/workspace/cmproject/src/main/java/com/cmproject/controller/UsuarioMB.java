@@ -7,28 +7,27 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
-import com.cmproject.model.Visitante;
-import com.cmproject.regradenegocio.VisitanteRN;
-import com.mysql.jdbc.TimeUtil;
+import com.cmproject.model.Usuario;
+import com.cmproject.regradenegocio.UsuarioRN;
 
-@ManagedBean (name="visitanteMB")
+@ManagedBean (name="usuarioMB")
 @SessionScoped
-public class VisitanteMB {
+public class UsuarioMB {
 
 	private boolean loggedIn;
 
-	private Visitante visitante = new Visitante();
+	private Usuario usuario = new Usuario();
 	
-	private Visitante visitanteLogado = new Visitante();
+	private Usuario usuarioLogado = new Usuario();
 
 	public void salvar(){
-		VisitanteRN visitanteRN = new VisitanteRN();
-		if(visitanteRN.pesquisarCPF(visitante.getCpf()) || visitanteRN.pesquisarEmail(visitante.getEmail())){
+		UsuarioRN usuarioRN = new UsuarioRN();
+		if(usuarioRN.pesquisarCPF(usuario.getCpf()) || usuarioRN.pesquisarEmail(usuario.getEmail())){
 			FacesMessage mensagem = new FacesMessage("cpf informado já cadastrado.");
 			FacesContext context = FacesContext.getCurrentInstance();
 			context.addMessage(null, mensagem);
 		} else {
-			visitanteRN.salvar(visitante);
+			usuarioRN.salvar(usuario);
 			FacesMessage mensagem = new FacesMessage("Cadastrado com sucesso!");
 			FacesContext context = FacesContext.getCurrentInstance();
 			context.addMessage(null, mensagem);
@@ -36,13 +35,13 @@ public class VisitanteMB {
 	}
 
 	public String logar(){
-		VisitanteRN visitanteRN = new VisitanteRN();
-		if(visitanteRN.pesquisarEmail(visitante.getEmail())){
+		UsuarioRN usuarioRN = new UsuarioRN();
+		if(usuarioRN.pesquisarEmail(usuario.getEmail())){
 			FacesMessage mensagem = new FacesMessage("Usuário logado com sucesso!");
 			FacesContext context = FacesContext.getCurrentInstance();
 			context.addMessage(null, mensagem);
 			setLoggedIn(true);
-			visitanteLogado = visitante;
+			usuarioLogado = usuario;
 			return "/_pages/_other/nossos_veiculos.xhtml";
 		} else {
 			FacesMessage mensagem = new FacesMessage("Você não tem cadastrado");
@@ -52,17 +51,17 @@ public class VisitanteMB {
 		}
 	}
 
-	public List<Visitante> listar(){
-		VisitanteRN visitanteRN = new VisitanteRN();
-		return visitanteRN.listar_visitantes();
+	public List<Usuario> listar(){
+		UsuarioRN usuarioRN = new UsuarioRN();
+		return usuarioRN.listarUsuario();
 	}
 
-	public void setVisitante(Visitante visitante) {
-		this.visitante = visitante;
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
-	public Visitante getVisitante() {
-		return visitante;
+	public Usuario getUsuario() {
+		return usuario;
 	}
 
 	public boolean isLoggedIn() {

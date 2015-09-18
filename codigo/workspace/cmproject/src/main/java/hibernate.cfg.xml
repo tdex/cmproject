@@ -13,6 +13,6 @@
   <mapping class="com.cmproject.model.Aluguel"/>
   <mapping class="com.cmproject.model.Colaborador"/>
   <mapping class="com.cmproject.model.Veiculo"/>
-  <mapping class="com.cmproject.model.Visitante"/>
+  <mapping class="com.cmproject.model.Usuario"/>
  </session-factory>
 </hibernate-configuration>

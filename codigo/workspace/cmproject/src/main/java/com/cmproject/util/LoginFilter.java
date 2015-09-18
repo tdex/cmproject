@@ -11,7 +11,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.cmproject.controller.VisitanteMB;
+import com.cmproject.controller.UsuarioMB;
 
 public class LoginFilter implements Filter { 
 
@@ -21,12 +21,12 @@ public class LoginFilter implements Filter {
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		//Captura o ManagedBean chamado “usuarioMB” 
-		VisitanteMB visitanteMB = (VisitanteMB) ((HttpServletRequest) request) .getSession().getAttribute("visitanteMB"); 
+		UsuarioMB usuarioMB = (UsuarioMB) ((HttpServletRequest) request) .getSession().getAttribute("usuarioMB"); 
 		//Verifica se nosso ManagedBean ainda não 
 		//foi instanciado ou caso a 
 		//variável loggedIn seja false, assim saberemos que 
 		// o usuário não está logado 
-		if (visitanteMB == null || !visitanteMB.isLoggedIn()) { 
+		if (usuarioMB == null || !usuarioMB.isLoggedIn()) { 
 			String contextPath = ((HttpServletRequest) request) .getContextPath(); 
 			//Redirecionamos o usuário imediatamente 
 			//para a página de login.xhtml 

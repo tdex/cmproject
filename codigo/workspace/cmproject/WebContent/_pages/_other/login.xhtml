@@ -18,7 +18,7 @@
 
 					<h:panelGrid columns="1" cellpadding="2">
 
-						<b:inputText value="#{visitanteMB.visitante.email}" id="email"
+						<b:inputText value="#{usuarioMB.usuario.email}" id="email"
 							placeholder="" required="true"
 							requiredMessage="Campo Obrigatório">
 							<f:facet name="prepend">
@@ -26,7 +26,7 @@
 							</f:facet>
 						</b:inputText>
 
-						<b:inputSecret value="#{visitanteMB.visitante.senha}" id="senha"
+						<b:inputSecret value="#{usuarioMB.usuario.senha}" id="senha"
 							placeholder="" required="true"
 							requiredMessage="Campo Obrigatório">
 							<f:facet name="prepend">
@@ -36,7 +36,7 @@
 
 						<h:panelGrid columns="1">
 							<b:commandButton value="Entrar" look="success" type="submit"
-								action="#{visitanteMB.logar}" />
+								action="#{usuarioMB.logar}" />
 						</h:panelGrid>
 					</h:panelGrid>
 				</h:form>
