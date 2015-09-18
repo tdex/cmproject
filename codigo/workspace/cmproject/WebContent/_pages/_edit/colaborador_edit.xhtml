@@ -16,7 +16,7 @@
 				<h:form>
 					<p:growl id="growl" showDetail="true" sticky="true" />
 					<h:panelGrid columns="1" cellpadding="2">
-						<b:inputText value="#{colaboradorMB.colaborador.nome}" id="nome"
+						<b:inputText value="#{usuarioMB.usuario.nome}" id="nome"
 							placeholder="Ex: Tarcísio Deschamps" required="true"
 							requiredMessage="Campo Obrigatório">
 							<f:facet name="prepend">
@@ -25,7 +25,7 @@
 						</b:inputText>
 
 						<b:inputText id="telefone" placeholder="apenas numeros!"
-							value="#{colaboradorMB.colaborador.telefone}" required="true"
+							value="#{usuarioMB.usuario.telefone}" required="true"
 							requiredMessage="Campo Telefone Obrigatório">
 							<f:facet name="prepend">
 								<h:outputText value="Telefone: " />
@@ -33,7 +33,7 @@
 						</b:inputText>
 
 						<b:inputText id="cpf" placeholder="apenas numeros!"
-							value="#{colaboradorMB.colaborador.cpf}" required="true"
+							value="#{usuarioMB.usuario.cpf}" required="true"
 							requiredMessage="Campo CPF Obrigatório">
 							<f:facet name="prepend">
 								<h:outputText value="CPF: " />
@@ -41,7 +41,7 @@
 						</b:inputText>
 
 						<b:inputText id="email" placeholder="" required="true"
-							value="#{colaboradorMB.colaborador.email}"
+							value="#{usuarioMB.usuario.email}"
 							requiredMessage="Campo E-mail Obrigatório">
 							<f:facet name="prepend">
 								<h:outputText value="Email: " />
@@ -49,7 +49,7 @@
 						</b:inputText>
 
 						<b:inputSecret id="senha" placeholder="" required="true"
-							value="#{colaboradorMB.colaborador.senha}"
+							value="#{usuarioMB.usuario.senha}"
 							requiredMessage="Campo Senha Obrigatório">
 							<f:facet name="prepend">
 								<h:outputText value="Senha: " />
@@ -57,24 +57,24 @@
 						</b:inputSecret>
 
 						<b:inputText id="endereco" placeholder="" required="true"
-							value="#{colaboradorMB.colaborador.endereco}"
+							value="#{usuarioMB.usuario.endereco}"
 							requiredMessage="Campo Endereco Obrigatório">
 							<f:facet name="prepend">
 								<h:outputText value="Endereço: " />
 							</f:facet>
 						</b:inputText>
 
-						<b:selectOneMenu value="#{colaboradorMB.colaborador.tipoAcesso}">
+						<b:selectOneMenu value="#{usuarioMB.usuario.tipoUsuario}">
 							<f:facet name="prepend">
 								<h:outputText value="Tipo Funcionário" />
 							</f:facet>
 							<f:selectItem itemLabel="Selecione" itemValue="" />
-							<f:selectItems value="#{colaboradorMB.tipoAcesso}" />
+							<f:selectItems value="#{usuarioMB.tipoUsuario" />
 						</b:selectOneMenu>
 
 						<h:panelGrid columns="2">
 							<b:commandButton value="Cadastrar" look="success" type="submit"
-								actionListener="#{colaboradorMB.salvar}" />
+								actionListener="#{usuarioMB.salvar}" />
 							<!-- <b:commandButton value="Limpar" look="danger" type="reset"/>  -->
 						</h:panelGrid>
 					</h:panelGrid>
