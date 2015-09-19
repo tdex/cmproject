@@ -41,7 +41,7 @@ public class UsuarioMB {
 			FacesContext context = FacesContext.getCurrentInstance();
 			context.addMessage(null, mensagem);
 			setLoggedIn(true);
-			usuarioLogado = usuario;
+			setUsuarioLogado(usuario);
 			return "/_pages/_other/nossos_veiculos.xhtml";
 		} else {
 			FacesMessage mensagem = new FacesMessage("Você não tem cadastrado");
@@ -70,6 +70,14 @@ public class UsuarioMB {
 
 	public void setLoggedIn(boolean loggedIn) {
 		this.loggedIn = loggedIn;
+	}
+
+	public Usuario getUsuarioLogado() {
+		return usuarioLogado;
+	}
+
+	public void setUsuarioLogado(Usuario usuarioLogado) {
+		this.usuarioLogado = usuarioLogado;
 	}
 }
 
