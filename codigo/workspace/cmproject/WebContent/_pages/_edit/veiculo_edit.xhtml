@@ -47,12 +47,12 @@
 							<h:outputText value="Status do Veículo" />
 						</f:facet>
 					</b:selectOneMenu>
+					
 					<h:outputLabel>Descrição</h:outputLabel>
-					<p:editor id="editor" widgetVar="editorWidget"
-						value="#{veiculoMB.veiculo.descricao}" width="300">
-					</p:editor>
-
-					<h:outputText value="Imagem:" />
+					<p:inputTextarea rows="6" cols="33"
+						value="#{veiculoMB.veiculo.descricao}" />
+					
+					<h:outputLabel value="Imagem:" />
 					<p:fileUpload mode="simple" value="#{veiculoMB.veiculo.imagem}" />
 					<br />
 					<h:panelGrid columns="2">
