@@ -12,13 +12,13 @@
 	<ui:define name="conteudo">
 		<b:container>
 			<b:well>
-				<h1>Visitantes cadastrados</h1>
+				<h1>Usuários cadastrados</h1>
 
-				<p:dataTable value="#{visitanteMB.listar()}" var="visitante"
-					id="visitanteTable" widgetVar="dataTable" paginator="true"
+				<p:dataTable value="#{usuarioMB.listar()}" var="usuario"
+					id="usuarioTable" widgetVar="dataTable" paginator="true"
 					rows="10"
 					paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-					rowsPerPageTemplate="5,10,20" rowKey="#{visitante.id_visitante}"
+					rowsPerPageTemplate="5,10,20" rowKey="#{usuario.id_visitante}"
 					selectionMode="single">
 
 					<!-- 					<p:ajax event="rowSelect" listener="#{alunoListMB.selectAluno}"
@@ -29,16 +29,16 @@
 						oncomplete="disableButtons();" />
  -->
 					<p:column headerText="Nome">
-						<h:outputText value="#{visitante.nome}" />
+						<h:outputText value="#{usuario.nome}" />
 					</p:column>
 					<p:column headerText="CPF">
-						<h:outputText value="#{visitante.cpf}" />
+						<h:outputText value="#{usuario.cpf}" />
 					</p:column>
 					<p:column headerText="E-mail">
-						<h:outputText value="#{visitante.email}" />
+						<h:outputText value="#{usuario.email}" />
 					</p:column>
 					<p:column headerText="Telefone">
-						<h:outputText value="#{visitante.telefone}" />
+						<h:outputText value="#{usuario.telefone}" />
 					</p:column>
 
 				</p:dataTable>
