@@ -21,4 +21,8 @@ public class VeiculoNR {
 	public List<Veiculo> listar_veiculos(){
 		return this.veiculoDAO.list();
 	}
+	
+	public void deletar(Veiculo veiculo) {
+		this.veiculoDAO.remove(veiculo);
+	}
 }

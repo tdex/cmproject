@@ -8,6 +8,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
+import org.primefaces.event.SelectEvent;
+
 import com.cmproject.model.StatusENUM;
 import com.cmproject.model.TipoVeiculoENUM;
 import com.cmproject.model.Veiculo;
@@ -18,6 +20,10 @@ import com.cmproject.regradenegocio.VeiculoNR;
 public class VeiculoMB{
 
 	private Veiculo veiculo = new Veiculo();
+	
+	private Veiculo selectedVeiculo = new Veiculo();
+	
+	private VeiculoNR veiculoNR = new VeiculoNR();
 	
 	public void salvar(){
 		VeiculoNR veiculoNR = new VeiculoNR();
@@ -32,6 +38,29 @@ public class VeiculoMB{
 		return veiculoNR.listar_veiculos();
 	}
 	
+	public void selectVeiculo(SelectEvent evt){
+		try {
+			if (evt.getObject() != null) {
+				this.selectedVeiculo = (Veiculo) evt.getObject();
+			} else {
+				this.selectedVeiculo = null;
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	public void unselectVeiculo(){
+		this.selectedVeiculo = null;
+	}
+	
+	public void remover() {
+		if (this.selectedVeiculo != null) {
+			this.veiculoNR.deletar(selectedVeiculo);
+		}
+	}
+	
+	//getter e setter
 	public Veiculo getVeiculo() {
 		return veiculo;
 	}
@@ -46,6 +75,22 @@ public class VeiculoMB{
 
 	public List<StatusENUM> getStatusVeiculo(){
 		return Arrays.asList(StatusENUM.values());
+	}
+
+	public Veiculo getSelectedVeiculo() {
+		return selectedVeiculo;
+	}
+
+	public void setSelectedVeiculo(Veiculo selectedVeiculo) {
+		this.selectedVeiculo = selectedVeiculo;
+	}
+
+	public VeiculoNR getVeiculoNR() {
+		return veiculoNR;
+	}
+
+	public void setVeiculoNR(VeiculoNR veiculoNR) {
+		this.veiculoNR = veiculoNR;
 	}
 	
 }
