@@ -7,6 +7,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
+import org.primefaces.event.SelectEvent;
+
 import com.cmproject.model.Usuario;
 import com.cmproject.regradenegocio.UsuarioRN;
 
@@ -14,11 +16,16 @@ import com.cmproject.regradenegocio.UsuarioRN;
 @SessionScoped
 public class UsuarioMB {
 
+	
 	private boolean loggedIn;
 
 	private Usuario usuario = new Usuario();
 	
+	private Usuario selectedUsuario = new Usuario();
+	
 	private Usuario usuarioLogado = new Usuario();
+	
+	private UsuarioRN usuarioRN = new UsuarioRN();
 
 	public void salvar(){
 		UsuarioRN usuarioRN = new UsuarioRN();
@@ -56,6 +63,30 @@ public class UsuarioMB {
 		return usuarioRN.listarUsuario();
 	}
 
+	public void selectUsuario(SelectEvent evt){
+		try {
+			if (evt.getObject() != null) {
+				this.selectedUsuario = (Usuario) evt.getObject();
+			} else {
+				this.selectedUsuario = null;
+			}
+		}catch (Exception e){
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	public void unselectUsuario() {
+		this.selectedUsuario = null;
+	}
+	
+	public void deletar(){
+		if (this.selectedUsuario != null) {
+			this.usuarioRN.deletar(selectedUsuario);
+		}
+	}
+	
+	
+	//getter e setter
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
@@ -79,6 +110,24 @@ public class UsuarioMB {
 	public void setUsuarioLogado(Usuario usuarioLogado) {
 		this.usuarioLogado = usuarioLogado;
 	}
+
+	public Usuario getSelectedUsuario() {
+		return selectedUsuario;
+	}
+
+	public void setSelectedUsuario(Usuario selectedUsuario) {
+		this.selectedUsuario = selectedUsuario;
+	}
+
+	public UsuarioRN getUsuarioRN() {
+		return usuarioRN;
+	}
+
+	public void setUsuarioRN(UsuarioRN usuarioRN) {
+		this.usuarioRN = usuarioRN;
+	}
+
+	
 }
 
 

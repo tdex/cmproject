@@ -5,10 +5,10 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
-import com.cmproject.DAO.usuarioDAO;
+import com.cmproject.DAO.UsuarioDAO;
 import com.cmproject.model.Usuario;
 
-public class UsuarioDAOHibertante implements usuarioDAO{
+public class UsuarioDAOHibertante implements UsuarioDAO{
 
 	private Session sessao;
 	

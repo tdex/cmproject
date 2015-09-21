@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.cmproject.model.Usuario;
 
-public interface usuarioDAO {
+public interface UsuarioDAO {
 	public void save(Usuario usuario);
 	public Usuario getUsuario(long id);
 	public List<Usuario> list();

@@ -2,14 +2,14 @@ package com.cmproject.regradenegocio;
 
 import java.util.List;
 
-import com.cmproject.DAO.usuarioDAO;
+import com.cmproject.DAO.UsuarioDAO;
 import com.cmproject.model.TipoUsuarioENUM;
 import com.cmproject.model.Usuario;
 import com.cmproject.util.DAOFactory;
 
 public class UsuarioRN {
 	
-	private usuarioDAO usuarioDAO;
+	private UsuarioDAO usuarioDAO;
 	
 	public UsuarioRN(){
 		this.usuarioDAO = DAOFactory.criaVisitanteDAO();
