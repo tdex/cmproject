@@ -73,7 +73,7 @@ public class VeiculoMB{
 		return Arrays.asList(TipoVeiculoENUM.values());
 	}
 
-	public List<StatusENUM> getStatusVeiculo(){
+	public List<StatusENUM> getStatusVeiculos(){
 		return Arrays.asList(StatusENUM.values());
 	}
 

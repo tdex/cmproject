@@ -3,7 +3,6 @@ package com.cmproject.regradenegocio;
 import java.util.List;
 
 import com.cmproject.DAO.UsuarioDAO;
-import com.cmproject.model.TipoUsuarioENUM;
 import com.cmproject.model.Usuario;
 import com.cmproject.util.DAOFactory;
 
@@ -16,12 +15,7 @@ public class UsuarioRN {
 	}
 	
 	public void salvar(Usuario usuario){
-		if(usuario.getTipoUsuario()==null){
-			usuario.setTipoUsuario(TipoUsuarioENUM.VISITANTE);
 			this.usuarioDAO.save(usuario);
-		} else {
-			this.usuarioDAO.save(usuario);
-		}	
 	}
 
 	public void deletar(Usuario usuario){

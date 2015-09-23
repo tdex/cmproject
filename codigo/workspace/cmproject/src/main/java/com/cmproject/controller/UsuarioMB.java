@@ -9,6 +9,7 @@ import javax.faces.context.FacesContext;
 
 import org.primefaces.event.SelectEvent;
 
+import com.cmproject.model.TipoUsuarioENUM;
 import com.cmproject.model.Usuario;
 import com.cmproject.regradenegocio.UsuarioRN;
 
@@ -26,8 +27,9 @@ public class UsuarioMB {
 	private Usuario usuarioLogado = new Usuario();
 	
 	private UsuarioRN usuarioRN = new UsuarioRN();
-
-	public void salvar(){
+	
+	public void salvar(TipoUsuarioENUM tipoUsuarioENUM){
+		usuario.setTipoUsuario(tipoUsuarioENUM);
 		UsuarioRN usuarioRN = new UsuarioRN();
 		if(usuarioRN.pesquisarCPF(usuario.getCpf()) || usuarioRN.pesquisarEmail(usuario.getEmail())){
 			FacesMessage mensagem = new FacesMessage("cpf informado já cadastrado.");
@@ -126,7 +128,14 @@ public class UsuarioMB {
 	public void setUsuarioRN(UsuarioRN usuarioRN) {
 		this.usuarioRN = usuarioRN;
 	}
-
+	
+	public TipoUsuarioENUM getUsuarioEnumColaborador(){
+		return TipoUsuarioENUM.COLABORADOR;
+	}
+	
+	public TipoUsuarioENUM getUsuarioEnumVisitante(){
+		return TipoUsuarioENUM.VISITANTE;
+	}
 	
 }
 
