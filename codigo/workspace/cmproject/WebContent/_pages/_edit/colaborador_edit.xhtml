@@ -12,37 +12,21 @@
 	<ui:define name="conteudo">
 		<b:container>
 			<b:well>
-				<h1>Cadastro de Colaborador</h1>
+				<h1>Cadastre-se gratuitamente</h1>
 				<h:form>
 					<p:growl id="growl" showDetail="true" sticky="true" />
 					<h:panelGrid columns="1" cellpadding="2">
 						<b:inputText value="#{usuarioMB.usuario.nome}" id="nome"
-							placeholder="Ex: Tarcísio Deschamps" required="true"
-							requiredMessage="Campo Obrigatório">
+							placeholder="Ex: Romero Brito" required="true"
+							requiredMessage="Campo Nome Obrigatório">
 							<f:facet name="prepend">
-								<h:outputText value="Nome: " />
-							</f:facet>
-						</b:inputText>
-
-						<b:inputText id="telefone" placeholder="apenas numeros!"
-							value="#{usuarioMB.usuario.telefone}" required="true"
-							requiredMessage="Campo Telefone Obrigatório">
-							<f:facet name="prepend">
-								<h:outputText value="Telefone: " />
-							</f:facet>
-						</b:inputText>
-
-						<b:inputText id="cpf" placeholder="apenas numeros!"
-							value="#{usuarioMB.usuario.cpf}" required="true"
-							requiredMessage="Campo CPF Obrigatório">
-							<f:facet name="prepend">
-								<h:outputText value="CPF: " />
+								<h:outputText value="Nome: " for="nome"/>
 							</f:facet>
 						</b:inputText>
 
 						<b:inputText id="email" placeholder="" required="true"
 							value="#{usuarioMB.usuario.email}"
-							requiredMessage="Campo E-mail Obrigatório">
+							requiredMessage="Insira um e-mail válido">
 							<f:facet name="prepend">
 								<h:outputText value="Email: " />
 							</f:facet>
@@ -50,36 +34,44 @@
 
 						<b:inputSecret id="senha" placeholder="" required="true"
 							value="#{usuarioMB.usuario.senha}"
-							requiredMessage="Campo Senha Obrigatório">
+							requiredMessage="Senha Obrigatória">
 							<f:facet name="prepend">
 								<h:outputText value="Senha: " />
 							</f:facet>
 						</b:inputSecret>
 
+						<b:inputText id="cpf" placeholder="apenas numeros!"
+							value="#{usuarioMB.usuario.cpf}" required="true"
+							requiredMessage="Insira seu CPF">
+							<f:facet name="prepend">
+								<h:outputText value="CPF: " />
+							</f:facet>
+						</b:inputText>
+
+						<b:inputText id="telefone" placeholder="apenas numeros!"
+							value="#{usuarioMB.usuario.telefone}" required="true"
+							requiredMessage="Insira um telefone">
+							<f:facet name="prepend">
+								<h:outputText value="Telefone: " />
+							</f:facet>
+							<f:ajax event="keypress" execute="telefone" />
+						</b:inputText>
+
 						<b:inputText id="endereco" placeholder="" required="true"
 							value="#{usuarioMB.usuario.endereco}"
-							requiredMessage="Campo Endereco Obrigatório">
+							requiredMessage="Insira um endereço">
 							<f:facet name="prepend">
 								<h:outputText value="Endereço: " />
 							</f:facet>
 						</b:inputText>
 
-						<b:selectOneMenu value="#{usuarioMB.usuario.tipoUsuario}">
-							<f:facet name="prepend">
-								<h:outputText value="Tipo Funcionário" />
-							</f:facet>
-							<f:selectItem itemLabel="Selecione" itemValue="" />
-							<f:selectItems value="#{usuarioMB.tipoUsuario" />
-						</b:selectOneMenu>
-
 						<h:panelGrid columns="2">
-							<b:commandButton value="Cadastrar" look="success" type="submit"
-								actionListener="#{usuarioMB.salvar}" />
-							<!-- <b:commandButton value="Limpar" look="danger" type="reset"/>  -->
+							<b:commandButton value="Cadastre-se" look="success" type="submit"
+								action="#{usuarioMB.salvar}" />
+							<!-- <b:commandButton value="Limpar" look="danger" type="reset" /> -->
 						</h:panelGrid>
 					</h:panelGrid>
 				</h:form>
-
 			</b:well>
 		</b:container>
 	</ui:define>
