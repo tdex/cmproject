@@ -14,68 +14,31 @@
 			<b:well>
 				<h1>Aluguél de veículo</h1>
 				<h:form>
+
 					<p:growl id="growl" showDetail="true" sticky="true" />
+
+					<!-- Os inputHidden vai setar os usuarios e os veiculos de forma oculta
+						 quando o veiculo for selecionado no dataTable -->
+					<h:inputHidden value="#{usuarioMB.usuarioLogado.id_visitante}" />
+					<h:inputHidden value="#{veiculoMB.selectedVeiculo.id_veiculo}" />
+
 					<h:panelGrid columns="1" cellpadding="2">
-						<b:inputText value="#{usuarioMB.usuario.nome}" id="nome"
-							placeholder="Ex: Tarcísio Deschamps" required="true"
-							requiredMessage="Campo Obrigatório">
-							<f:facet name="prepend">
-								<h:outputText value="Nome: " />
-							</f:facet>
+						<b:datepicker value="#{aluguelMB.aluguel.retirada}" id="nome" />
+						<f:facet name="prepend">
+							<h:outputText value="Retirada: " />
+						</f:facet>
 						</b:inputText>
 
-						<b:inputText id="telefone" placeholder="apenas numeros!"
-							value="#{usuarioMB.usuario.telefone}" required="true"
-							requiredMessage="Campo Telefone Obrigatório">
-							<f:facet name="prepend">
-								<h:outputText value="Telefone: " />
-							</f:facet>
+						<b:datepicker value="#{aluguelMB.aluguel.entrega}" id="nome" />
+						<f:facet name="prepend">
+							<h:outputText value="Entrega: " />
+						</f:facet>
 						</b:inputText>
-
-						<b:inputText id="cpf" placeholder="apenas numeros!"
-							value="#{usuarioMB.usuario.cpf}" required="true"
-							requiredMessage="Campo CPF Obrigatório">
-							<f:facet name="prepend">
-								<h:outputText value="CPF: " />
-							</f:facet>
-						</b:inputText>
-
-						<b:inputText id="email" placeholder="" required="true"
-							value="#{usuarioMB.usuario.email}"
-							requiredMessage="Campo E-mail Obrigatório">
-							<f:facet name="prepend">
-								<h:outputText value="Email: " />
-							</f:facet>
-						</b:inputText>
-
-						<b:inputSecret id="senha" placeholder="" required="true"
-							value="#{usuarioMB.usuario.senha}"
-							requiredMessage="Campo Senha Obrigatório">
-							<f:facet name="prepend">
-								<h:outputText value="Senha: " />
-							</f:facet>
-						</b:inputSecret>
-
-						<b:inputText id="endereco" placeholder="" required="true"
-							value="#{usuarioMB.usuario.endereco}"
-							requiredMessage="Campo Endereco Obrigatório">
-							<f:facet name="prepend">
-								<h:outputText value="Endereço: " />
-							</f:facet>
-						</b:inputText>
-
-						<b:selectOneMenu value="#{usuarioMB.usuario.tipoUsuario}">
-							<f:facet name="prepend">
-								<h:outputText value="Tipo Funcionário" />
-							</f:facet>
-							<f:selectItem itemLabel="Selecione" itemValue="" />
-							<f:selectItems value="#{usuarioMB.tipoUsuario" />
-						</b:selectOneMenu>
 
 						<h:panelGrid columns="2">
-							<b:commandButton value="Cadastrar" look="success" type="submit"
-								actionListener="#{usuarioMB.salvar}" />
-							<!-- <b:commandButton value="Limpar" look="danger" type="reset"/>  -->
+							<b:commandButton value="Alugar" look="success" type="submit"
+								actionListener="#{aluguelMB.save}" />
+							<b:commandButton value="Limpar" type="reset" />
 						</h:panelGrid>
 					</h:panelGrid>
 				</h:form>
