@@ -20,7 +20,7 @@
 							placeholder="Ex: Romero Brito" required="true"
 							requiredMessage="Campo Nome Obrigatório">
 							<f:facet name="prepend">
-								<h:outputText value="Nome: " for="nome"/>
+								<h:outputText value="Nome: " for="nome" />
 							</f:facet>
 						</b:inputText>
 
@@ -63,11 +63,12 @@
 							<f:facet name="prepend">
 								<h:outputText value="Endereço: " />
 							</f:facet>
-						</b:inputText>					
+						</b:inputText>
 
 						<h:panelGrid columns="2">
 							<b:commandButton value="Cadastrar" look="success" type="submit"
 								action="#{usuarioMB.salvar(usuarioMB.usuarioEnumColaborador)}" />
+							<b:commandButton value="Limpar" type="reset" />
 						</h:panelGrid>
 					</h:panelGrid>
 				</h:form>
