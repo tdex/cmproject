@@ -10,32 +10,28 @@
 
 <ui:composition template="../../main.xhtml">
 	<ui:define name="conteudo">
-		<b:container>
-			<h1>Nossos Veículos</h1>
-			<p:dataTable value="#{veiculoMB.listar()}" var="veiculo"
-				id="veiculoTable" widgetVar="dataTable" paginator="true" rows="10"
-				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-				rowsPerPageTemplate="5,10,20" rowKey="#{veiculo.id_veiculo}"
-				selectionMode="single">
 
-				<!-- p:ajax event="rowSelect" listener="#{alunoListMB.selectAluno}"
-						oncomplete="enableButtons();" />
-					<p:ajax event="page" listener="#{alunoListMB.unselectAluno}"
-						oncomplete="unselectRows();" />
-					<p:ajax event="rowUnselect" listener="#{alunoListMB.unselectAluno}"
-						oncomplete="disableButtons();" />
-						 -->
- 			
- 					<p:column headerText="Nome">
-						<h:outputText value="#{veiculo.nome}" />
-					</p:column> <p:column headerText="Modelo">
-						<h:outputText value="#{veiculo.modelo}" />
-					</p:column> <p:column headerText="Descrição">
-						<h:outputText value="#{veiculo.descricao}" />
-					</p:column> <p:column headerText="Imagem">
-						<img src="#{veiculo.imagem}" width="100%" />
-					</p:column>
-			</p:dataTable>
+		<b:container>
+			<div id="total_carros">
+				<b:row styleClass="show-grid">
+					<ui:repeat var="veiculo" value="#{veiculoMB.listar()}">
+						<b:column span="4" col-xs="12" col-sm="6">
+							<div id="carro_list">
+								<h1>
+									<h:outputText value="#{veiculo.nome}" />
+								</h1>
+								<h2>
+									<h:outputText value="#{veiculo.modelo}" />
+								</h2>
+								<img src="#{request.contextPath}/_resources/_img/cama.png" alt="" class="car_img"/>
+								<span> <h:outputText value="#{veiculo.descricao}" /></span>
+								<br />
+								<b:button value="Alugar"/>
+							</div>
+						</b:column>
+					</ui:repeat>
+				</b:row>
+			</div>
 		</b:container>
 	</ui:define>
 </ui:composition>

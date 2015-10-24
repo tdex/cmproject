@@ -42,3 +42,26 @@ body{
 span.input-group-addon:first-child{
 	width:100px;
 }
+
+#carro_list > h1, #carro_list > h2{
+	margin: 0;
+	padding: 0;
+}
+
+#carro_list > h1{
+	text-transform:uppercase;
+}
+
+#carro_list{
+	box-sizing: border-box;
+	padding: 0.3em;
+	background: #f0f0f0;
+	box-shadow: 0 1px 6px grey;
+	margin-top: 1.3em;
+	position: relative;
+}
+
+.car_img{
+	width: 100%;
+	position: static;
+}
