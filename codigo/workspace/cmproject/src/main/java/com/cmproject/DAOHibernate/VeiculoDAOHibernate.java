@@ -30,7 +30,7 @@ public class VeiculoDAOHibernate implements VeiculoDAO{
 
 	@Override
 	public void remove(Veiculo veiculo) {
-		
+		this.session.delete(veiculo);
 	}
 
 	@Override

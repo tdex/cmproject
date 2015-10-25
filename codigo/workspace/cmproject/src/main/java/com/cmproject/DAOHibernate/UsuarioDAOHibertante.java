@@ -35,8 +35,7 @@ public class UsuarioDAOHibertante implements UsuarioDAO{
 
 	@Override
 	public void remove(Usuario visitante) {
-		// TODO Auto-generated method stub
-		
+		this.sessao.delete(visitante);
 	}
 
 	@Override

@@ -31,8 +31,7 @@ public class AluguelDAOHibernate implements AluguelDAO{
 
 	@Override
 	public void remove(Aluguel aluguel) {
-		// TODO Auto-generated method stub
-		
+		this.session.delete(aluguel);
 	}
 
 	@Override
