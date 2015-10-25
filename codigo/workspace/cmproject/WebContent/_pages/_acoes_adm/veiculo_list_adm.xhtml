@@ -11,39 +11,40 @@
 <ui:composition template="../../main.xhtml">
 	<ui:define name="conteudo">
 		<b:container>
-			<h1>Veículos cadastrados</h1>
-			<p:dataTable value="#{veiculoMB.listar()}" var="veiculo"
-				id="veiculoTable" widgetVar="dataTable" paginator="true" rows="10"
-				paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-				rowsPerPageTemplate="5,10,20" rowKey="#{veiculo.id_veiculo}"
-				selectionMode="single">
+			<h:form>
+				<h1>Veículos cadastrados</h1>
+				<p:contextMenu for="veiculoTable">
+					<p:menuitem value="Delete" update="veiculoTable"
+						icon="ui-icon-close" action="#{veiculoMB.remover}" />
+					
+				</p:contextMenu>
+				<p:dataTable value="#{veiculoMB.listar()}" var="veiculo"
+					id="veiculoTable" widgetVar="dataTable" paginator="true" rows="10"
+					paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+					rowsPerPageTemplate="5,10,20" rowKey="#{veiculo.id_veiculo}"
+					selectionMode="single" selection="#{veiculoMB.selectedVeiculo}">
 
-				<!-- <p:ajax event="rowSelect" listener="#{alunoListMB.selectAluno}"
-						oncomplete="enableButtons();" />
-					<p:ajax event="page" listener="#{alunoListMB.unselectAluno}"
-						oncomplete="unselectRows();" />
-					<p:ajax event="rowUnselect" listener="#{alunoListMB.unselectAluno}"
-						oncomplete="disableButtons();" />
- -->
-				<p:column headerText="Nome">
-					<h:outputText value="#{veiculo.nome}" />
-				</p:column>
-				<p:column headerText="Modelo">
-					<h:outputText value="#{veiculo.modelo}" />
-				</p:column>
-				<p:column headerText="Descrição">
-					<h:outputText value="#{veiculo.descricao}" />
-				</p:column>
-				<p:column headerText="Imagem">
-					<img src="#{veiculo.imagem}" width="100%" />
-				</p:column>
-				<p:column headerText="Tipo">
-					<h:outputText value="#{veiculo.tipo}" />
-				</p:column>
-				<p:column headerText="Status">
-					<h:outputText value="#{veiculo.status}" />
-				</p:column>
-			</p:dataTable>
+
+					<p:column headerText="Nome">
+						<h:outputText value="#{veiculo.nome}" />
+					</p:column>
+					<p:column headerText="Modelo">
+						<h:outputText value="#{veiculo.modelo}" />
+					</p:column>
+					<p:column headerText="Descrição">
+						<h:outputText value="#{veiculo.descricao}" />
+					</p:column>
+					<p:column headerText="Imagem">
+						<img src="#{veiculo.imagem}" width="100%" />
+					</p:column>
+					<p:column headerText="Tipo">
+						<h:outputText value="#{veiculo.tipo}" />
+					</p:column>
+					<p:column headerText="Status">
+						<h:outputText value="#{veiculo.status}" />
+					</p:column>
+				</p:dataTable>
+			</h:form>
 		</b:container>
 	</ui:define>
 </ui:composition>

@@ -57,6 +57,8 @@ public class VeiculoMB{
 	public void remover() {
 		if (this.selectedVeiculo != null) {
 			this.veiculoNR.deletar(selectedVeiculo);
+		} else{
+			System.out.println("nenhum veiculo selecionado");
 		}
 	}
 	
