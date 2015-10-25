@@ -12,13 +12,11 @@
 	<ui:define name="conteudo">
 		<b:container>
 			<b:well>
-				<h1>Aluguél de veículo</h1>
+				<h1>Aluguel de veículo</h1>
 				<h:form>
 
 					<p:growl id="growl" showDetail="true" sticky="true" />
 
-					<!-- Os inputHidden vai setar os usuarios e os veiculos de forma oculta
-						 quando o veiculo for selecionado no dataTable -->
 					<h:inputHidden value="#{usuarioMB.usuarioLogado.id_visitante}" />
 					<h:inputHidden value="#{veiculoMB.selectedVeiculo.id_veiculo}" />
 
@@ -38,7 +36,6 @@
 						<h:panelGrid columns="2">
 							<b:commandButton value="Alugar" look="success" type="submit"
 								actionListener="#{aluguelMB.save}" />
-							<!--b:commandButton value="Limpar" type="reset" /-->
 						</h:panelGrid>
 					</h:panelGrid>
 				</h:form>
