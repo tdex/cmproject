@@ -3,13 +3,15 @@ package com.cmproject.DAOHibernate;
 import java.util.List;
 
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 
 import com.cmproject.DAO.VeiculoDAO;
 import com.cmproject.model.Veiculo;
 
 public class VeiculoDAOHibernate implements VeiculoDAO{
 
-	private Session session;
+	//private SessionFactory sessionFactory;
+	private Session session ;
 	
 	@Override
 	public void save(Veiculo veiculo) {
@@ -30,7 +32,9 @@ public class VeiculoDAOHibernate implements VeiculoDAO{
 
 	@Override
 	public void remove(Veiculo veiculo) {
+//		this.session = sessionFactory.openSession();
 		this.session.delete(veiculo);
+		this.session.flush();
 	}
 
 	@Override
