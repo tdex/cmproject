@@ -23,7 +23,7 @@ public class VeiculoMB{
 	
 	private Veiculo selectedVeiculo = new Veiculo();
 	
-	private VeiculoNR veiculoNR = new VeiculoNR();
+	private VeiculoNR veiculoNR;
 	
 	public void salvar(){
 		VeiculoNR veiculoNR = new VeiculoNR();
@@ -34,7 +34,7 @@ public class VeiculoMB{
 	}
 	
 	public List<Veiculo> listar(){
-		VeiculoNR veiculoNR = new VeiculoNR();
+		veiculoNR = new VeiculoNR();
 		return veiculoNR.listar_veiculos();
 	}
 	
