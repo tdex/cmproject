@@ -26,7 +26,7 @@ public class UsuarioMB {
 	
 	private Usuario usuarioLogado = new Usuario();
 	
-	private UsuarioRN usuarioRN = new UsuarioRN();
+	private UsuarioRN usuarioRN;
 	
 	public void salvar(TipoUsuarioENUM tipoUsuarioENUM){
 		usuario.setTipoUsuario(tipoUsuarioENUM);
@@ -61,7 +61,7 @@ public class UsuarioMB {
 	}
 
 	public List<Usuario> listar(){
-		UsuarioRN usuarioRN = new UsuarioRN();
+		usuarioRN = new UsuarioRN();
 		return usuarioRN.listarUsuario();
 	}
 
