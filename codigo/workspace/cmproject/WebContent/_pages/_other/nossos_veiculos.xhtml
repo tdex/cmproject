@@ -14,6 +14,7 @@
 		<b:container>
 			<div id="total_carros">
 				<b:row styleClass="show-grid">
+				<!-- 
 					<ui:repeat var="veiculo" value="#{veiculoMB.listar()}">
 						<b:column span="4" col-xs="12" col-sm="6">
 							<div id="carro_list">
@@ -30,6 +31,33 @@
 							</div>
 						</b:column>
 					</ui:repeat>
+					 -->
+					 <h1>
+						Nossos Veículos
+					 </h1>
+					 <p:dataTable value="#{veiculoMB.listar()}" var="veiculo"
+						id="veiculoTable" widgetVar="dataTable" paginator="true" rows="10"
+						paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+						rowsPerPageTemplate="5,10,20" rowKey="#{veiculo.id_veiculo}"
+						selectionMode="single" selection="#{veiculoMB.selectedVeiculo}">
+
+
+						<p:column headerText="Imagem">
+							<img src="#{veiculo.imagem}" width="100%" />
+						</p:column>
+						<p:column headerText="Nome">
+							<h:outputText value="#{veiculo.nome}" />
+						</p:column>
+						<p:column headerText="Modelo">
+							<h:outputText value="#{veiculo.modelo}" />
+						</p:column>
+						<p:column headerText="Descrição">
+							<h:outputText value="#{veiculo.descricao}" />
+						</p:column>
+						<p:column headerText="Ações">
+							<b:button value="asdf"/>
+						</p:column>
+					</p:dataTable>
 				</b:row>
 			</div>
 		</b:container>
