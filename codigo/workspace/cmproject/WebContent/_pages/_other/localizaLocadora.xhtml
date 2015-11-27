@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui" template="/main.xhtml">
+
+	<ui:define name="conteudo">
+		<div id="content">
+			<b:container>
+				<b:jumbotron id="locadora">
+					<h2>Nossa Localização</h2>
+					<div id="googleMap" style="width: 500px; height: 380px;"></div>
+					<script>
+						function initialize() {
+							var mapProp = {
+								center : new google.maps.LatLng(51.508742,
+										-0.120850),
+								zoom : 5,
+								mapTypeId : google.maps.MapTypeId.ROADMAP
+							};
+							var map = new google.maps.Map(document
+									.getElementById("googleMap"), mapProp);
+						}
+						google.maps.event.addDomListener(window, 'load',
+								initialize);
+					</script>
+				</b:jumbotron>
+			</b:container>
+		</div>
+	</ui:define>
+
+</ui:composition>
