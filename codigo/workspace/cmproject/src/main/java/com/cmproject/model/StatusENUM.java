@@ -1,7 +1,7 @@
 package com.cmproject.model;
 
 public enum StatusENUM {
-	Disponível(1), Indisponível(2);
+	Disponível(0), Indisponível(1);
 	
 	public int valor;
 	

@@ -30,6 +30,14 @@
 							<h:outputText value="Modelo: " />
 						</f:facet>
 					</b:inputText>
+					
+					<b:inputText id="valor" placeholder=""
+						value="#{veiculoMB.veiculo.valor}" required="true"
+						requiredMessage="Campo Obrigatório">
+						<f:facet name="prepend">
+							<h:outputText value="Valor: " />
+						</f:facet>
+					</b:inputText>
 
 					<b:selectOneMenu required="true" value="#{veiculoMB.veiculo.tipo}">
 						<f:selectItem itemLabel="Selecione" itemValue="" />
@@ -47,19 +55,25 @@
 							<h:outputText value="Status do Veículo" />
 						</f:facet>
 					</b:selectOneMenu>
-					
+
 					<h:outputLabel>Descrição</h:outputLabel>
 					<p:inputTextarea rows="6" cols="33"
 						value="#{veiculoMB.veiculo.descricao}" />
-					
+
 					<h:outputLabel value="Imagem:" />
 					<p:fileUpload mode="simple" value="#{veiculoMB.veiculo.imagem}" />
+
 					<br />
 					<h:panelGrid columns="2">
 						<b:commandButton value="Cadastrar" look="success" type="submit"
 							action="#{veiculoMB.salvar}" />
-						<!--b:commandButton value="Limpar" type="reset"/--> 
+						<!--b:commandButton value="Limpar" type="reset"/-->
 					</h:panelGrid>
+
+					<!--  b:datepicker mode="icon-popup" showButtonPanel="true" changeMonth="true" changeYear="true" 
+						
+					</b:datepicker> -->
+
 				</h:panelGrid>
 			</h:form>
 

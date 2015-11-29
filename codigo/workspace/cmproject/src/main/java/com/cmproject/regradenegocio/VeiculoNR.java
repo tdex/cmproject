@@ -25,4 +25,12 @@ public class VeiculoNR {
 	public void deletar(Veiculo veiculo) {
 		this.veiculoDAO.remove(veiculo);
 	}
+	
+	public Veiculo getVeiculo(String nome) {
+		return this.veiculoDAO.getVeiculo(nome);
+	}
+	
+	public boolean verificarStatus(String nome) {
+		return this.veiculoDAO.verificarStatus(nome);
+	}
 }

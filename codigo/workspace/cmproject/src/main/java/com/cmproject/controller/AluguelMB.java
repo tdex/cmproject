@@ -1,59 +1,53 @@
 package com.cmproject.controller;
 
-import java.util.List;
-
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
-import com.cmproject.DAO.AluguelDAO;
 import com.cmproject.model.Aluguel;
+import com.cmproject.model.Veiculo;
 import com.cmproject.regradenegocio.AluguelRN;
 
-@ManagedBean
+@ManagedBean (name="aluguelMB")
 @SessionScoped
-public class AluguelMB implements AluguelDAO{
+public class AluguelMB{
 	
+	private Aluguel aluguel = new Aluguel();
 	
-	private Aluguel aluguel;
+	private AluguelRN aluguelRN;
 	
-	private AluguelRN aluguelRN = new AluguelRN();
-	
-	public AluguelMB() {
-		this.aluguel = new Aluguel();
-	}
-
-	@Override
-	public void save(Aluguel aluguel) {
-		this.aluguelRN.salvar(aluguel);
+	public void salvar(String veiculo) {
+		AluguelRN aluguelRN = new AluguelRN();
+//		aluguelRN.salvar(veiculo);
+		System.out.println(veiculo);
 		FacesMessage mensagem = new FacesMessage("Alguel realizado com sucesso!");
 		FacesContext context = FacesContext.getCurrentInstance();
 		context.addMessage(null, mensagem);
 	}
 
-	@Override
-	public Aluguel getAluguel(long id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Aluguel> list() {
-		return this.aluguelRN.listar_alugueis();
-	}
-
-	@Override
-	public void remove(Aluguel aluguel) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void update(Aluguel aluguel) {
-		// TODO Auto-generated method stub
-		
-	}
+//	@Override
+//	public Aluguel getAluguel(long id) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//
+//	@Override
+//	public List<Aluguel> list() {
+//		return this.aluguelRN.listar_alugueis();
+//	}
+//
+//	@Override
+//	public void remove(Aluguel aluguel) {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//	@Override
+//	public void update(Aluguel aluguel) {
+//		// TODO Auto-generated method stub
+//		
+//	}
 
 	public Aluguel getAluguel() {
 		return aluguel;

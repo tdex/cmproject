@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.cmproject.DAO.AluguelDAO;
 import com.cmproject.model.Aluguel;
+import com.cmproject.model.Veiculo;
 import com.cmproject.util.DAOFactory;
 
 public class AluguelRN {
@@ -14,8 +15,8 @@ public class AluguelRN {
 		this.aluguelDAO = DAOFactory.criaAluguelDAO();
 	}
 	
-	public void salvar (Aluguel aluguel) {
-		this.aluguelDAO.save(aluguel);
+	public void salvar (Veiculo veiculo) {
+		this.aluguelDAO.save(veiculo);
 	}
 
 	public void deletar (Aluguel aluguel) {

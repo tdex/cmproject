@@ -1,7 +1,7 @@
 package com.cmproject.model;
 
 public enum TipoVeiculoENUM {
-	Carro(1), Moto(2), Caminhão(3), Ônibus(4);
+	Carro(0), Moto(1), Caminhão(2), Ônibus(3);
 	
 	public int valor;
 	

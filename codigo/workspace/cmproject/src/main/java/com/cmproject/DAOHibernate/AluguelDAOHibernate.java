@@ -6,14 +6,15 @@ import org.hibernate.Session;
 
 import com.cmproject.DAO.AluguelDAO;
 import com.cmproject.model.Aluguel;
+import com.cmproject.model.Veiculo;
 
 public class AluguelDAOHibernate implements AluguelDAO{
 	
 	private Session session;
 
 	@Override
-	public void save(Aluguel aluguel) {
-		this.session.save(aluguel);
+	public void save(Veiculo veiculo) {
+		this.session.save(veiculo);
 	}
 
 	@Override

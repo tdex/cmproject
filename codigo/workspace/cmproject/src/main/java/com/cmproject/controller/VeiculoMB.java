@@ -1,5 +1,6 @@
 package com.cmproject.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.List;
 
@@ -8,6 +9,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
+import org.primefaces.context.RequestContext;
 import org.primefaces.event.SelectEvent;
 
 import com.cmproject.model.StatusENUM;
@@ -31,6 +33,27 @@ public class VeiculoMB{
 		FacesMessage mensagem = new FacesMessage("Cadastrado com sucesso!");
 		FacesContext context = FacesContext.getCurrentInstance();
 		context.addMessage(null, mensagem);
+	}
+	
+	public String alugar(){
+		VeiculoNR veiculoNR = new VeiculoNR();
+		String nome = (String) FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("nome");
+		Veiculo veiculo = new Veiculo();
+		veiculo = veiculoNR.getVeiculo(nome);
+		veiculo.setStatus(StatusENUM.Indisponível);
+		veiculo.setDataInicio(this.veiculo.getDataInicio());
+		veiculo.setDataFinal(this.veiculo.getDataFinal());
+		veiculoNR.salvar(veiculo);
+		FacesMessage mensagem = new FacesMessage("Veículo alugado com sucesso!");
+		FacesContext context = FacesContext.getCurrentInstance();
+		context.addMessage(null, mensagem);
+		return "";
+	}
+	
+	public boolean verficarStatus(String nome){
+		VeiculoNR veiculoNR = new VeiculoNR();
+		boolean retorno = veiculoNR.verificarStatus(nome);
+		return retorno;
 	}
 	
 	public List<Veiculo> listar(){
@@ -61,6 +84,19 @@ public class VeiculoMB{
 			System.out.println("nenhum veiculo selecionado");
 		}
 	}
+	
+	public void onDateSelect(SelectEvent event) {
+        FacesContext facesContext = FacesContext.getCurrentInstance();
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+        facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Date Selected", format.format(event.getObject())));
+    }
+     
+    public void click() {
+        RequestContext requestContext = RequestContext.getCurrentInstance();
+         
+        requestContext.update("form:display");
+        requestContext.execute("PF('dlg').show()");
+    }
 	
 	//getter e setter
 	public Veiculo getVeiculo() {

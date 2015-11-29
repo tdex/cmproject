@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.Session;
 
 import com.cmproject.DAO.VeiculoDAO;
+import com.cmproject.model.StatusENUM;
 import com.cmproject.model.Veiculo;
 
 public class VeiculoDAOHibernate implements VeiculoDAO{
@@ -18,15 +19,35 @@ public class VeiculoDAOHibernate implements VeiculoDAO{
 	}
 
 	@Override
-	public Veiculo getVeiculo(long id) {
-		return null;
-	}
-
-	@Override
 	public List<Veiculo> list() {
 		@SuppressWarnings("unchecked")
 		List<Veiculo> list = getSession().createCriteria(Veiculo.class).list();
 		return list;
+	}
+	
+	@Override
+	public Veiculo getVeiculo(String nome) {
+		@SuppressWarnings("unchecked")
+		List<Veiculo> list = getSession().createCriteria(Veiculo.class).list();
+		Veiculo returnVeiculo = new Veiculo();
+		for (Veiculo veiculo : list) {
+			if(veiculo.getNome().equals(nome)){
+				return returnVeiculo = veiculo;
+			} 
+		} 
+		return returnVeiculo;
+	}
+	
+	public boolean verificarStatus(String nome) {
+		boolean retornoBoolean = false;
+		@SuppressWarnings("unchecked")
+		List<Veiculo> list = getSession().createCriteria(Veiculo.class).list();
+		for (Veiculo veiculo : list) {
+			if(veiculo.getNome().equals(nome) && veiculo.getStatus().equals(StatusENUM.Indisponível)){
+				return retornoBoolean = true;
+			} 
+		} 
+		return retornoBoolean;
 	}
 
 	@Override

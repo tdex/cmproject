@@ -1,5 +1,7 @@
 package com.cmproject.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -30,9 +32,13 @@ public class Veiculo {
 	private StatusENUM status; //disponivel ou não
 	@Column(nullable = false, length = 600)
 	private String descricao;
+	@Column
+	private String dataInicio;
+	@Column
+	private String dataFinal;
+	@Column
+	private Float valor;
 	
-	
-
 	public long getId_veiculo() {
 		return idVeiculo;
 	}
@@ -75,7 +81,22 @@ public class Veiculo {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	
-	
-	
+	public String getDataInicio() {
+		return dataInicio;
+	}
+	public void setDataInicio(String dataInicio) {
+		this.dataInicio = dataInicio;
+	}
+	public String getDataFinal() {
+		return dataFinal;
+	}
+	public void setDataFinal(String dataFinal) {
+		this.dataFinal = dataFinal;
+	}
+	public Float getValor() {
+		return valor;
+	}
+	public void setValor(Float valor) {
+		this.valor = valor;
+	}
 }
