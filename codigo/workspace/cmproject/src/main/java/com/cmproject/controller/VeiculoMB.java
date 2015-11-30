@@ -47,7 +47,7 @@ public class VeiculoMB{
 		FacesMessage mensagem = new FacesMessage("Veículo alugado com sucesso!");
 		FacesContext context = FacesContext.getCurrentInstance();
 		context.addMessage(null, mensagem);
-		return "";
+		return "/_pages/_other/veiculo_sucesso.xhtml";
 	}
 	
 	public boolean verficarStatus(String nome){
