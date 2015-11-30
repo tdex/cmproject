@@ -33,4 +33,9 @@ public class VeiculoNR {
 	public boolean verificarStatus(String nome) {
 		return this.veiculoDAO.verificarStatus(nome);
 	}
+	
+	public String verficarLabelValor(String nome) {
+		return this.veiculoDAO.verficarLabelValor(nome);
+	}
+	
 }

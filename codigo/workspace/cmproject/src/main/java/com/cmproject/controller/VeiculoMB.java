@@ -56,6 +56,12 @@ public class VeiculoMB{
 		return retorno;
 	}
 	
+	public String verficarLabelValor(String nome){
+		VeiculoNR veiculoNR = new VeiculoNR();
+		String retorno = veiculoNR.verficarLabelValor(nome);
+		return retorno;
+	}
+	
 	public List<Veiculo> listar(){
 		veiculoNR = new VeiculoNR();
 		return veiculoNR.listar_veiculos();

@@ -27,11 +27,11 @@
 								</h2>
 								<img src="#{request.contextPath}/_resources/_img/cama.png" alt="" class="car_img"/>
 								<br />
-								<h2>
-									<h:outputText value="Valor: " />
+								<h3>
+									<h:outputText value="#{veiculoMB.verficarLabelValor(veiculo.nome)}" />
 									<h:outputText value="#{veiculo.valor}" />
-									<h:outputText value="R$" />
-								</h2>
+									<h:outputText value=",00" />
+								</h3>
 								<b:commandButton disabled="#{veiculoMB.verficarStatus(veiculo.nome)}" value="Alugar" action="/_pages/_edit/aluguel.xhtml"/>
 							</div>
 						</b:column>

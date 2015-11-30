@@ -11,4 +11,5 @@ public interface VeiculoDAO {
 	public void remove(Veiculo veiculo);
 	public void update(Veiculo veiculo);
 	public boolean verificarStatus(String nome);
+	public String verficarLabelValor(String nome);
 }

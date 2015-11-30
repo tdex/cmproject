@@ -1,7 +1,5 @@
 package com.cmproject.model;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -37,7 +35,9 @@ public class Veiculo {
 	@Column
 	private String dataFinal;
 	@Column
-	private Float valor;
+	private long valor;
+	@Column
+	private long valorPromocao;
 	
 	public long getId_veiculo() {
 		return idVeiculo;
@@ -93,10 +93,16 @@ public class Veiculo {
 	public void setDataFinal(String dataFinal) {
 		this.dataFinal = dataFinal;
 	}
-	public Float getValor() {
-		return valor;
+	public long getValorPromocao() {
+		return valorPromocao;
 	}
-	public void setValor(Float valor) {
+	public void setValorPromocao(long valorPromocao) {
+		this.valorPromocao = valorPromocao;
+	}
+	public void setValor(long valor) {
 		this.valor = valor;
+	}
+	public long getValor() {
+		return valor;
 	}
 }

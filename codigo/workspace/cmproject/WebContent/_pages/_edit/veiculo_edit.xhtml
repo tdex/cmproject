@@ -30,12 +30,20 @@
 							<h:outputText value="Modelo: " />
 						</f:facet>
 					</b:inputText>
-					
+
 					<b:inputText id="valor" placeholder=""
 						value="#{veiculoMB.veiculo.valor}" required="true"
 						requiredMessage="Campo Obrigatório">
 						<f:facet name="prepend">
-							<h:outputText value="Valor: " />
+							<h:outputText value="Valor: R$" />
+						</f:facet>
+					</b:inputText>
+					
+					<b:inputText id="valorPromocao" placeholder=""
+						value="#{veiculoMB.veiculo.valorPromocao}" required="true"
+						requiredMessage="Campo Obrigatório">
+						<f:facet name="prepend">
+							<h:outputText value="Valor da promoção: R$" />
 						</f:facet>
 					</b:inputText>
 
@@ -59,9 +67,6 @@
 					<h:outputLabel>Descrição</h:outputLabel>
 					<p:inputTextarea rows="6" cols="33"
 						value="#{veiculoMB.veiculo.descricao}" />
-
-					<h:outputLabel value="Imagem:" />
-					<p:fileUpload mode="simple" value="#{veiculoMB.veiculo.imagem}" />
 
 					<br />
 					<h:panelGrid columns="2">

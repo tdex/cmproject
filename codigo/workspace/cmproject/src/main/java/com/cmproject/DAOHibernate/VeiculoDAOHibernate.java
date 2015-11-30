@@ -49,6 +49,19 @@ public class VeiculoDAOHibernate implements VeiculoDAO{
 		} 
 		return retornoBoolean;
 	}
+	
+	public String verficarLabelValor(String nome) {
+		String retornoLabelValor = "Valor: R$ ";
+		@SuppressWarnings("unchecked")
+		List<Veiculo> list = getSession().createCriteria(Veiculo.class).list();
+		for (Veiculo veiculo : list) {
+			if(veiculo.getNome().equals(nome) && veiculo.getValorPromocao() != 0){
+				return retornoLabelValor = "Valor promocional: R$ ";
+			} 
+		} 
+		return retornoLabelValor;
+	}
+	
 
 	@Override
 	public void remove(Veiculo veiculo) {
