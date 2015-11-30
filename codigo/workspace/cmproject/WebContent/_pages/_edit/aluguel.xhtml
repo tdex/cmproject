@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="../../main.xhtml">
+	<ui:define name="conteudo">
+		<b:container>
+			<b:well>
+				<h1>Alugar este veículo</h1>
+				<h:form>
+
+					<p:growl id="growl" showDetail="true" sticky="true" />
+
+
+					<img src="#{request.contextPath}/_resources/_img/cama.png" alt=""
+						class="car_img" />
+					<br />
+
+					<h4>
+						<h:outputText value="Nome: " />
+						<h:outputText value="#{veiculo.nome}" />
+					</h4>
+					<h4>
+						<h:outputText value="Modelo: " />
+						<h:outputText value="#{veiculo.modelo}" />
+					</h4>
+					<h4>
+						<h:outputText value="Tipo: " />
+						<h:outputText value="#{veiculo.tipo}" />
+					</h4>
+					<h4>
+						<h:outputText value="Descrição: " />
+						<h:outputText value="#{veiculo.descricao}" />
+					</h4>
+					<h4>
+						<h:outputText value="Valor: " />
+						<h:outputText value="#{veiculo.valor}" />
+					</h4>
+
+					<h4>
+						<h:outputText value="Data de retirada " />
+						<p:inputMask value="#{veiculoMB.veiculo.dataInicio}"
+							mask="99/99/9999" />
+					</h4>
+
+					<h4>
+						<h:outputText value="Data de devolução " />
+						<p:inputMask value="#{veiculoMB.veiculo.dataFinal}"
+							mask="99/99/9999" />
+					</h4>
+
+					<h4>
+						<h:commandButton value="Confirmar aluguel"
+							action="#{veiculoMB.alugar}">
+							<f:param name="nome" value="#{veiculo.nome}" />
+						</h:commandButton>
+					</h4>
+
+				</h:form>
+			</b:well>
+		</b:container>
+	</ui:define>
+</ui:composition>
+</html>
