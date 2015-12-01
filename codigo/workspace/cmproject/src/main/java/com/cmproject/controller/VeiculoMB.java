@@ -1,5 +1,6 @@
 package com.cmproject.controller;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.List;
@@ -22,11 +23,11 @@ import com.cmproject.regradenegocio.VeiculoNR;
 public class VeiculoMB{
 
 	private Veiculo veiculo = new Veiculo();
-	
+
 	private Veiculo selectedVeiculo = new Veiculo();
-	
+
 	private VeiculoNR veiculoNR;
-	
+
 	public void salvar(){
 		VeiculoNR veiculoNR = new VeiculoNR();
 		veiculoNR.salvar(veiculo);
@@ -34,8 +35,8 @@ public class VeiculoMB{
 		FacesContext context = FacesContext.getCurrentInstance();
 		context.addMessage(null, mensagem);
 	}
-	
-	public String alugar(){
+
+	public String alugar() throws ParseException{
 		VeiculoNR veiculoNR = new VeiculoNR();
 		String nome = (String) FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("nome");
 		Veiculo veiculo = new Veiculo();
@@ -47,26 +48,27 @@ public class VeiculoMB{
 		FacesMessage mensagem = new FacesMessage("Veículo alugado com sucesso!");
 		FacesContext context = FacesContext.getCurrentInstance();
 		context.addMessage(null, mensagem);
-		return "/_pages/_other/veiculo_sucesso.xhtml";
+		return "/_pages/_other/alugado_sucesso.xhtml";
+
 	}
-	
+
 	public boolean verficarStatus(String nome){
 		VeiculoNR veiculoNR = new VeiculoNR();
 		boolean retorno = veiculoNR.verificarStatus(nome);
 		return retorno;
 	}
-	
+
 	public String verficarLabelValor(String nome){
 		VeiculoNR veiculoNR = new VeiculoNR();
 		String retorno = veiculoNR.verficarLabelValor(nome);
 		return retorno;
 	}
-	
+
 	public List<Veiculo> listar(){
 		veiculoNR = new VeiculoNR();
 		return veiculoNR.listar_veiculos();
 	}
-	
+
 	public void selectVeiculo(SelectEvent evt){
 		try {
 			if (evt.getObject() != null) {
@@ -78,11 +80,11 @@ public class VeiculoMB{
 			System.out.println(e.getMessage());
 		}
 	}
-	
+
 	public void unselectVeiculo(){
 		this.selectedVeiculo = null;
 	}
-	
+
 	public void remover() {
 		if (this.selectedVeiculo != null) {
 			this.veiculoNR.deletar(selectedVeiculo);
@@ -90,20 +92,20 @@ public class VeiculoMB{
 			System.out.println("nenhum veiculo selecionado");
 		}
 	}
-	
+
 	public void onDateSelect(SelectEvent event) {
-        FacesContext facesContext = FacesContext.getCurrentInstance();
-        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-        facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Date Selected", format.format(event.getObject())));
-    }
-     
-    public void click() {
-        RequestContext requestContext = RequestContext.getCurrentInstance();
-         
-        requestContext.update("form:display");
-        requestContext.execute("PF('dlg').show()");
-    }
-	
+		FacesContext facesContext = FacesContext.getCurrentInstance();
+		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+		facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Date Selected", format.format(event.getObject())));
+	}
+
+	public void click() {
+		RequestContext requestContext = RequestContext.getCurrentInstance();
+
+		requestContext.update("form:display");
+		requestContext.execute("PF('dlg').show()");
+	}
+
 	//getter e setter
 	public Veiculo getVeiculo() {
 		return veiculo;
@@ -136,5 +138,5 @@ public class VeiculoMB{
 	public void setVeiculoNR(VeiculoNR veiculoNR) {
 		this.veiculoNR = veiculoNR;
 	}
-	
+
 }
