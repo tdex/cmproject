@@ -16,38 +16,31 @@ public class AluguelMB{
 	private Aluguel aluguel = new Aluguel();
 	
 	private AluguelRN aluguelRN;
-	
-	public void salvar(String veiculo) {
+		
+	public void salvar(Veiculo veiculo) {
 		AluguelRN aluguelRN = new AluguelRN();
-//		aluguelRN.salvar(veiculo);
+		aluguelRN.salvar(veiculo);
 		System.out.println(veiculo);
 		FacesMessage mensagem = new FacesMessage("Alguel realizado com sucesso!");
 		FacesContext context = FacesContext.getCurrentInstance();
 		context.addMessage(null, mensagem);
 	}
-
-//	@Override
-//	public Aluguel getAluguel(long id) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public List<Aluguel> list() {
-//		return this.aluguelRN.listar_alugueis();
-//	}
-//
-//	@Override
-//	public void remove(Aluguel aluguel) {
-//		// TODO Auto-generated method stub
-//		
-//	}
-//
-//	@Override
-//	public void update(Aluguel aluguel) {
-//		// TODO Auto-generated method stub
-//		
-//	}
+	
+	public void deletar(Aluguel aluguel) {
+		AluguelRN aluguelRN = new AluguelRN();
+		aluguelRN.deletar(aluguel);
+		FacesMessage mensagem = new FacesMessage("Alguel deletado com sucesso!");
+		FacesContext context = FacesContext.getCurrentInstance();
+		context.addMessage(null, mensagem);
+	}
+	
+	public void listar_alugueis() {
+		AluguelRN aluguelRN = new AluguelRN();
+		aluguelRN.listar_alugueis();
+		FacesMessage mensagem = new FacesMessage("Algueis listados");
+		FacesContext context = FacesContext.getCurrentInstance();
+		context.addMessage(null, mensagem);
+	}
 
 	public Aluguel getAluguel() {
 		return aluguel;
