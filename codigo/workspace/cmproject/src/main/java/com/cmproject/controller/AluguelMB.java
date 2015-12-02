@@ -17,7 +17,7 @@ public class AluguelMB{
 	
 	private AluguelRN aluguelRN;
 		
-	public void salvar(Veiculo veiculo) {
+	public void alugar(Veiculo veiculo) {
 		AluguelRN aluguelRN = new AluguelRN();
 		aluguelRN.salvar(veiculo);
 		System.out.println(veiculo);
