@@ -17,25 +17,30 @@ import com.cmproject.regradenegocio.UsuarioRN;
 @SessionScoped
 public class UsuarioMB {
 
-	
+
 	private boolean loggedIn;
 
 	private Usuario usuario = new Usuario();
-	
+
 	private Usuario selectedUsuario = new Usuario();
-	
+
 	private Usuario usuarioLogado = new Usuario();
-	
+
 	private UsuarioRN usuarioRN;
-	
+
 	public void salvar(TipoUsuarioENUM tipoUsuarioENUM){
 		usuario.setTipoUsuario(tipoUsuarioENUM);
 		UsuarioRN usuarioRN = new UsuarioRN();
-		if(usuarioRN.pesquisarCPF(usuario.getCpf()) || usuarioRN.pesquisarEmail(usuario.getEmail())){
+		if(usuarioRN.pesquisarCPF(usuario.getCpf())){
 			FacesMessage mensagem = new FacesMessage("cpf informado já cadastrado.");
 			FacesContext context = FacesContext.getCurrentInstance();
 			context.addMessage(null, mensagem);
-		} else {
+		} else if(usuarioRN.pesquisarEmail(usuario.getEmail())){
+			FacesMessage mensagem = new FacesMessage("email informado já cadastrado.");
+			FacesContext context = FacesContext.getCurrentInstance();
+			context.addMessage(null, mensagem);
+		} 
+		else {
 			usuarioRN.salvar(usuario);
 			FacesMessage mensagem = new FacesMessage("Cadastrado com sucesso!");
 			FacesContext context = FacesContext.getCurrentInstance();
@@ -76,18 +81,18 @@ public class UsuarioMB {
 			System.out.println(e.getMessage());
 		}
 	}
-	
+
 	public void unselectUsuario() {
 		this.selectedUsuario = null;
 	}
-	
+
 	public void deletar(){
 		if (this.selectedUsuario != null) {
 			this.usuarioRN.deletar(selectedUsuario);
 		}
 	}
-	
-	
+
+
 	//getter e setter
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
@@ -128,15 +133,15 @@ public class UsuarioMB {
 	public void setUsuarioRN(UsuarioRN usuarioRN) {
 		this.usuarioRN = usuarioRN;
 	}
-	
+
 	public TipoUsuarioENUM getUsuarioEnumColaborador(){
 		return TipoUsuarioENUM.COLABORADOR;
 	}
-	
+
 	public TipoUsuarioENUM getUsuarioEnumVisitante(){
 		return TipoUsuarioENUM.VISITANTE;
 	}
-	
+
 }
 
 
