@@ -17,6 +17,10 @@ public class VeiculoNR {
 	public void salvar(Veiculo veiculo){
 		this.veiculoDAO.save(veiculo);
 	}
+	
+	public void salvarVeiculoUtil(Veiculo veiculo){
+		this.veiculoDAO.save(veiculo);
+	}
 
 	public List<Veiculo> listar_veiculos(){
 		return this.veiculoDAO.list();

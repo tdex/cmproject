@@ -24,23 +24,23 @@
 
 					<h3>
 						<h:outputText value="Nome: " style="font-weight:bold" />
-						<h:outputText value="#{veiculo.nome}" />
+						<h:outputText value="#{veiculoMB.veiculo.nome}" />
 					</h3>
 					<h3>
 						<h:outputText value="Modelo: " style="font-weight:bold" />
-						<h:outputText value="#{veiculo.modelo}" />
+						<h:outputText value="#{veiculoMB.veiculo.modelo}" />
 					</h3>
 					<h3>
 						<h:outputText value="Tipo: " style="font-weight:bold" />
-						<h:outputText value="#{veiculo.tipo}" />
+						<h:outputText value="#{veiculoMB.veiculo.tipo}" />
 					</h3>
 					<h3>
 						<h:outputText value="Descrição: " style="font-weight:bold" />
-						<h:outputText value="#{veiculo.descricao}" />
+						<h:outputText value="#{veiculoMB.veiculo.descricao}" />
 					</h3>
 					<h3>
 						<h:outputText value="Valor: " style="font-weight:bold" />
-						<h:outputText value="#{veiculo.valor}" />
+						<h:outputText value="#{veiculoMB.veiculo.valor}" />
 					</h3>
 
 					<h3>
@@ -58,7 +58,7 @@
 					<h3>
 						<h:commandButton value="Confirmar aluguel"
 							action="#{veiculoMB.alugar}">
-							<f:param name="nome" value="#{veiculo.nome}" />
+							<f:param name="nome" value="#{veiculoMB.veiculo.nome}" />
 						</h:commandButton>
 					</h3>
 

@@ -17,6 +17,10 @@ public class VeiculoDAOHibernate implements VeiculoDAO{
 	public void save(Veiculo veiculo) {
 		this.session.save(veiculo);
 	}
+	
+	public void saveVeiculoUtil(Veiculo veiculo) {
+		this.session.save(veiculo);
+	}
 
 	@Override
 	public List<Veiculo> list() {
