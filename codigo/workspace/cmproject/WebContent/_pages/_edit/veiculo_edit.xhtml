@@ -9,10 +9,11 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <ui:composition template="../../main.xhtml">
+<head></head>
 	<ui:define name="conteudo">
 		<b:container>
 			<h1>Cadastro de Veículo</h1>
-			<h:form>
+			<h:form enctype="multipart/form-data">
 				<p:growl id="growl" showDetail="true" sticky="true" />
 				<h:panelGrid columns="1" cellpadding="2">
 					<b:inputText value="#{veiculoMB.veiculo.nome}" id="nome"
@@ -38,7 +39,7 @@
 							<h:outputText value="Valor: R$" />
 						</f:facet>
 					</b:inputText>
-					
+
 					<b:inputText id="valorPromocao" placeholder=""
 						value="#{veiculoMB.veiculo.valorPromocao}" required="true"
 						requiredMessage="Campo Obrigatório">
@@ -69,15 +70,19 @@
 						value="#{veiculoMB.veiculo.descricao}" />
 
 					<br />
+					<br />
+
+					<p:fileUpload mode="simple" value="#{veiculoMB.file}" requiredMessage="Escolha uma foto para o veículo"/>
+
+					<br />
+					<br />
+
+					<br />
 					<h:panelGrid columns="2">
 						<b:commandButton value="Cadastrar" look="success" type="submit"
 							action="#{veiculoMB.salvar}" />
 						<!--b:commandButton value="Limpar" type="reset"/-->
 					</h:panelGrid>
-
-					<!--  b:datepicker mode="icon-popup" showButtonPanel="true" changeMonth="true" changeYear="true" 
-						
-					</b:datepicker> -->
 
 				</h:panelGrid>
 			</h:form>

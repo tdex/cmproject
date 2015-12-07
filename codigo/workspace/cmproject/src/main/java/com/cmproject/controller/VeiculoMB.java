@@ -9,10 +9,12 @@ import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
 import org.primefaces.context.RequestContext;
 import org.primefaces.event.SelectEvent;
+import org.primefaces.model.UploadedFile;
 
 import com.cmproject.model.StatusENUM;
 import com.cmproject.model.TipoVeiculoENUM;
@@ -29,27 +31,36 @@ public class VeiculoMB{
 
 	private VeiculoNR veiculoNR;
 
+	private UploadedFile file;
+	 
+    public UploadedFile getFile() {
+        return file;
+    }
+ 
+    public void setFile(UploadedFile file) {
+        this.file = file;
+    }
+
 	public void salvar(){
+		this.veiculo.setImagem(file.getFileName());
 		VeiculoNR veiculoNR = new VeiculoNR();
 		veiculoNR.salvar(veiculo);
 		FacesMessage mensagem = new FacesMessage("Cadastrado com sucesso!");
 		FacesContext context = FacesContext.getCurrentInstance();
 		context.addMessage(null, mensagem);
 	}
-	
+
 	public String alugarNossosVeiculos(String nome){
 		VeiculoNR veiculoNR = new VeiculoNR();
-		Veiculo veiculo = new Veiculo();
 		veiculo = veiculoNR.getVeiculo(nome);
-		veiculoNR.salvarVeiculoUtil(veiculo);
 		return "/_pages/_edit/aluguel.xhtml";
 	}
 
 	public String alugar() throws ParseException{
-		
+
 		String dataInicioDigitada = this.veiculo.getDataInicio();
 		String dataFinalDigitada = this.veiculo.getDataFinal();
-		
+
 		VeiculoNR veiculoNRn = new VeiculoNR();
 		String teste = (String) FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("nome");
 		this.veiculo = veiculoNRn.getVeiculo(teste);
@@ -69,12 +80,12 @@ public class VeiculoMB{
 				Date dateDataFinal = formatData.parse(this.veiculo.getDataFinal());
 				if(dateDataFinal.compareTo(dateDataInicio) == 1){
 					VeiculoNR veiculoNR = new VeiculoNR();
-//					String nome = (String) FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("nome");
-//					Veiculo veiculo = new Veiculo();
-//					veiculo = veiculoNR.getVeiculo(nome);
+					//					String nome = (String) FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("nome");
+					//					Veiculo veiculo = new Veiculo();
+					//					veiculo = veiculoNR.getVeiculo(nome);
 					this.veiculo.setStatus(StatusENUM.Indisponível);
-//					veiculo.setDataInicio(this.veiculo.getDataInicio());
-//					veiculo.setDataFinal(this.veiculo.getDataFinal());
+					//					veiculo.setDataInicio(this.veiculo.getDataInicio());
+					//					veiculo.setDataFinal(this.veiculo.getDataFinal());
 					veiculoNR.salvar(veiculo);
 					FacesMessage mensagem = new FacesMessage("Veículo alugado com sucesso!");
 					FacesContext context = FacesContext.getCurrentInstance();
@@ -94,12 +105,12 @@ public class VeiculoMB{
 			}
 		}
 	}
-	
-//	public String verficarTodosLabels(String , String tipo, String valor){
-//		VeiculoNR veiculoNR = new VeiculoNR();
-//		String retorno = veiculoNR.verficarLabelValor(nome);
-//		return retorno;
-//	}
+
+	//	public String verficarTodosLabels(String , String tipo, String valor){
+	//		VeiculoNR veiculoNR = new VeiculoNR();
+	//		String retorno = veiculoNR.verficarLabelValor(nome);
+	//		return retorno;
+	//	}
 
 	public boolean verficarStatus(String nome){
 		VeiculoNR veiculoNR = new VeiculoNR();

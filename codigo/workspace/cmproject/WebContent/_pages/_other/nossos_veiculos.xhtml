@@ -26,7 +26,7 @@
 								<h2>
 									<h:outputText value="#{veiculo.modelo}" />
 								</h2>
-								<img src="#{request.contextPath}/_resources/_img/cama.png" alt="" class="car_img"/>
+								<img src="#{request.contextPath}/_resources/_img/#{veiculo.imagem}" alt="" class="car_img"/>
 								<br />
 								<h3>
 									<h:outputText value="#{veiculoMB.verficarLabelValor(veiculo.nome)}" />
@@ -45,8 +45,6 @@
 						paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 						rowsPerPageTemplate="5,10,20" rowKey="#{veiculo.id_veiculo}"
 						selectionMode="single" selection="#{veiculoMB.selectedVeiculo}">
-
-
 						<p:column headerText="Imagem">
 							<img src="#{veiculo.imagem}" width="100%" />
 						</p:column>
