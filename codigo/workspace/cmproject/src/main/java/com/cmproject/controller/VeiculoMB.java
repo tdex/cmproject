@@ -53,7 +53,7 @@ public class VeiculoMB{
 	public String alugarNossosVeiculos(String nome){
 		VeiculoNR veiculoNR = new VeiculoNR();
 		veiculo = veiculoNR.getVeiculo(nome);
-		return "/_pages/_edit/aluguel.xhtml";
+		return "/_pages/_acoes_adm/aluguel.xhtml";
 	}
 
 	public String alugar() throws ParseException{
@@ -111,6 +111,10 @@ public class VeiculoMB{
 	//		String retorno = veiculoNR.verficarLabelValor(nome);
 	//		return retorno;
 	//	}
+	
+	public String redirecionarPaginaAlugar(){
+		return "/_pages/_acoes_adm/aluguel.xhtml";
+	}
 
 	public boolean verficarStatus(String nome){
 		VeiculoNR veiculoNR = new VeiculoNR();

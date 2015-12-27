@@ -16,9 +16,10 @@
 				<h:form>
 					<p:growl id="growl" showDetail="true" sticky="true" />
 
-					<img src="#{request.contextPath}/_resources/_img/cama.png" alt=""
+					<div style="width: 500px; height: 400px; ">
+					<img src="#{request.contextPath}/_resources/_img/#{veiculoMB.veiculo.imagem}" alt=""
 						class="car_img" />
-						 
+					</div>
 				<a href="#{request.contextPath}/_pages/_other/localizaLocadora.xhtml"
 					class="btn btn-lg btn-info">Localizar locadora</a>
 					<button onclick="print()" class="btn brn-lg">Imprimir</button>

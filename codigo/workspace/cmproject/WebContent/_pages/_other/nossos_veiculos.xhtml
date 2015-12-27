@@ -33,7 +33,7 @@
 									<h:outputText value="#{veiculo.valor}" />
 									<h:outputText value=",00" />
 								</h3>
-								<b:commandButton disabled="#{veiculoMB.verficarStatus(veiculo.nome)}" value="Alugar" action="/_pages/_edit/aluguel.xhtml"/>
+								<b:commandButton disabled="#{veiculoMB.verficarStatus(veiculo.nome)}" value="Alugar" action="#{veiculoMB.redirecionarPaginaAlugar}"/>
 							</div>
 						</b:column>
 						</h:form>
