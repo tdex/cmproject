@@ -10,7 +10,7 @@
 
 <ui:composition template="../../main.xhtml">
 	<ui:define name="conteudo">
-		<b:container>
+		<b:container styleClass="loginBox">
 			<b:well>
 				<h1>Login</h1>
 				<h:form>
@@ -19,7 +19,7 @@
 					<h:panelGrid columns="1" cellpadding="2">
 
 						<b:inputText value="#{usuarioMB.usuario.email}" id="email"
-							placeholder="" required="true"
+							styleClass="campo" placeholder="" required="true"
 							requiredMessage="Campo Obrigatório">
 							<f:facet name="prepend">
 								<h:outputText value="Email: " />
@@ -27,7 +27,7 @@
 						</b:inputText>
 
 						<b:inputSecret value="#{usuarioMB.usuario.senha}" id="senha"
-							placeholder="" required="true"
+							styleClass="campo" placeholder="" required="true"
 							requiredMessage="Campo Obrigatório">
 							<f:facet name="prepend">
 								<h:outputText value="Senha: " />
@@ -35,8 +35,9 @@
 						</b:inputSecret>
 
 						<h:panelGrid columns="1">
-							<b:commandButton value="Entrar" look="success" type="submit"
-								action="#{usuarioMB.logar}" />
+							<b:commandButton value="Entrar" icon="ui-icon-sigin" look="success" type="submit"
+								actionListener="#{usuarioMB.logar}">
+							</b:commandButton>
 						</h:panelGrid>
 					</h:panelGrid>
 				</h:form>

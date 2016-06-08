@@ -10,35 +10,40 @@
 
 <ui:composition template="../../main.xhtml">
 	<ui:define name="conteudo">
+		<b:container col-xs="12" styleClass="carrosBox">
+			<b:well>
+				<div id="total_carros">
+					<b:row styleClass="show-grid">
+						<h1>Nossos Veículos</h1>
 
-		<b:container>
-			<div id="total_carros">
-				<b:row styleClass="show-grid">
-				<h1>Nossos Veículos</h1>
-					
-					<ui:repeat var="veiculo" value="#{veiculoMB.listar()}">
-					<h:form>
-						<b:column span="4" col-xs="12" col-sm="6">
-							<div id="carro_list">
-								<h1>
-									<h:outputText value="#{veiculo.nome}" />
-								</h1>
-								<h2>
-									<h:outputText value="#{veiculo.modelo}" />
-								</h2>
-								<img src="#{request.contextPath}/_resources/_img/#{veiculo.imagem}" alt="" class="car_img"/>
-								<br />
-								<h3>
-									<h:outputText value="#{veiculoMB.verficarLabelValor(veiculo.nome)}" />
-									<h:outputText value="#{veiculo.valor}" />
-									<h:outputText value=",00" />
-								</h3>
-								<b:commandButton disabled="#{veiculoMB.verficarStatus(veiculo.nome)}" value="Alugar" action="#{veiculoMB.redirecionarPaginaAlugar}"/>
-							</div>
-						</b:column>
-						</h:form>
-					</ui:repeat>
-					 <!--
+						<ui:repeat var="veiculo" value="#{veiculoMB.listar()}" >
+							<h:form>
+								<b:column span="4" col-xs="12" col-sm="6">
+									<div id="carro_list">
+										<h1>
+											<h:outputText value="#{veiculo.nome}" />
+										</h1>
+										<h2>
+											<h:outputText value="#{veiculo.modelo}" />
+										</h2>
+										<img
+											src="#{request.contextPath}/_resources/_img/#{veiculo.imagem}"
+											alt="" class="car_img" /> <br />
+										<h3>
+											<h:outputText
+												value="#{veiculoMB.verficarLabelValor(veiculo.nome)}" />
+											<h:outputText value="#{veiculo.valor}" />
+											<h:outputText value=",00" />
+										</h3>
+										<b:commandButton
+											disabled="#{veiculoMB.verficarStatus(veiculo.nome)}"
+											value="Alugar" action="#{veiculoMB.redirecionarPaginaAlugar}" />
+									</div>
+								</b:column>
+							</h:form>
+						</ui:repeat>
+						
+						<!--
 					<h1>Nossos Veículos</h1>
 					<p:dataTable value="#{veiculoMB.listar()}" var="veiculo"
 						id="veiculoTable" widgetVar="dataTable" paginator="true" rows="10"
@@ -61,9 +66,10 @@
 						<h:outputText value="This is a Modal Dialog." />
 					</p:dialog>-->
 
-					
-				</b:row>
-			</div>
+
+					</b:row>
+				</div>
+			</b:well>
 		</b:container>
 	</ui:define>
 </ui:composition>

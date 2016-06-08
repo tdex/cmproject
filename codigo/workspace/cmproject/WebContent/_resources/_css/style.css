@@ -65,3 +65,22 @@ span.input-group-addon:first-child{
 	width: 100%;
 	position: static;
 }
+
+.loginBox{
+	text-align: center;
+	width: 400px;
+	margin: 10px auto;
+}
+.loginBox .input-group{
+	width: 330px;
+}
+
+.carrosBox{
+	text-align: center;
+	margin: 10px auto;
+}
+
+
+.ui-icon-sigin{
+	background-image: url("#{resource['../_img/icon/ic_input_black_48dp.png']}");
+}
