@@ -14,10 +14,13 @@
 			<b:well>
 				<h:form>
 					<h1>Usuários cadastrados</h1>
-					
-					<a href="../../_pages/_edit/colaborador_edit.xhtml"
-					class="btn btn-lg btn-info">Novo Colaborador</a>
-					
+
+					<h:form styleClass="adm_actions">
+						<p:button value="Novo Colaborador"
+							class="fa fa-user-plus btn btn-default adm_acao"
+							href="../../_pages/_edit/colaborador_edit.xhtml" />
+					</h:form>
+
 					<p:contextMenu for="usuarioTable">
 						<p:menuitem value="Delete" update="usuarioTable"
 							icon="ui-icon-close" action="#{usuarioMB.deletar}" />
@@ -42,7 +45,7 @@
 							<h:outputText value="#{usuario.telefone}" />
 						</p:column>
 						<p:column headerText="Tipo">
-							<h:outputText value="#{usuario.tipoUsuario}"/>
+							<h:outputText value="#{usuario.tipoUsuario}" />
 						</p:column>
 
 					</p:dataTable>

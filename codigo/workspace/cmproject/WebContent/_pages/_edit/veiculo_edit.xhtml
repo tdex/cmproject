@@ -70,20 +70,16 @@
 						<p:inputTextarea rows="6" cols="33"
 							value="#{veiculoMB.veiculo.descricao}" />
 
-						<br />
-						<br />
 
-						<p:fileUpload mode="simple" value="#{veiculoMB.file}"
+						<p:fileUpload mode="advance" value="#{veiculoMB.file}" required="false"
 							requiredMessage="Escolha uma foto para o veículo" />
 
-						<br />
-						<br />
 
 						<br />
-						<h:panelGrid columns="2">
-							<b:commandButton value="Cadastrar" look="success" type="submit"
+						<h:panelGrid columns="2" styleClass="botoes_form">
+							<b:commandButton value="Cadastrar" look="success" type="submit" iconAwesome="floppy-o"
 								action="#{veiculoMB.salvar}" />
-							<!--b:commandButton value="Limpar" type="reset"/-->
+							<b:button value="Cancelar" look="warning" iconAwesome="close" />
 						</h:panelGrid>
 
 					</h:panelGrid>

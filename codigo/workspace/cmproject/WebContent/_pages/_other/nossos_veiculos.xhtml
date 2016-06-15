@@ -16,7 +16,7 @@
 					<b:row styleClass="show-grid">
 						<h1>Nossos Veículos</h1>
 
-						<ui:repeat var="veiculo" value="#{veiculoMB.listar()}" >
+						<ui:repeat var="veiculo" value="#{veiculoMB.listar()}">
 							<h:form>
 								<b:column span="4" col-xs="12" col-sm="6">
 									<div id="carro_list">
@@ -28,7 +28,7 @@
 										</h2>
 										<img
 											src="#{request.contextPath}/_resources/_img/#{veiculo.imagem}"
-											alt="" class="car_img" /> <br />
+											alt="imagem veiculo" class="car_img" /> <br />
 										<h3>
 											<h:outputText
 												value="#{veiculoMB.verficarLabelValor(veiculo.nome)}" />
@@ -36,13 +36,20 @@
 											<h:outputText value=",00" />
 										</h3>
 										<b:commandButton
+											rendered="#{!(veiculoMB.verficarStatus(veiculo.nome))}"
 											disabled="#{veiculoMB.verficarStatus(veiculo.nome)}"
-											value="Alugar" action="#{veiculoMB.redirecionarPaginaAlugar}" />
+											iconAwesome="car" value="Alugar"
+											action="#{veiculoMB.redirecionarPaginaAlugar}" />
+										<b:commandButton
+											rendered="#{veiculoMB.verficarStatus(veiculo.nome)}"
+											disabled="#{veiculoMB.verficarStatus(veiculo.nome)}"
+											iconAwesome="ban" value="Alugado"
+											action="#{veiculoMB.redirecionarPaginaAlugar}" />
 									</div>
 								</b:column>
 							</h:form>
 						</ui:repeat>
-						
+
 						<!--
 					<h1>Nossos Veículos</h1>
 					<p:dataTable value="#{veiculoMB.listar()}" var="veiculo"

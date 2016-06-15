@@ -14,18 +14,19 @@
 			<b:well>
 				<h1>Ações administrativas</h1>
 
-				<a href="../../_pages/_edit/colaborador_edit.xhtml"
-					class="btn btn-lg btn-info">Cadastro de Colaborador</a>
-				<a href="../../_pages/_edit/veiculo_edit.xhtml" 
-					class="btn btn-lg btn-info">Cadastro de Veículo</a>
+				<h:form styleClass="adm_actions">
+					<p:button value="Novo Colaborador"
+						class="fa fa-user-plus btn btn-default adm_acao"
+						href="../../_pages/_edit/colaborador_edit.xhtml" />
+					<p:button value="Novo Veículo" class="fa fa-car btn btn-default"
+						href="../../_pages/_edit/veiculo_edit.xhtml" />
+					<p:button value="Listar Usuários"
+						class="fa fa-users btn btn-default"
+						href="../../_pages/_acoes_adm/visitante_list_adm.xhtml" />
+					<p:button value="Listar Veículos" class="fa fa-car btn btn-default"
+						href="../../_pages/_acoes_adm/veiculo_list_adm.xhtml" />
+				</h:form>
 
-				<a href="../../_pages/_acoes_adm/visitante_list_adm.xhtml"
-					class="btn btn-lg btn-info">Listar Usuários</a>
-				<!-- <a href="../../_pages/_acoes_adm/colaborador_list_adm.xhtml"
-					class="btn btn-lg btn-info">Listar Colaboradores</a>
-				 -->
-				<a href="../../_pages/_acoes_adm/veiculo_list_adm.xhtml"
-					class="btn btn-lg btn-info">Listar Veículos</a>
 
 			</b:well>
 		</b:container>

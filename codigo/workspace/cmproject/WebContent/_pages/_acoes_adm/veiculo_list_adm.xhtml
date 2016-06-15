@@ -15,8 +15,11 @@
 				<h:form>
 					<h1>Veículos cadastrados</h1>
 
-					<a href="../../_pages/_edit/veiculo_edit.xhtml"
-						class="btn btn-lg btn-info">Novo Veículo</a>
+					<h:form styleClass="adm_actions">
+						<p:button value="Novo Veículo"
+							class="fa fa-car btn btn-default adm_acao"
+							href="../../_pages/_edit/veiculo_edit.xhtml" />
+					</h:form>
 
 					<p:contextMenu for="veiculoTable">
 						<p:menuitem value="Delete" update="veiculoTable"

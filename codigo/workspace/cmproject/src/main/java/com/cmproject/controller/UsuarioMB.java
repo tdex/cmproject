@@ -1,5 +1,6 @@
 package com.cmproject.controller;
 
+import java.io.IOException;
 import java.util.List;
 
 import javax.faces.application.FacesMessage;
@@ -92,6 +93,11 @@ public class UsuarioMB {
 		}
 	}
 
+	public void redirecionar(String acao) throws IOException{
+		FacesContext.getCurrentInstance().getExternalContext().redirect("index");
+		if(acao.equals("novoColab")){
+		}
+	}
 
 	//getter e setter
 	public void setUsuario(Usuario usuario) {

@@ -7,11 +7,15 @@
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<title>CMPROJECT</title>
-	<link rel="stylesheet" type="text/css" href="#{request.contextPath}/_resources/_css/style.css" />
-	<script type="text/javascript" src="#{request.contextPath}/_resources/_js/jquery-2.1.4.min.js"></script>
-	<script type="text/javascript" src="#{request.contextPath}/_resources/_js/jquery.maskedinput.min.js"></script>
-	<script type="text/javascript" src="#{request.contextPath}/_resources/_js/script.js"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" type="text/css"
+		href="#{request.contextPath}/_resources/_css/style.css" />
+	<script type="text/javascript"
+		src="#{request.contextPath}/_resources/_js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript"
+		src="#{request.contextPath}/_resources/_js/jquery.maskedinput.min.js"></script>
+	<script type="text/javascript"
+		src="#{request.contextPath}/_resources/_js/script.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<script src="http://maps.googleapis.com/maps/api/js"></script>
 </h:head>
 <h:body>
@@ -22,13 +26,21 @@
 				<b:navLink value="Nossos Veículos"
 					href="/_pages/_other/nossos_veiculos.xhtml" />
 				<b:navLink value="Sobre" href="/_pages/_other/about.xhtml" />
-				<b:navLink value="Encontre-nos" href="/_pages/_other/localizaLocadora.xhtml" />
+				<b:navLink value="Encontre-nos"
+					href="/_pages/_other/localizaLocadora.xhtml" />
 				<b:dropMenu value="Acesso">
-					<b:navLink value="Login" href="/_pages/_other/login.xhtml" />
-					<b:navLink value="Cadastre-se" href="/_pages/_other/usuario_cadastro.xhtml" />
-					<b:navLink></b:navLink>
-					<b:navLink header="Administrador" />
-					<b:navLink value="Ações Administrativas" href="/_pages/_acoes_adm/acoes_adm.xhtml" />
+					<b:navLink value="Login" href="/_pages/_other/login.xhtml"
+						iconAwesome="sign-in" rendered="#{usuarioMB.loggedIn == false}" />
+					<b:navLink value="Cadastre-se"
+						href="/_pages/_other/usuario_cadastro.xhtml"
+						iconAwesome="bookmark" rendered="#{usuarioMB.loggedIn == false}" />
+					<!-- 					<b:navLink></b:navLink> -->
+					<b:navLink header="Administrador" rendered="#{usuarioMB.loggedIn}" />
+					<b:navLink value="Ações Administrativas"
+						href="/_pages/_acoes_adm/acoes_adm.xhtml"
+						rendered="#{usuarioMB.loggedIn}" iconAwesome="certificate" />
+					<b:navLink value="Sair" rendered="#{usuarioMB.loggedIn}"
+						iconAwesome="sign-out" style="float: right" />
 				</b:dropMenu>
 			</b:navbarLinks>
 		</b:navBar>
@@ -44,7 +56,7 @@
 	<div id="footer">
 		<b:container>
 			<b:row>
-				<b:column col-md="4" col-sm="6" >
+				<b:column col-md="4" col-sm="6">
 					<h4>Sobre</h4>
 					<p>Car Management Project &#174;</p>
 					<p>
@@ -52,7 +64,7 @@
 					</p>
 					<p>Professor: Jarley Nobrega</p>
 				</b:column>
-				<b:column col-md="4" col-sm="6" >
+				<b:column col-md="4" col-sm="6">
 					<h4>Desenvolvedores</h4>
 					<p>Tarcísio Deschamps Silva</p>
 					<p>Diógenes Melo</p>

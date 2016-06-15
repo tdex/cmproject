@@ -65,10 +65,12 @@
 							</f:facet>
 						</b:inputText>
 
-						<h:panelGrid columns="2">
+						<h:panelGrid columns="2" styleClass="botoes_form">
 							<b:commandButton value="Cadastre-se" look="success" type="submit"
-								action="#{usuarioMB.salvar(usuarioMB.usuarioEnumVisitante)}" update="form" />
-							<!--b:commandButton value="Limpar" type="reset" /-->
+								iconAwesome="floppy-o"
+								action="#{usuarioMB.salvar(usuarioMB.usuarioEnumVisitante)}"
+								update="form" />
+							<b:button value="Cancelar" look="warning" iconAwesome="close" />
 						</h:panelGrid>
 					</h:panelGrid>
 				</h:form>

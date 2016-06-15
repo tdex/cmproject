@@ -34,10 +34,12 @@
 							</f:facet>
 						</b:inputSecret>
 
-						<h:panelGrid columns="1">
-							<b:commandButton value="Entrar" icon="ui-icon-sigin" look="success" type="submit"
+						<h:panelGrid columns="1" styleClass="grade_botoes">
+							<b:commandButton value="Entrar" iconAwesome="thumbs-o-up" look="success" type="submit"
 								actionListener="#{usuarioMB.logar}">
 							</b:commandButton>
+
+							<b:button value="Cancelar" look="warning" iconAwesome="close"/>
 						</h:panelGrid>
 					</h:panelGrid>
 				</h:form>

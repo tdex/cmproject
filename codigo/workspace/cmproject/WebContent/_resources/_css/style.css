@@ -61,6 +61,10 @@ span.input-group-addon:first-child{
 	position: relative;
 }
 
+#carro_list:HOVER{
+	background: #CED4D0;
+}
+
 .car_img{
 	width: 100%;
 	position: static;
@@ -80,7 +84,19 @@ span.input-group-addon:first-child{
 	margin: 10px auto;
 }
 
-
 .ui-icon-sigin{
 	background-image: url("#{resource['../_img/icon/ic_input_black_48dp.png']}");
+}
+
+.grade_botoes tr, .botoes_form td{
+	display: inline-block;
+	margin-right: 5px;
+}
+
+.adm_actions button{
+	margin: 0 5px 5px 0;
+	padding-top: 5px;
+}
+.adm_actions button span{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
